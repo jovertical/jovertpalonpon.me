@@ -1,5 +1,5 @@
 .btn {
-    @apply tw-inline-block tw-px-5 tw-py-3 tw-rounded-lg tw-text-white tw-text-sm tw-uppercase tw-tracking-wide tw-font-semibold;
+    @apply tw-inline-block tw-px-5 tw-py-2 tw-rounded-full tw-text-white tw-text-sm tw-uppercase tw-tracking-wide tw-font-semibold;
 }
 
 .btn:focus {
@@ -7,11 +7,11 @@
 }
 
 .btn-primary {
-    @apply tw-bg-indigo-500;
+    @apply tw-bg-transparent tw-border tw-border-2 tw-border-blue-500 tw-text-blue-500;
 }
 
 .btn-primary:hover {
-    @apply tw-bg-indigo-400;
+    @apply tw-bg-blue-500 tw-text-white;
 }
 
 .btn-primary:focus {
@@ -19,5 +19,5 @@
 }
 
 .btn-primary:active {
-    @apply tw-bg-indigo-600;
+    @apply tw-bg-blue-700;
 }
