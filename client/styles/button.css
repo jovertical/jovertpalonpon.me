@@ -1,5 +1,5 @@
 .btn {
-    @apply tw-inline-block tw-px-5 tw-py-2 tw-rounded-full tw-text-white tw-text-sm tw-uppercase tw-tracking-wide tw-font-semibold;
+    @apply tw-inline-block tw-px-5 tw-py-2 tw-rounded-full tw-text-white tw-text-sm tw-tracking-wide tw-font-semibold;
 }
 
 .btn:focus {

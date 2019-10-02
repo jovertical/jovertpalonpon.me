@@ -18,16 +18,17 @@ interface Props {
     type?: Types
     kind?: Kinds
     children?: React.ReactNode
-    classNames?: string
+    className?: string
 }
 
 const Button: React.FC = ({
     type = Types.button,
     kind = Kinds.primary,
     children,
-    classNames = ''
+    className = '',
+    ...other
 }: Props): React.ReactElement => (
-    <button type={type} className={`btn btn-${kind} ${classNames}`}>
+    <button type={type} className={`btn btn-${kind} ${className}`} {...other}>
         {children}
     </button>
 )
