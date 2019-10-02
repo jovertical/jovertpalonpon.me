@@ -1,0 +1,23 @@
+.btn {
+    @apply tw-inline-block tw-px-5 tw-py-3 tw-rounded-lg tw-text-white tw-text-sm tw-uppercase tw-tracking-wide tw-font-semibold;
+}
+
+.btn:focus {
+    @apply tw-outline-none;
+}
+
+.btn-primary {
+    @apply tw-bg-indigo-500;
+}
+
+.btn-primary:hover {
+    @apply tw-bg-indigo-400;
+}
+
+.btn-primary:focus {
+    @apply tw-shadow-outline;
+}
+
+.btn-primary:active {
+    @apply tw-bg-indigo-600;
+}
