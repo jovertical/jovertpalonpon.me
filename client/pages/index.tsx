@@ -141,6 +141,16 @@ const Index: React.FC = (): React.ReactElement => {
                     </div>
                 </div>
             </section>
+
+            <section className="tw-my-32 tw-mx-5 lg:tw-mx-40 tw-text-center">
+                <h1 className="tw-font-bold tw-text-2xl tw-mb-4">
+                    Featured Projects
+                </h1>
+
+                <div className="tw-flex tw-flex-wrap">
+                    <div className="tw-border"></div>
+                </div>
+            </section>
         </Layout>
     )
 }
