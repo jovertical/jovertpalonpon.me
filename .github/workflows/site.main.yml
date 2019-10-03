@@ -1,12 +1,12 @@
-name: Actions@client
+name: Actions@site
 
 on:
   push:
     branches:
       - master
-      - '*' #remove this later
+      # - '*' #remove this later
     # paths:
-    # - 'client/**'
+    # - 'site/**'
 
 jobs:
   Build:
@@ -24,7 +24,7 @@ jobs:
       - name: Publish to Netlify
         uses: netlify/actions/build@master
         env:
-          GITHUB_TOKEN: ${{secrets.CLIENT_GITHUB_TOKEN}}
+          GITHUB_TOKEN: ${{secrets.SITE_GITHUB_TOKEN}}
           NETLIFY_BASE: site
-          NETLIFY_CMD: npm build
-          NETLIFY_DIR: site/_build
+          NETLIFY_CMD: npm run export
+          NETLIFY_DIR: site/out
