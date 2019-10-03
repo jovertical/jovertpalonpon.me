@@ -4,9 +4,8 @@ on:
   push:
     branches:
       - master
-      - '*' #remove this later
-    # paths:
-    # - 'site/**'
+    paths:
+    - 'site/**'
 
 jobs:
   Build:
@@ -30,4 +29,4 @@ jobs:
           NETLIFY_AUTH_TOKEN: ${{ secrets.SITE_NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.SITE_NETLIFY_API_ID }}
         with:
-          args: publish
+          args: deploy
