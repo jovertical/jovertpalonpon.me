@@ -1,0 +1,30 @@
+name: Actions@site
+
+on:
+  push:
+    branches:
+      - master
+      # - '*' #remove this later
+    # paths:
+    # - 'site/**'
+
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v1
+
+      - name: Install Node.js dependencies
+        run: npm install --prefix=./site
+
+      - name: Run code quality checks
+        run: npm run --prefix=./site --silent lint
+
+      - name: Publish to Netlify
+        uses: netlify/actions/build@master
+        env:
+          GITHUB_TOKEN: ${{secrets.SITE_GITHUB_TOKEN}}
+          NETLIFY_BASE: site
+          NETLIFY_CMD: npm run export
+          NETLIFY_DIR: site/out
