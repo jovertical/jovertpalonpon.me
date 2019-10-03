@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - master
-      # - '*' #remove this later
+      - '*' #remove this later
     # paths:
     # - 'site/**'
 
