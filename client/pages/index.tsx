@@ -32,7 +32,7 @@ const Index: React.FC = (): React.ReactElement => {
                     project when I started collaborating with my school mates in
                     freelance projects for small businesses, my corporate career
                     is spent for start-up companies making me a resourceful
-                    person as a result. {`I'm`} also collaborating with my
+                    person as a result. I'm also collaborating with my
                     colleagues in developing applications that can help the
                     society. Throughout the years {`I've`} expanded my knowledge
                     from front-end stuff to back-end and then DevOps. I only
