@@ -21,6 +21,9 @@ jobs:
       - name: Run code quality checks
         run: npm run --prefix=./site --silent lint
 
+      - name: Run production build
+        run: npm run export
+
       - name: Publish to Netlify
         uses: netlify/actions/cli@master
         env:
