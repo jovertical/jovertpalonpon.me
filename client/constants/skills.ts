@@ -10,6 +10,7 @@ export const frontendLanguages: string[] = [
 
 export const frontendTools: string[] = [
     'Webpack',
+    'Next.js',
     'Tailwind CSS',
     'Material UI',
     'Bootstrap',
