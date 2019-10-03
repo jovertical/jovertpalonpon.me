@@ -22,7 +22,7 @@ jobs:
         run: npm run --prefix=./site --silent lint
 
       - name: Run production build
-        run: npm run export
+        run: npm run --prefix=./site export
 
       - name: Publish to Netlify
         uses: netlify/actions/cli@master
