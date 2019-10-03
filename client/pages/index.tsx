@@ -35,7 +35,7 @@ const Index: React.FC = (): React.ReactElement => {
                     person as a result. {`I'm`} also collaborating with my
                     colleagues in developing applications that can help the
                     society. Throughout the years {`I've`} expanded my knowledge
-                    from front-end stuff to back-end and then DevOps.I only
+                    from front-end stuff to back-end and then DevOps. I only
                     follow a basic principle: {`"Don't Repeat Yourself"`}.
                 </p>
             </section>

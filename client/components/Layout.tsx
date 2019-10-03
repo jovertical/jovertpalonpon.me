@@ -10,7 +10,7 @@ const Layout: React.FC = (props: Props): React.ReactElement => (
     <div>
         <Header />
 
-        <main>{props.children}</main>
+        <main className="tw-mb-5">{props.children}</main>
 
         <Footer />
     </div>
