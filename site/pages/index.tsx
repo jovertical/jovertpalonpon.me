@@ -40,104 +40,147 @@ const Index: React.FC = (): React.ReactElement => {
                 </p>
             </section>
 
-            <section className="tw-bg-white tw--mt-32 tw-mx-5 lg:tw-mx-40 tw-rounded-lg tw-border">
-                <div className="tw-flex tw-flex-wrap">
-                    <div className="tw-w-full lg:tw-w-1/3 tw-border-b lg:tw-border-b-none lg:tw-border-r tw-p-8 tw-text-center">
-                        <h1 className="tw-font-bold tw-text-xl tw-mb-4">
-                            Front-end Developer
-                        </h1>
+            <section className="tw--mt-32 tw-mx-5 lg:tw-mx-40">
+                <div className="tw-flex tw-flex-wrap tw--mx-2">
+                    <div className="tw-w-full lg:tw-w-1/3 tw-px-2 tw-mb-5 lg:tw-mg-0">
+                        <div className="tw-h-full tw-text-center tw-p-8 tw-bg-white tw-rounded tw-border hover:tw-shadow-lg">
+                            <div className="tw-m-5">
+                                <svg
+                                    className="tw-fill-current tw-text-blue-500 tw-h-16 tw-mx-auto"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path d="M13 17h-2v2h2v-2zm2 0v2h2a1 1 0 0 1 0 2H7a1 1 0 0 1 0-2h2v-2H4a2 2 0 0 1-2-2V5c0-1.1.9-2 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-5zM4 5v10h16V5H4z" />
+                                </svg>
+                            </div>
 
-                        <p className="tw-mb-10 lg:tw-text-lg">
-                            I love to convert a design into code, ensure that it
-                            is responsive and cross-browser compatible.I always
-                            tries to be the {`"user"`} when doing frontend
-                            stuff.
-                        </p>
+                            <h1 className="tw-font-bold tw-text-xl tw-mb-4">
+                                Front-end Developer
+                            </h1>
 
-                        <p className="tw-mb-2 lg:tw-text-lg tw-text-blue-500">
-                            Languages I Speak:
-                        </p>
+                            <p className="tw-mb-10 lg:tw-text-lg">
+                                I love to convert a design into code, ensure
+                                that it is responsive and cross-browser
+                                compatible.I always tries to be the {`"user"`}{' '}
+                                when doing frontend stuff.
+                            </p>
 
-                        <p className="tw-mb-10 lg:tw-text-lg">
-                            {SKILLS.frontendLanguages.map(lang => lang + ', ')}
-                        </p>
+                            <p className="tw-mb-2 lg:tw-text-lg tw-text-blue-500">
+                                Languages I Speak:
+                            </p>
 
-                        <p className="tw-mb-2 lg:tw-text-lg tw-text-blue-500">
-                            Dev Tools:
-                        </p>
+                            <p className="tw-mb-10 lg:tw-text-lg">
+                                {SKILLS.frontendLanguages.map(
+                                    lang => lang + ', '
+                                )}
+                            </p>
 
-                        <ul>
-                            {SKILLS.frontendTools.map((tool, i) => (
-                                <li key={i}>
-                                    <p className="lg:tw-text-lg">{tool}</p>
-                                </li>
-                            ))}
-                        </ul>
+                            <p className="tw-mb-2 lg:tw-text-lg tw-text-blue-500">
+                                Dev Tools:
+                            </p>
+
+                            <ul>
+                                {SKILLS.frontendTools.map((tool, i) => (
+                                    <li key={i}>
+                                        <p className="lg:tw-text-lg">{tool}</p>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
                     </div>
 
-                    <div className="tw-w-full lg:tw-w-1/3 tw-border-b lg:tw-border-b-none lg:tw-border-r tw-p-8 tw-text-center">
-                        <h1 className="tw-font-bold tw-text-xl tw-mb-4">
-                            Back-end Developer
-                        </h1>
+                    <div className="tw-w-full lg:tw-w-1/3 tw-px-2 tw-mb-5 lg:tw-mg-0">
+                        <div className="tw-h-full tw-text-center tw-p-8 tw-bg-white tw-rounded tw-border hover:tw-shadow-lg">
+                            <div className="tw-m-5">
+                                <svg
+                                    className="tw-fill-current tw-text-blue-500 tw-h-16 tw-mx-auto"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path d="M20.59 12l-3.3-3.3a1 1 0 1 1 1.42-1.4l4 4a1 1 0 0 1 0 1.4l-4 4a1 1 0 0 1-1.42-1.4l3.3-3.3zM3.4 12l3.3 3.3a1 1 0 0 1-1.42 1.4l-4-4a1 1 0 0 1 0-1.4l4-4a1 1 0 0 1 1.42 1.4L3.4 12zm7.56 8.24a1 1 0 0 1-1.94-.48l4-16a1 1 0 1 1 1.94.48l-4 16z" />
+                                </svg>
+                            </div>
 
-                        <p className="tw-mb-10 lg:tw-text-lg">
-                            I love making simple to complex application backend
-                            systems, I code with maintainability in mind by
-                            following industry-proven coding standards.
-                        </p>
+                            <h1 className="tw-font-bold tw-text-xl tw-mb-4">
+                                Back-end Developer
+                            </h1>
 
-                        <p className="tw-mb-2 lg:tw-text-lg tw-text-blue-500">
-                            Languages I Speak:
-                        </p>
+                            <p className="tw-mb-10 lg:tw-text-lg">
+                                I love making simple to complex application
+                                backend systems, I code with maintainability in
+                                mind by following industry-proven coding
+                                standards.
+                            </p>
 
-                        <p className="tw-mb-10 lg:tw-text-lg">
-                            {SKILLS.backendLanguages.map(lang => lang + ', ')}
-                        </p>
+                            <p className="tw-mb-2 lg:tw-text-lg tw-text-blue-500">
+                                Languages I Speak:
+                            </p>
 
-                        <p className="tw-mb-2 lg:tw-text-lg tw-text-blue-500">
-                            Dev Tools:
-                        </p>
+                            <p className="tw-mb-10 lg:tw-text-lg">
+                                {SKILLS.backendLanguages.map(
+                                    lang => lang + ', '
+                                )}
+                            </p>
 
-                        <ul>
-                            {SKILLS.backendTools.map((tool, i) => (
-                                <li key={i}>
-                                    <p className="lg:tw-text-lg">{tool}</p>
-                                </li>
-                            ))}
-                        </ul>
+                            <p className="tw-mb-2 lg:tw-text-lg tw-text-blue-500">
+                                Dev Tools:
+                            </p>
+
+                            <ul>
+                                {SKILLS.backendTools.map((tool, i) => (
+                                    <li key={i}>
+                                        <p className="lg:tw-text-lg">{tool}</p>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
                     </div>
 
-                    <div className="tw-w-full lg:tw-w-1/3 tw-p-8 tw-text-center">
-                        <h1 className="tw-font-bold tw-text-xl tw-mb-4">
-                            DevOps Enthusiast
-                        </h1>
+                    <div className="tw-w-full lg:tw-w-1/3 tw-px-2 tw-mb-5 lg:tw-mg-0">
+                        <div className="tw-h-full tw-text-center tw-p-8 tw-bg-white tw-rounded tw-border hover:tw-shadow-lg">
+                            <div className="tw-m-5">
+                                <svg
+                                    className="tw-fill-current tw-text-blue-500 tw-h-16 tw-mx-auto"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5c0-1.1.9-2 2-2zm14 8V5H5v6h14zm0 2H5v6h14v-6zM8 9a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm0 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
+                                </svg>
+                            </div>
 
-                        <p className="tw-mb-10 lg:tw-text-lg">
-                            My interest in DevOps and cloud has just developed
-                            over the years, its just fulfilling to see your app
-                            being a reality.I ensure that the app is secure
-                            &amp; scalable.
-                        </p>
+                            <h1 className="tw-font-bold tw-text-xl tw-mb-4">
+                                DevOps Enthusiast
+                            </h1>
 
-                        <p className="tw-mb-2 lg:tw-text-lg tw-text-blue-500">
-                            Tools I use:
-                        </p>
+                            <p className="tw-mb-10 lg:tw-text-lg">
+                                My interest in DevOps and cloud has just
+                                developed over the years, its just fulfilling to
+                                see your app being a reality.I ensure that the
+                                app is secure &amp; scalable.
+                            </p>
 
-                        <p className="tw-mb-10 lg:tw-text-lg">
-                            {SKILLS.devOpsTools.map(tool => tool + ', ')}
-                        </p>
+                            <p className="tw-mb-2 lg:tw-text-lg tw-text-blue-500">
+                                Tools I use:
+                            </p>
 
-                        <p className="tw-mb-2 lg:tw-text-lg tw-text-blue-500">
-                            Cloud Platforms I deploy to:
-                        </p>
+                            <p className="tw-mb-10 lg:tw-text-lg">
+                                {SKILLS.devOpsTools.map(tool => tool + ', ')}
+                            </p>
 
-                        <ul>
-                            {SKILLS.cloudPlatforms.map((platform, i) => (
-                                <li key={i}>
-                                    <p className="lg:tw-text-lg">{platform}</p>
-                                </li>
-                            ))}
-                        </ul>
+                            <p className="tw-mb-2 lg:tw-text-lg tw-text-blue-500">
+                                Cloud Platforms I deploy to:
+                            </p>
+
+                            <ul>
+                                {SKILLS.cloudPlatforms.map((platform, i) => (
+                                    <li key={i}>
+                                        <p className="lg:tw-text-lg">
+                                            {platform}
+                                        </p>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </section>

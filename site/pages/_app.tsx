@@ -9,10 +9,10 @@ export default class App extends Next {
         return (
             <>
                 <style global jsx>{`
-                    @import url('https://fonts.googleapis.com/css?family=Fira+Sans+Condensed:400,500,700,800,900&display=swap');
+                    @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500,700,800,900&display=swap');
 
                     body {
-                        font-family: 'Raleway', sans-serif;
+                        font-family: 'Open Sans', sans-serif;
                     }
                 `}</style>
 
