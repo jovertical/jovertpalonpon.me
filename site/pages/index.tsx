@@ -3,6 +3,15 @@ import Layout from '../components/Layout'
 import * as SKILLS from '../constants/skills'
 
 const Index: React.FC = (): React.ReactElement => {
+    const projects: Project[] = [
+        {
+            id: 'AE2S-GHS7-1RZ5-89AE',
+            name: 'Workgalore',
+            description: 'This is a wonderful project',
+            imageUrl: '/static/workgalore.png'
+        }
+    ]
+
     return (
         <Layout>
             <section className="tw-pt-5">
@@ -186,14 +195,39 @@ const Index: React.FC = (): React.ReactElement => {
             </section>
 
             <section className="tw-my-32 tw-mx-5 lg:tw-mx-40 tw-text-center">
-                <h1 className="tw-font-bold tw-text-2xl tw-mb-4">
+                <h1 className="tw-font-bold tw-text-2xl tw-mb-10">
                     Featured Projects
                 </h1>
 
                 <div className="tw-flex tw-flex-wrap">
-                    <div className="tw-border"></div>
+                    {projects.map(project => (
+                        <div className="project tw-w-full lg:tw-w-1/3">
+                            <div
+                                className="content tw-relative tw-bg-cover tw-bg-center tw-h-0 tw-w-full tw-rounded-lg hover:tw-bg-gray-700"
+                                style={{
+                                    backgroundImage: `url("${project.imageUrl}")`
+                                }}
+                            >
+                                <div className="tw-justify-center tw-items-center tw-absolute tw-inset-0 tw-w-full tw-h-full">
+                                    <p className="tw-text-white">
+                                        {project.description}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </section>
+
+            <style jsx>{`
+                .project .content {
+                    padding-top: 56.25%;
+                }
+
+                .project .content:hover {
+                    background-image: none !important;
+                }
+            `}</style>
         </Layout>
     )
 }
