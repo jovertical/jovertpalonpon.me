@@ -20,6 +20,4 @@ jobs:
         run: npm install --prefix=./client
 
       - name: Run code quality checks
-        uses: stefanoeb/eslint-action@master
-        with:
-          args: client/ --ext .ts,.tsx .
+        run: npm run lint --silent
