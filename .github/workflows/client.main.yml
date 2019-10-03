@@ -14,14 +14,12 @@ jobs:
     steps:
 
       - name: Checkout repository
-        working-directory: ./client
         uses: actions/checkout@v1
 
       - name: Install Node.js dependencies
-        run: npm install
+        run: npm install --prefix=./client
 
       - name: Run code quality checks
         uses: stefanoeb/eslint-action@master
         with:
-          args: --ext .ts,.tsx .
-        working-directory: ./client
+          args: client/ --ext .ts,.tsx .
