@@ -201,7 +201,10 @@ const Index: React.FC = (): React.ReactElement => {
 
                 <div className="tw-flex tw-flex-wrap">
                     {projects.map(project => (
-                        <div className="project tw-w-full lg:tw-w-1/3">
+                        <div
+                            key={project.id}
+                            className="project tw-w-full lg:tw-w-1/3"
+                        >
                             <div
                                 className="content tw-relative tw-bg-cover tw-bg-center tw-h-0 tw-w-full tw-rounded-lg hover:tw-bg-gray-700"
                                 style={{
