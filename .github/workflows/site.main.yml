@@ -22,9 +22,9 @@ jobs:
         run: npm run --prefix=./site --silent lint
 
       - name: Publish to Netlify
-        uses: netlify/actions/build@master
+        uses: netlify/actions/cli@master
         env:
-          GITHUB_TOKEN: ${{secrets.SITE_GITHUB_TOKEN}}
-          NETLIFY_BASE: site
-          NETLIFY_CMD: npm run export
-          NETLIFY_DIR: site/out
+          NETLIFY_AUTH_TOKEN: ${{ secrets.SITE_NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.SITE_NETLIFY_API_ID }}
+        with:
+          args: deploy
