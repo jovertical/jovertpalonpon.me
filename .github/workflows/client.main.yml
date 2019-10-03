@@ -5,8 +5,8 @@ on:
     branches:
       - master
       - "*" # remove this later
-    paths:
-    - 'client/**'
+    # paths:
+    # - 'client/**'
 
 jobs:
   Build:
@@ -17,8 +17,10 @@ jobs:
 
       - name: Install Node.js dependencies
         run: npm install
+        working-directory: ./client
 
       - name: Run code quality checks
         uses: stefanoeb/eslint-action@master
         with:
           args: --ext .ts,.tsx .
+        working-directory: ./client
