@@ -23,6 +23,12 @@ const Header: React.FC = (): React.ReactElement => {
                     </div>
 
                     <div className="tw-px-4">
+                        <Link href="/blog">
+                            <a className="hover:tw-text-blue-500">Blog</a>
+                        </Link>
+                    </div>
+
+                    <div className="tw-px-4">
                         <Link href="/contact">
                             <Button>Contact</Button>
                         </Link>
@@ -63,6 +69,14 @@ const Header: React.FC = (): React.ReactElement => {
                             </div>
 
                             <div className="tw-py-2">
+                                <Link href="/blog">
+                                    <a className="hover:tw-text-blue-500">
+                                        Blog
+                                    </a>
+                                </Link>
+                            </div>
+
+                            <div className="tw-py-2">
                                 <Link href="/contact">
                                     <Button>Contact</Button>
                                 </Link>
@@ -84,10 +98,12 @@ const Header: React.FC = (): React.ReactElement => {
                 }
 
                 .menu-open .bar-1 {
+                    -webkit-transform: rotate(-45deg) translate(2px, 5px);
                     transform: rotate(-45deg) translate(2px, 5px);
                 }
 
                 .menu-open .bar-3 {
+                    -webkit-transform: rotate(45deg) translate(2px, -5px);
                     transform: rotate(45deg) translate(2px, -5px);
                 }
             `}</style>

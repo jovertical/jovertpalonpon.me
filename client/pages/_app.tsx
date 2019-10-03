@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import Next from 'next/app'
 import '../styles/app.css'
 
