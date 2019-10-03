@@ -12,12 +12,13 @@ jobs:
   Build:
     runs-on: ubuntu-latest
     steps:
+      - working-directory: ./client
+
       - name: Checkout repository
         uses: actions/checkout@v1
 
       - name: Install Node.js dependencies
         run: npm install
-        working-directory: ./client
 
       - name: Run code quality checks
         uses: stefanoeb/eslint-action@master
