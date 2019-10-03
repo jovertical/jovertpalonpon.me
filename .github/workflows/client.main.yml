@@ -1,10 +1,10 @@
-name: Client
+name: Actions@client
 
 on:
   push:
     branches:
       - master
-      - "*" # remove this later
+      - '*' #remove this later
     # paths:
     # - 'client/**'
 
@@ -12,12 +12,19 @@ jobs:
   Build:
     runs-on: ubuntu-latest
     steps:
-
       - name: Checkout repository
         uses: actions/checkout@v1
 
       - name: Install Node.js dependencies
-        run: npm install --prefix=./client
+        run: npm install --prefix=./site
 
       - name: Run code quality checks
-        run: npm run --prefix=./client --silent lint
+        run: npm run --prefix=./site --silent lint
+
+      - name: Publish to Netlify
+        uses: netlify/actions/build@master
+        env:
+          GITHUB_TOKEN: ${{secrets.CLIENT_GITHUB_TOKEN}}
+          NETLIFY_BASE: site
+          NETLIFY_CMD: npm build
+          NETLIFY_DIR: site/_build
