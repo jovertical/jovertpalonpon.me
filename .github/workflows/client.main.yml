@@ -12,9 +12,9 @@ jobs:
   Build:
     runs-on: ubuntu-latest
     steps:
-      - working-directory: ./client
 
       - name: Checkout repository
+        working-directory: ./client
         uses: actions/checkout@v1
 
       - name: Install Node.js dependencies
