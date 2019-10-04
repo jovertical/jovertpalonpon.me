@@ -23,6 +23,7 @@ const Footer: React.FC = (): React.ReactElement => (
                         href={socialLinks.github}
                         title="My Github profile"
                         target="_blank"
+                        rel="noopener noreferrer"
                     >
                         <svg
                             className="tw-fill-current tw-text-white tw-inline-block tw-border-2 tw-border-blue-400 hover:tw-border-white hover:tw-border-none hover:tw-text-blue-500 hover:tw-bg-white tw-cursor-pointer tw-rounded-full tw-p-3 tw-h-12 tw-w-12"
@@ -39,6 +40,7 @@ const Footer: React.FC = (): React.ReactElement => (
                         href={socialLinks.linkedin}
                         title="My Linkedin profile"
                         target="_blank"
+                        rel="noopener noreferrer"
                     >
                         <svg
                             className="tw-fill-current tw-text-white tw-inline-block tw-border-2 tw-border-blue-400 hover:tw-border-white hover:tw-border-none hover:tw-text-blue-500 hover:tw-bg-white tw-cursor-pointer tw-rounded-full tw-p-2 tw-h-12 tw-w-12"
@@ -55,6 +57,7 @@ const Footer: React.FC = (): React.ReactElement => (
                         href={socialLinks.twitter}
                         title="My Twitter profile"
                         target="_blank"
+                        rel="noopener noreferrer"
                     >
                         <svg
                             className="tw-fill-current tw-text-white tw-inline-block tw-border-2 tw-border-blue-400 hover:tw-border-white hover:tw-border-none hover:tw-text-blue-500 hover:tw-bg-white tw-cursor-pointer tw-rounded-full tw-p-3 tw-h-12 tw-w-12"
@@ -100,7 +103,8 @@ const Footer: React.FC = (): React.ReactElement => (
                 <a
                     href="https://tailwindcss.com"
                     title="Tailwind CSS"
-                    target="_black"
+                    target="_blank"
+                    rel="noopener noreferrer"
                 >
                     <svg
                         className="tw-fill-current tw-text-gray-400 tw-h-10"
