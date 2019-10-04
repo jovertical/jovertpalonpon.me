@@ -21,8 +21,8 @@ jobs:
           APP: api
           SECRET_PASSPHRASE: ${{secrets.API_SECRET_PASSPHRASE}}
 
-      - name: Change directory
-        run: cd api
+      - name: Move files to root
+        run: mv api/. .
 
       - name: Install PHP dependencies
         run: composer install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
