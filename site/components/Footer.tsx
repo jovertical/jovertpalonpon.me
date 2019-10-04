@@ -19,7 +19,11 @@ const Footer: React.FC = (): React.ReactElement => (
 
             <div className="tw-mb-10">
                 <span className="tw-mx-2">
-                    <a href={socialLinks.github} title="My Github profile">
+                    <a
+                        href={socialLinks.github}
+                        title="My Github profile"
+                        target="_blank"
+                    >
                         <svg
                             className="tw-fill-current tw-text-white tw-inline-block tw-border-2 tw-border-blue-400 hover:tw-border-white hover:tw-border-none hover:tw-text-blue-500 hover:tw-bg-white tw-cursor-pointer tw-rounded-full tw-p-3 tw-h-12 tw-w-12"
                             xmlns="http://www.w3.org/2000/svg"
@@ -31,7 +35,11 @@ const Footer: React.FC = (): React.ReactElement => (
                 </span>
 
                 <span className="tw-mx-2">
-                    <a href={socialLinks.linkedin} title="My Linkedin profile">
+                    <a
+                        href={socialLinks.linkedin}
+                        title="My Linkedin profile"
+                        target="_blank"
+                    >
                         <svg
                             className="tw-fill-current tw-text-white tw-inline-block tw-border-2 tw-border-blue-400 hover:tw-border-white hover:tw-border-none hover:tw-text-blue-500 hover:tw-bg-white tw-cursor-pointer tw-rounded-full tw-p-2 tw-h-12 tw-w-12"
                             xmlns="http://www.w3.org/2000/svg"
@@ -43,7 +51,11 @@ const Footer: React.FC = (): React.ReactElement => (
                 </span>
 
                 <span className="tw-mx-2">
-                    <a href={socialLinks.twitter} title="My Twitter profile">
+                    <a
+                        href={socialLinks.twitter}
+                        title="My Twitter profile"
+                        target="_blank"
+                    >
                         <svg
                             className="tw-fill-current tw-text-white tw-inline-block tw-border-2 tw-border-blue-400 hover:tw-border-white hover:tw-border-none hover:tw-text-blue-500 hover:tw-bg-white tw-cursor-pointer tw-rounded-full tw-p-3 tw-h-12 tw-w-12"
                             xmlns="http://www.w3.org/2000/svg"
@@ -85,7 +97,11 @@ const Footer: React.FC = (): React.ReactElement => (
             <span className="tw-w-full tw-flex tw-justify-center tw-items-center">
                 <p className="tw-text-sm tw-text-gray-400 tw-mr-1">Made with</p>
 
-                <a href="https://tailwindcss.com" title="Tailwind CSS">
+                <a
+                    href="https://tailwindcss.com"
+                    title="Tailwind CSS"
+                    target="_black"
+                >
                     <svg
                         className="tw-fill-current tw-text-gray-400 tw-h-10"
                         viewBox="0 0 64 64"

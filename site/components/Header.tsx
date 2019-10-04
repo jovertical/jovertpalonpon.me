@@ -9,7 +9,7 @@ const Header: React.FC = (): React.ReactElement => {
     return (
         <>
             <nav className="tw-py-5">
-                <div className="tw-hidden tw-items-center tw-w-4/5 tw-mx-auto lg:tw-flex">
+                <div className="tw-hidden lg:tw-flex tw-items-center tw-w-4/5 tw-mx-auto">
                     <div className="tw-p-4 tw-flex-grow tw-font-bold">
                         <Link href="/">
                             <a title="home">Jovert P.</a>

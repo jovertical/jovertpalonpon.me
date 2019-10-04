@@ -3,4 +3,5 @@ interface Project {
     name: string
     description: string
     imageUrl?: string
+    projectUrl?: string
 }

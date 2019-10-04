@@ -1,14 +1,32 @@
 import React from 'react'
+import Link from 'next/link'
 import Layout from '../components/Layout'
 import * as SKILLS from '../constants/skills'
+import Button from '../components/Button'
 
 const Index: React.FC = (): React.ReactElement => {
     const projects: Project[] = [
         {
             id: 'AE2S-GHS7-1RZ5-89AE',
             name: 'Workgalore',
-            description: 'This is a wonderful project',
+            description: 'Find work from dozens of websites. All in one place.',
             imageUrl: '/static/workgalore.png'
+        },
+
+        {
+            id: 'AE2S-GHS7-1RZ5-S9AE',
+            name: 'Laravel React Admin',
+            description:
+                'A fully featured custom content management system (CMS).',
+            imageUrl: '/static/laravel-react-admin.png'
+        },
+
+        {
+            id: 'BE2S-GHS2-1RZ5-S9AE',
+            name: 'Caribbean Waterpark',
+            description:
+                'Elegant booking system with landing page for Caribbean Waterpark Resort.',
+            imageUrl: '/static/caribbean-waterpark.png'
         }
     ]
 
@@ -199,26 +217,38 @@ const Index: React.FC = (): React.ReactElement => {
                     Featured Projects
                 </h1>
 
-                <div className="tw-flex tw-flex-wrap">
+                <div className="tw-flex tw-flex-wrap tw--mx-2 tw-mb-10">
                     {projects.map(project => (
                         <div
                             key={project.id}
-                            className="project tw-w-full lg:tw-w-1/3"
+                            className="project tw-w-full lg:tw-w-1/3 tw-px-2 tw-mb-5 lg:tw-mb-0"
                         >
                             <div
-                                className="content tw-relative tw-bg-cover tw-bg-center tw-h-0 tw-w-full tw-rounded-lg hover:tw-bg-gray-700"
+                                className="content tw-h-0 tw-w-full tw-relative tw-bg-cover tw-bg-center tw-rounded-lg hover:tw-bg-gray-800"
                                 style={{
                                     backgroundImage: `url("${project.imageUrl}")`
                                 }}
                             >
-                                <div className="tw-justify-center tw-items-center tw-absolute tw-inset-0 tw-w-full tw-h-full">
-                                    <p className="tw-text-white">
+                                <div className="details tw-hidden tw-flex-col tw-justify-center tw-items-center tw-absolute tw-inset-0 tw-w-full tw-h-full tw-p-10">
+                                    <p className="tw-text-white tw-mb-5">
                                         {project.description}
                                     </p>
+
+                                    <Button>
+                                        <p className="tw-text-white">
+                                            View Project
+                                        </p>
+                                    </Button>
                                 </div>
                             </div>
                         </div>
                     ))}
+                </div>
+
+                <div className="tw-w-full">
+                    <Link href="/projects">
+                        <Button>View All</Button>
+                    </Link>
                 </div>
             </section>
 
@@ -229,6 +259,10 @@ const Index: React.FC = (): React.ReactElement => {
 
                 .project .content:hover {
                     background-image: none !important;
+                }
+
+                .project .content:hover .details {
+                    display: flex;
                 }
             `}</style>
         </Layout>
