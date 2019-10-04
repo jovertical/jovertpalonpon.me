@@ -22,7 +22,7 @@ jobs:
           SECRET_PASSPHRASE: ${{secrets.API_SECRET_PASSPHRASE}}
 
       - name: Move files to root
-        run: mv api/. .
+        run: mv ./api/. .
 
       - name: Install PHP dependencies
         run: composer install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
@@ -30,23 +30,23 @@ jobs:
       - name: Run the test suite
         run: composer test
 
-      - name: Login
-        uses: actions/heroku@master
-        env:
-          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-        with:
-          args: container:login
+      # - name: Login
+      #   uses: actions/heroku@master
+      #   env:
+      #     HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+      #   with:
+      #     args: container:login
 
-      - name: Push
-        uses: actions/heroku@master
-        env:
-          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-        with:
-          args: container:push -a palonponjovertlota web
+      # - name: Push
+      #   uses: actions/heroku@master
+      #   env:
+      #     HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+      #   with:
+      #     args: container:push -a palonponjovertlota web
 
-      - name: Release
-        uses: actions/heroku@master
-        env:
-          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-        with:
-          args: container:release -a palonponjovertlota web
+      # - name: Release
+      #   uses: actions/heroku@master
+      #   env:
+      #     HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+      #   with:
+      #     args: container:release -a palonponjovertlota web
