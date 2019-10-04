@@ -15,6 +15,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v1
 
+      - run: echo $WORKDIR
+
       - name: Decrypt configuration file
         run: sh ./.github/scripts/decrypt_secret.sh
         env:
@@ -29,7 +31,6 @@ jobs:
 
       - name: Login
         uses: actions/heroku@master
-        working-directory: ./api
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
         with:
@@ -37,7 +38,6 @@ jobs:
 
       - name: Push
         uses: actions/heroku@master
-        working-directory: ./api
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
         with:
@@ -45,7 +45,6 @@ jobs:
 
       - name: Release
         uses: actions/heroku@master
-        working-directory: ./api
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
         with:
