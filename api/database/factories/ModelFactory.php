@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
 |--------------------------------------------------------------------------
 | Model Factories
@@ -11,7 +13,7 @@
 |
 */
 
-$factory->define(App\User::class, function (Faker\Generator $faker) {
+$factory->define(App\User::class, static function (Faker\Generator $faker) {
     return [
         'name' => $faker->name,
         'email' => $faker->email,
