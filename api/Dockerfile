@@ -28,8 +28,8 @@ COPY apache.conf /etc/apache2/sites-available
 
 # Configure && restart apache2
 RUN a2enmod rewrite \
-    && a2dismod worker \
     && a2enmod headers \
+    && a2enmod ssl \
     && service apache2 restart
 
 COPY . ${APP_PATH}
