@@ -15,19 +15,20 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v1
 
-      - run: echo $WORKDIR
-
       - name: Decrypt configuration file
         run: sh ./.github/scripts/decrypt_secret.sh
         env:
           APP: api
           SECRET_PASSPHRASE: ${{secrets.API_SECRET_PASSPHRASE}}
 
+      - name: Change directory
+        run: cd api
+
       - name: Install PHP dependencies
-        run: composer install -d $PWD/api -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
+        run: composer install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
 
       - name: Run the test suite
-        run: composer test -d $PWD/api
+        run: composer test
 
       - name: Login
         uses: actions/heroku@master
