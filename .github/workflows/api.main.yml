@@ -4,9 +4,8 @@ on:
   push:
     branches:
       - master
-      - 'api/*' # Remove this
-    # paths:
-    # - 'api/**'
+    paths:
+    - 'api/**'
 
 jobs:
   Build-Deploy:
@@ -35,23 +34,23 @@ jobs:
       - name: Run the test suite
         run: composer test
 
-      # - name: Login to Heroku
-      #   uses: actions/heroku@master
-      #   env:
-      #     HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-      #   with:
-      #     args: container:login
+      - name: Login to Heroku
+        uses: actions/heroku@master
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+        with:
+          args: container:login
 
-      # - name: Push to Heroku
-      #   uses: actions/heroku@master
-      #   env:
-      #     HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-      #   with:
-      #     args: container:push -a palonponjovertlota web
+      - name: Push to Heroku
+        uses: actions/heroku@master
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+        with:
+          args: container:push -a palonponjovertlota web
 
-      # - name: Release from Heroku
-      #   uses: actions/heroku@master
-      #   env:
-      #     HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-      #   with:
-      #     args: container:release -a palonponjovertlota web
+      - name: Release from Heroku
+        uses: actions/heroku@master
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+        with:
+          args: container:release -a palonponjovertlota web
