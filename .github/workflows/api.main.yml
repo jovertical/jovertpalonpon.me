@@ -5,8 +5,8 @@ on:
     branches:
       - master
       - "api/**" # Remove this
-    paths:
-    - 'api/**'
+    # paths:
+    # - 'api/**'
 
 jobs:
   Build-Deploy:
