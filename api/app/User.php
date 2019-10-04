@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App;
 
 use Illuminate\Auth\Authenticatable;
@@ -8,7 +10,7 @@ use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Database\Eloquent\Model;
 use Laravel\Lumen\Auth\Authorizable;
 
-class User extends Model implements AuthenticatableContract, AuthorizableContract
+final class User extends Model implements AuthenticatableContract, AuthorizableContract
 {
     use Authenticatable, Authorizable;
 
@@ -24,7 +26,7 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
     /**
      * The attributes excluded from the model's JSON form.
      *
-     * @var array
+     * @var array<string>
      */
     protected $hidden = [
         'password',
