@@ -22,7 +22,7 @@ jobs:
           SECRET_PASSPHRASE: ${{secrets.API_SECRET_PASSPHRASE}}
 
       - name: Move files to root
-        run: cp api/. .
+        run: cp -r api/. . && rm -r api client dashboard
 
       - name: Install PHP dependencies
         run: composer install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
