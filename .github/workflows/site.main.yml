@@ -8,20 +8,23 @@ on:
     - 'site/**'
 
 jobs:
-  Build:
+  Build-Deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v1
 
+      - name: Move files to root
+        run: cp -r site/. . && rm -r api site dashboard
+
       - name: Install Node.js dependencies
-        run: npm install --prefix=./site
+        run: npm install
 
       - name: Run code quality checks
-        run: npm run --prefix=./site --silent lint
+        run: npm run --silent lint
 
       - name: Run production build
-        run: npm run --prefix=./site export
+        run: npm run export
 
       - name: Publish to Netlify
         uses: netlify/actions/cli@master
