@@ -4,9 +4,9 @@ on:
   push:
     branches:
       - master
-      - "*" # Remove this
-    # paths:
-    #   - 'api/**'
+      - "api/**" # Remove this
+    paths:
+      - 'api/**'
 
 jobs:
   Build-Deploy:
