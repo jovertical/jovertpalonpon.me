@@ -30,26 +30,26 @@ jobs:
       - name: Run code quality checks
         uses: stefanzweifel/phpinsights-action@v1.0.0
         with:
-          args: -v --min-quality=100 --min-complexity=80 --min-architecture=80 --min-style=80
+          args: -v --min-quality=80 --min-complexity=80 --min-architecture=80 --min-style=80
 
       - name: Run the test suite
         run: composer test
 
-      - name: Login
+      - name: Login to Heroku
         uses: actions/heroku@master
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
         with:
           args: container:login
 
-      - name: Push
+      - name: Push to Heroku
         uses: actions/heroku@master
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
         with:
           args: container:push -a palonponjovertlota web
 
-      - name: Release
+      - name: Release from Heroku
         uses: actions/heroku@master
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
