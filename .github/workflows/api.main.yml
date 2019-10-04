@@ -1,0 +1,28 @@
+name: Actions@api
+
+on:
+  push:
+    branches:
+      - master
+      - "*" # Remove this
+    # paths:
+    #   - 'api/**'
+
+jobs:
+  Build-Deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v1
+
+      - name: Decrypt configuration file
+        run: sh ./.github/scripts/decrypt_secret.sh
+        env:
+          APP: api
+          SECRET_PASSPHRASE: ${{secrets.API_SECRET_PASSPHRASE}}
+
+      - name: Install PHP dependencies
+        run: composer install -d $PWD/api -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
+
+      - name: Run the test suite
+        run: composer test -d $PWD/api
