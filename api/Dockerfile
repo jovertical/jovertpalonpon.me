@@ -9,7 +9,7 @@ LABEL maintainer="Jovert Palonpon <palonponjovertlota@gmail.com>"
 ENV APP_PATH=/var/www/html
 
 # Install linux utilities
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install -y -qq \
     curl \
     zip \
     unzip
@@ -29,6 +29,7 @@ COPY php.ini /usr/local/etc/php/conf.d/local.ini:ro
 # Modify root to `/var/www/html/public`
 RUN sed -i -e "s/html/html\/public/g" /etc/apache2/sites-enabled/000-default.conf
 
+# Configure apache
 RUN a2enmod rewrite
 
 COPY . ${APP_PATH}
@@ -38,5 +39,5 @@ RUN composer install -q --no-ansi --no-interaction --no-scripts --no-suggest --n
 RUN chown -R www-data:www-data ${APP_PATH}
 RUN chmod -R 775 ${APP_PATH}/storage
 
-ENTRYPOINT []
-CMD sed -i "s/80/$PORT/g" /etc/apache2/sites-enabled/000-default.conf /etc/apache2/ports.conf && docker-php-entrypoint apache2-foreground
+# ENTRYPOINT []
+# CMD sed -i "s/80/$PORT/g" /etc/apache2/sites-enabled/000-default.conf /etc/apache2/ports.conf && docker-php-entrypoint apache2-foreground
