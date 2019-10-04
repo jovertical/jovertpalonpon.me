@@ -23,15 +23,6 @@ RUN docker-php-ext-install bcmath mbstring
 # This will override default PHP configuration variables
 COPY php.ini /usr/local/etc/php/conf.d/local.ini:ro
 
-# Copy virtual host file
-COPY apache.conf /etc/apache2/sites-available
-
-# Configure && restart apache2
-RUN a2enmod rewrite \
-    && a2enmod headers \
-    && a2enmod ssl \
-    && service apache2 restart
-
 COPY . ${APP_PATH}
 
 RUN chmod -R 775 ${APP_PATH}/storage
