@@ -6,7 +6,7 @@ on:
       - master
       - "api/**" # Remove this
     paths:
-      - 'api/**'
+    - 'api/**'
 
 jobs:
   Build-Deploy:
@@ -26,3 +26,27 @@ jobs:
 
       - name: Run the test suite
         run: composer test -d $PWD/api
+
+      - name: Login
+        uses: actions/heroku@master
+        working-directory: ./api
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+        with:
+          args: container:login
+
+      - name: Push
+        uses: actions/heroku@master
+        working-directory: ./api
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+        with:
+          args: container:push -a palonponjovertlota web
+
+      - name: Release
+        uses: actions/heroku@master
+        working-directory: ./api
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+        with:
+          args: container:release -a palonponjovertlota web
