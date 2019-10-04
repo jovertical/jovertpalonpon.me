@@ -39,5 +39,5 @@ RUN composer install -q --no-ansi --no-interaction --no-scripts --no-suggest --n
 RUN chown -R www-data:www-data ${APP_PATH}
 RUN chmod -R 775 ${APP_PATH}/storage
 
-# ENTRYPOINT []
-# CMD sed -i "s/80/$PORT/g" /etc/apache2/sites-enabled/000-default.conf /etc/apache2/ports.conf && docker-php-entrypoint apache2-foreground
+# Replaces default apache port with the $PORT environment variable at runtime.
+CMD sed -i "s/80/$PORT/g" /etc/apache2/sites-enabled/000-default.conf /etc/apache2/ports.conf
