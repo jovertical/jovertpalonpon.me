@@ -4,9 +4,8 @@ on:
   push:
     branches:
       - master
-      - "api/**" # Remove this
     paths:
-      - 'api/**'
+    - 'api/**'
 
 jobs:
   Build-Deploy:
@@ -21,8 +20,32 @@ jobs:
           APP: api
           SECRET_PASSPHRASE: ${{secrets.API_SECRET_PASSPHRASE}}
 
+      - name: Move files to root
+        run: cp -r api/. . && rm -r api site dashboard
+
       - name: Install PHP dependencies
-        run: composer install -d $PWD/api -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
+        run: composer install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
 
       - name: Run the test suite
-        run: composer test -d $PWD/api
+        run: composer test
+
+      - name: Login
+        uses: actions/heroku@master
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+        with:
+          args: container:login
+
+      - name: Push
+        uses: actions/heroku@master
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+        with:
+          args: container:push -a palonponjovertlota web
+
+      - name: Release
+        uses: actions/heroku@master
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+        with:
+          args: container:release -a palonponjovertlota web
