@@ -4,8 +4,9 @@ on:
   push:
     branches:
       - master
-    paths:
-    - 'api/**'
+      - '*'
+    # paths:
+    # - 'api/**'
 
 jobs:
   Build-Deploy:
@@ -25,6 +26,11 @@ jobs:
 
       - name: Install PHP dependencies
         run: composer install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
+
+      - name: Run code quality checks
+        uses: stefanzweifel/phpinsights-action@v1.0.0
+        with:
+          args: -v --min-quality=100 --min-complexity=80 --min-architecture=80 --min-style=80
 
       - name: Run the test suite
         run: composer test
