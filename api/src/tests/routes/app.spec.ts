@@ -1,5 +1,5 @@
 import * as request from 'supertest'
-import app from '../../src/server'
+import app from '../../bootstrap'
 
 describe('Application Endpoints', () => {
     it('should print the welcome message', async () => {
