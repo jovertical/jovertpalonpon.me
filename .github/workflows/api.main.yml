@@ -5,7 +5,7 @@ on:
     branches:
       - master
     paths:
-    - 'api/**'
+      - "api/**"
 
 jobs:
   Build-Deploy:
@@ -14,25 +14,20 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v1
 
-      - name: Decrypt configuration file
-        run: sh ./.github/scripts/decrypt_secret.sh
-        env:
-          APP: api
-          SECRET_PASSPHRASE: ${{secrets.API_SECRET_PASSPHRASE}}
-
       - name: Move files to root
         run: cp -r api/. . && rm -r api site dashboard
 
-      - name: Install PHP dependencies
-        run: composer install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
-
-      - name: Run code quality checks
-        uses: stefanzweifel/phpinsights-action@v1.0.0
-        with:
-          args: -v --min-quality=80 --min-complexity=80 --min-architecture=80 --min-style=80
+      - name: Install dependencies
+        run: npm install
 
       - name: Run the test suite
-        run: composer test
+        run: ./node_modules/.bin/jest
+
+      - name: Run code quality checks
+        run: npm run --silent lint
+
+      - name: Run production build
+        run: npm run build
 
       - name: Login to Heroku
         uses: actions/heroku@master
