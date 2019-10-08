@@ -6,7 +6,7 @@
 import app from './server'
 
 // Set application defaults
-app.set('port', process.env.PORT || 3000)
+app.set('port', process.env.PORT || 8080)
 
 // Sets server port and logs message on success
 app.listen(app.get('port'), () =>
