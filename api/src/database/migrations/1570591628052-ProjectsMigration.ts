@@ -26,12 +26,12 @@ export class ProjectsMigration1570591628052 implements MigrationInterface {
 
                     {
                         name: 'createdAt',
-                        type: 'datetime'
+                        type: 'timestamp without time zone'
                     },
 
                     {
                         name: 'updatedAt',
-                        type: 'datetime'
+                        type: 'timestamp without time zone'
                     }
                 ]
             }),
@@ -48,7 +48,6 @@ export class ProjectsMigration1570591628052 implements MigrationInterface {
     }
 
     public async down(queryRunner: QueryRunner): Promise<any> {
-        await queryRunner.dropIndex('projects', 'IDX_PROJECT_NAME')
         await queryRunner.dropTable('projects')
     }
 }

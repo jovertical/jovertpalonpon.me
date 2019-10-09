@@ -1,25 +1,37 @@
 const config = {
-    entities: ['src/app/models/*.ts'],
+    entities: ['dist/app/models/*.js'],
     migrations: [
-        'src/database/migrations/*.ts',
-        'src/database/seeders/*.ts'
+        'dist/database/migrations/*.js',
+        'dist/database/seeders/*.js'
     ],
     cli: {
-        migrationsDir: 'src/database/migrations'
-    }
+        migrationsDir: 'dist/database/migrations'
+    },
+    synchronize: true,
 }
 
 module.exports = [
     {
-        name: 'development',
         ...config,
+        name: 'default',
         type: 'sqlite',
         database: 'src/database/database.sqlite',
     },
 
     {
+        ...config,
         name: 'testing',
         type: 'sqlite',
         database: ':memory:'
+    },
+
+    {
+        ...config,
+        name: 'production',
+        type: 'postgres',
+        url: process.env.DB_URL,
+        extra: {
+            ssl: true
+        }
     }
 ]

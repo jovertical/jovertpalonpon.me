@@ -1,25 +1,11 @@
-import {
-    Entity,
-    Column,
-    PrimaryGeneratedColumn,
-    CreateDateColumn,
-    UpdateDateColumn
-} from 'typeorm'
+import { Column, Entity } from 'typeorm'
+import Model from './Model'
 
 @Entity({ name: 'projects' })
-export default class Project {
-    @PrimaryGeneratedColumn()
-    id?: number
-
+export default class Project extends Model {
     @Column()
     name?: string
 
     @Column({ nullable: true })
     description?: string
-
-    @CreateDateColumn()
-    createdAt?: string
-
-    @UpdateDateColumn()
-    updatedAt?: string
 }
