@@ -21,7 +21,7 @@ jobs:
         run: npm install
 
       - name: Run the test suite
-        run: ./node_modules/.bin/jest
+        run: npm run test
 
       - name: Run code quality checks
         run: npm run --silent lint
