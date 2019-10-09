@@ -13,5 +13,9 @@ export const getEnvironment = (): string => {
  * @default default
  */
 export const getDatabaseConnection = (): string => {
-    return process.env.NODE_ENV || 'default'
+    if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
+        return 'default'
+    }
+
+    return process.env.NODE_ENV
 }
