@@ -1,17 +1,20 @@
 {
     "compilerOptions": {
-        "target": "es2015",
+        "lib": ["es5", "es6", "dom"],
+        "target": "es5",
         "module": "commonjs",
         "outDir": "dist",
         "strict": true,
         "sourceMap": false,
-        "allowSyntheticDefaultImports": true,
         "baseUrl": ".",
         "paths": {
             "*": ["node_modules/"],
             "typings/*": ["src/typings/*"]
-        }
+        },
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "removeComments": true
     },
     "include": ["src/**/*.ts"],
-    "exclude": ["__tests__/**/*.spec.ts"]
+    "exclude": ["src/tests/**/*.spec.ts"]
 }

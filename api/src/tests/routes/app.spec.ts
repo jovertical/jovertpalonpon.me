@@ -6,6 +6,6 @@ describe('Application Endpoints', () => {
         const res = await request(app).get('/')
 
         expect(res.status).toEqual(200)
-        expect(res.text).toEqual(`Nice to meet you! I'm Jovert`)
+        expect(res.text).toEqual(`Hello! I'm Jovert`)
     })
 })

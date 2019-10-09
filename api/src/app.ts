@@ -3,7 +3,7 @@
  *
  * Here is where we bootstrap & expose the app.
  */
-import app from './server'
+import app from './bootstrap'
 
 // Set application defaults
 app.set('port', process.env.PORT || 8080)
