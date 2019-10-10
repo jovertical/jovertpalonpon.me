@@ -15,7 +15,8 @@
         "coverage": "./node_modules/.bin/jest --coverage",
         "format": "./node_modules/.bin/prettier --write \"src/**/*.ts\"",
         "lint": "./node_modules/.bin/eslint ./src --ext .ts",
-        "typeorm": "ts-node ./node_modules/typeorm/cli"
+        "tm:run": "npx ts-node ./node_modules/.bin/typeorm migration:run -f ormconfig",
+        "tm:revert": "npx ts-node ./node_modules/.bin/typeorm migration:revert -f ormconfig"
     },
     "dependencies": {
         "@types/moment": "^2.13.0",

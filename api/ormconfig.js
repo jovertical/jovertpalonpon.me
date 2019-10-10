@@ -1,45 +1,34 @@
-const local = {
-    entities: ['src/app/models/*.ts'],
+const path = require('path')
+
+const config = {
+    entities: [path.resolve(__dirname, 'src/app/models/*.ts')],
     migrations: [
-        'src/database/migrations/*.ts',
-        'src/database/seeders/*.ts'
+        path.resolve(__dirname, 'src/database/migrations/*.ts'),
+        path.resolve(__dirname, 'src/database/seeders/*.ts')
     ],
     cli: {
-        migrationsDir: 'src/database/migrations'
+        migrationsDir: path.resolve(__dirname, 'src/database/migrations')
     },
     synchronize: true,
 }
-
-const cloud = {
-    entities: ['dist/app/models/*.js'],
-    migrations: [
-        'dist/database/migrations/*.js',
-        'dist/database/seeders/*.js'
-    ],
-    cli: {
-        migrationsDir: 'dist/database/migrations'
-    },
-    synchronize: true,
-}
-
 
 module.exports = [
     {
-        ...local,
+        ...config,
         name: 'default',
         type: 'sqlite',
         database: 'src/database/database.sqlite',
     },
 
     {
-        ...local,
+        ...config,
         name: 'testing',
         type: 'sqlite',
         database: ':memory:'
     },
 
     {
-        ...cloud,
+        ...config,
         name: 'production',
         type: 'postgres',
         url: process.env.DB_URL,
