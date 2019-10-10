@@ -1,4 +1,3 @@
-import * as moment from 'moment'
 import * as express from 'express'
 import { Request, Response } from 'express'
 import { check, validationResult } from 'express-validator'
@@ -33,9 +32,7 @@ createConnection(getDatabaseConnection()).then((connection: Connection) => {
 
             const resource = await repo.create({
                 name: req.body.name,
-                description: req.body.description,
-                createdAt: moment().format('YYYY-MM-DD hh:mm:ss'),
-                updatedAt: moment().format('YYYY-MM-DD hh:mm:ss')
+                description: req.body.description
             })
             const project = await repo.save(resource)
 
