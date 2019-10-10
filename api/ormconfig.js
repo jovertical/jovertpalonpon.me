@@ -12,6 +12,18 @@ const config = {
     synchronize: true,
 }
 
+const cloudConfig = {
+    entities: [path.resolve(__dirname, 'dist/app/models/*.js')],
+    migrations: [
+        path.resolve(__dirname, 'dist/database/migrations/*.js'),
+        path.resolve(__dirname, 'dist/database/seeders/*.js')
+    ],
+    cli: {
+        migrationsDir: path.resolve(__dirname, 'dist/database/migrations')
+    },
+    synchronize: true,
+}
+
 module.exports = [
     {
         ...config,
@@ -28,10 +40,10 @@ module.exports = [
     },
 
     {
-        ...config,
+        ...cloudConfig,
         name: 'production',
         type: 'postgres',
-        url: process.env.DB_URL,
+        url: process.env.DATABASE_URL,
         extra: {
             ssl: true
         }
