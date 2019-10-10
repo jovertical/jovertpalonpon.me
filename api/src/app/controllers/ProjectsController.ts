@@ -1,5 +1,4 @@
 import { Request, Response } from 'express'
-import { validationResult } from 'express-validator'
 import { Repository } from 'typeorm'
 import Project from '../models/Project'
 
@@ -39,12 +38,6 @@ export default class ProjectsController {
      * @param res Response object
      */
     public async store(req: Request, res: Response) {
-        const errors = validationResult(req)
-
-        if (!errors.isEmpty()) {
-            return res.status(422).send({ errors: errors.array() })
-        }
-
         const resource = await this.repo.create({
             name: req.body.name,
             description: req.body.description
