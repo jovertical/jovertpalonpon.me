@@ -5,10 +5,10 @@
 
 ## Testing
 
-You can run tests with:
+You can run unit tests with:
 
 ```
-npm run test
+npm run test:unit
 ```
 
 ## Linting
@@ -16,5 +16,5 @@ npm run test
 You can run the linter with:
 
 ```
-npm run lint
+npm run test:lint
 ```
