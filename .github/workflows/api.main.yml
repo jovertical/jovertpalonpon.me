@@ -23,9 +23,6 @@ jobs:
       - name: Run the test suite
         run: npm run test
 
-      - name: Run code quality checks
-        run: npm run --silent lint
-
       - name: Run production build
         run: npm run build
 
