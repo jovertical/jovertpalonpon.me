@@ -3,8 +3,7 @@ const path = require('path')
 const config = {
     entities: [path.resolve(__dirname, 'src/app/models/*.ts')],
     migrations: [
-        path.resolve(__dirname, 'src/database/migrations/*.ts'),
-        path.resolve(__dirname, 'src/database/seeders/*.ts')
+        path.resolve(__dirname, 'src/database/migrations/*.ts')
     ],
     cli: {
         migrationsDir: path.resolve(__dirname, 'src/database/migrations')
@@ -16,7 +15,6 @@ const cloudConfig = {
     entities: [path.resolve(__dirname, 'dist/app/models/*.js')],
     migrations: [
         path.resolve(__dirname, 'dist/database/migrations/*.js'),
-        path.resolve(__dirname, 'dist/database/seeders/*.js')
     ],
     cli: {
         migrationsDir: path.resolve(__dirname, 'dist/database/migrations')

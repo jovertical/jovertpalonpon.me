@@ -1,12 +1,17 @@
 import * as request from 'supertest'
-import { createConnection } from 'typeorm'
+import { createConnection, Connection, getConnection } from 'typeorm'
 import app from '../../bootstrap'
-import { getDatabaseConnection } from '../../helpers'
 
 beforeAll(async () => {
     // This is used to avoid time-out errors because the bootstrap file
-    // may contain database connection attempts which is synchronous
-    await createConnection(getDatabaseConnection())
+    // may contain database connection attempts which is asynchronous
+    await createConnection('testing')
+})
+
+afterAll(async () => {
+    const connection: Connection = await getConnection('testing')
+
+    connection.close()
 })
 
 describe('Application Endpoints', () => {
