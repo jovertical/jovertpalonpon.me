@@ -1,5 +1,4 @@
 import * as moment from 'moment'
-
 import { PrimaryGeneratedColumn, Column } from 'typeorm'
 
 export default class Model {

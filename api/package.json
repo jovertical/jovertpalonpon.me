@@ -17,13 +17,16 @@
         "test:coverage": "cross-env NODE_ENV=testing ./node_modules/.bin/jest --coverage",
         "test": "npm run test:lint --silent && npm run test:unit",
         "tm:run": "npx ts-node ./node_modules/.bin/typeorm migration:run -f ormconfig",
-        "tm:revert": "npx ts-node ./node_modules/.bin/typeorm migration:revert -f ormconfig"
+        "tm:revert": "npx ts-node ./node_modules/.bin/typeorm migration:revert -f ormconfig",
+        "ts:clear": "npx ts-node ./node_modules/.bin/typeorm schema:drop -f ormconfig"
     },
     "dependencies": {
         "body-parser": "^1.19.0",
         "cross-env": "^6.0.3",
         "express": "^4.17.1",
         "express-validator": "^6.2.0",
+        "inversify": "^5.0.1",
+        "inversify-express-utils": "^6.3.2",
         "moment": "^2.24.0",
         "pg": "^7.12.1",
         "reflect-metadata": "^0.1.13",
