@@ -14,6 +14,7 @@ import { InversifyExpressServer } from 'inversify-express-utils'
 // Register controllers
 import './app/controllers/PagesController'
 import './app/controllers/ProjectsController'
+import './app/controllers/ProjectImagesController'
 
 // Create the container
 const container = new Container()
