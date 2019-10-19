@@ -1,5 +1,6 @@
 import { Request, Response, NextFunction } from 'express'
 import { validationResult, ValidationChain } from 'express-validator'
+import { Connection, createConnection, getConnection, Repository } from 'typeorm'
 
 /**
  * Gives the application's environment.
@@ -21,6 +22,19 @@ export const getDatabaseConnection = (): string => {
     }
 
     return process.env.NODE_ENV
+}
+
+/**
+ * Get the repository of the model.
+ *
+ * @param model The model of the repository.
+ */
+export const getRepository = (model: any): Promise<Repository<any>> => {
+    const connectionName = getDatabaseConnection()
+
+    return createConnection(connectionName)
+        .then((con: Connection) => con.getRepository(model))
+        .catch(() => getConnection(connectionName).getRepository(model))
 }
 
 /**
