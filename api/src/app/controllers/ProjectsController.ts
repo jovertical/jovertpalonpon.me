@@ -58,7 +58,7 @@ export default class ProjectsController extends Controller {
         @requestParam('id') id: string
     ): Promise<Response> {
         const project = await this.repo().then(async (repo: Repository<Project>) => {
-            let project = await repo.findOneOrFail(id)
+            const project = await repo.findOneOrFail(id)
             project.name = req.body.name
             project.updatedAt = now()
 

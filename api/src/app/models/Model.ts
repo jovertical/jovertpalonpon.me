@@ -1,4 +1,3 @@
-import * as moment from 'moment'
 import { PrimaryGeneratedColumn, Column } from 'typeorm'
 import { now } from '../../helpers'
 
