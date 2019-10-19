@@ -1,6 +1,7 @@
 import { Request, Response, NextFunction } from 'express'
 import { validationResult, ValidationChain } from 'express-validator'
 import { Connection, createConnection, getConnection, Repository } from 'typeorm'
+import * as moment from 'moment'
 
 /**
  * Gives the application's environment.
@@ -55,4 +56,11 @@ export const validate = (validations: Array<ValidationChain>) => {
 
         res.status(422).json({ errors: errors.array() })
     }
+}
+
+/**
+ * Gives the current time
+ */
+export const now = (): string => {
+    return moment().format('YYYY-MM-DD hh:mm:ss')
 }
