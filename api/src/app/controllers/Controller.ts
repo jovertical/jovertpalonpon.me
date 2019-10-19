@@ -1,11 +1,11 @@
 import { injectable } from 'inversify'
-import { interfaces } from 'inversify-express-utils'
+import { BaseHttpController } from 'inversify-express-utils'
 import { createConnection, Connection, Repository } from 'typeorm'
 import { getDatabaseConnection } from '../../helpers'
 import Model from '../models/Model'
 
 @injectable()
-export default class Controller implements interfaces.Controller {
+export default class Controller extends BaseHttpController {
     /**
      * Get the repository of the model.
      *
