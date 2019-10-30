@@ -11,7 +11,7 @@ const Index: React.FC = (): React.ReactElement => {
             id: 'AE2S-GHS7-1RZ5-89AE',
             name: 'Workgalore',
             description: 'Find work from dozens of websites. All in one place.',
-            imageUrl: '/static/workgalore.png'
+            imageUrl: '/png/workgalore.png'
         },
 
         {
@@ -19,7 +19,7 @@ const Index: React.FC = (): React.ReactElement => {
             name: 'Laravel React Admin',
             description:
                 'A fully featured custom content management system (CMS).',
-            imageUrl: '/static/laravel-react-admin.png'
+            imageUrl: '/png/laravel-react-admin.png'
         },
 
         {
@@ -27,7 +27,7 @@ const Index: React.FC = (): React.ReactElement => {
             name: 'Caribbean Waterpark',
             description:
                 'Elegant booking system with landing page for Caribbean Waterpark Resort.',
-            imageUrl: '/static/caribbean-waterpark.png'
+            imageUrl: '/png/caribbean-waterpark.png'
         }
     ]
 
@@ -46,7 +46,7 @@ const Index: React.FC = (): React.ReactElement => {
                 </div>
 
                 <div className="tw-w-3/4 lg:tw-w-1/2 tw-mx-auto">
-                    <img src="/static/web_developer.svg" alt="Web Developer" />
+                    <img src="/svg/web_developer.svg" alt="Web Developer" />
                 </div>
             </section>
 
