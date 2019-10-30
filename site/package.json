@@ -1,12 +1,19 @@
 {
-    "author": "palonponjovertlota@gmail.com",
+    "name": "palonponjovertlota",
+    "author": {
+        "name": "Jovert Palonpon",
+        "email": "palonponjovertlota@gmail.com",
+        "url": "https://palonponjovertlota.me"
+    },
     "scripts": {
         "dev": "next",
         "build": "next build",
         "export": "npm run build && next export",
         "start": "next start",
         "format": "./node_modules/.bin/prettier --write \"{components,pages,styles}/**/*{.ts,.tsx,.css}\"",
-        "lint": "./node_modules/.bin/eslint --ext .ts,.tsx ."
+        "test:lint": "./node_modules/.bin/eslint --ext .ts,.tsx .",
+        "test:unit": "./node_modules/.bin/jest --passWithNoTests",
+        "test": "npm run test:lint --silent && npm run test:unit --silent"
     },
     "dependencies": {
         "@zeit/next-css": "^1.0.1",
@@ -15,6 +22,7 @@
         "react-dom": "^16.10.2"
     },
     "devDependencies": {
+        "@types/jest": "^24.0.21",
         "@types/node": "^12.7.11",
         "@types/react": "^16.9.5",
         "@types/react-dom": "^16.9.1",
@@ -26,6 +34,7 @@
         "eslint-config-prettier": "^6.3.0",
         "eslint-plugin-prettier": "^3.1.1",
         "eslint-plugin-react": "^7.15.1",
+        "jest": "^24.9.0",
         "postcss-loader": "^3.0.0",
         "prettier": "^1.18.2",
         "tailwindcss": "^1.1.2",
