@@ -60,6 +60,7 @@ export default class ProjectsController extends Controller {
         const project = await this.repo().then(async (repo: Repository<Project>) => {
             const project = await repo.findOneOrFail(id)
             project.name = req.body.name
+            project.description = req.body.description
             project.updatedAt = now()
 
             return this.repo().then(repo => repo.save(project))
