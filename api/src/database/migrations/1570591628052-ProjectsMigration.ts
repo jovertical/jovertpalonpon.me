@@ -11,8 +11,8 @@ export class ProjectsMigration1570591628052 implements MigrationInterface {
                         name: 'id',
                         type: 'uuid',
                         isPrimary: true,
-                        isUnique: true,
-                        default: `uuid_generate_v4()`
+                        isGenerated: true,
+                        generationStrategy: 'uuid'
                     },
 
                     {

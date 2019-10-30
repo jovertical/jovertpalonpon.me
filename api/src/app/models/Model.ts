@@ -1,8 +1,9 @@
-import { PrimaryGeneratedColumn, Column } from 'typeorm'
+import { PrimaryColumn, Column, Generated } from 'typeorm'
 import { now } from '../../helpers'
 
 export default class Model {
-    @PrimaryGeneratedColumn('uuid')
+    @PrimaryColumn()
+    @Generated('uuid')
     id?: string
 
     @Column({ default: now() })
