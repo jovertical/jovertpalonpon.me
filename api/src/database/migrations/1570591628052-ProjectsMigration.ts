@@ -9,9 +9,8 @@ export class ProjectsMigration1570591628052 implements MigrationInterface {
                 columns: [
                     {
                         name: 'id',
-                        type: 'varchar',
+                        type: 'bigint',
                         isPrimary: true,
-                        isGenerated: false,
                     },
 
                     {

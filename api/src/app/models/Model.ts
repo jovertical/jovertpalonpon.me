@@ -1,10 +1,9 @@
-import * as uuidv4 from 'uuid/v4'
-import { PrimaryColumn, Column } from 'typeorm'
+import { PrimaryGeneratedColumn, Column } from 'typeorm'
 import { now } from '../../helpers'
 
 export default class Model {
-    @PrimaryColumn({ default: uuidv4() })
-    id?: string
+    @PrimaryGeneratedColumn()
+    id?: number
 
     @Column({ default: now() })
     createdAt?: string
