@@ -9,10 +9,9 @@ export class ProjectsMigration1570591628052 implements MigrationInterface {
                 columns: [
                     {
                         name: 'id',
-                        type: 'uuid',
+                        type: 'varchar',
                         isPrimary: true,
-                        isGenerated: true,
-                        generationStrategy: 'uuid'
+                        isGenerated: false,
                     },
 
                     {
