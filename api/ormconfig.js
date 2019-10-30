@@ -45,6 +45,5 @@ module.exports = [
         extra: {
             ssl: true,
         },
-        uuidExtension: 'pgcrypto'
     }
 ]
