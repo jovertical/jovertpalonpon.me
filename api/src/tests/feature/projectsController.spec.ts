@@ -4,7 +4,7 @@ import * as request from 'supertest'
 import app from '../../bootstrap'
 import Project from '../../app/models/Project'
 import { getRepository } from '../../helpers'
-import { seedProjects } from '../utils'
+import { seedProjects, findProject } from '../utils'
 
 describe('Projects', () => {
     beforeAll(async () => {
@@ -39,27 +39,32 @@ describe('Projects', () => {
     })
 
     it('should update a project', async () => {
+        const project = await findProject()
+        const attributes = { name: 'Hope', description: 'Bot that cares' }
+
         await request(app)
-            .patch('/projects/1')
-            .send({ name: 'Hope' })
+            .patch(`/projects/${project.id}`)
+            .send(attributes)
             .expect(200)
             .then(response => {
-                expect(response.body).toMatchObject({ name: 'Hope' })
+                expect(response.body).toMatchObject(attributes)
             })
 
         await getRepository(Project)
-            .then(repo => repo.findOneOrFail(1))
+            .then(repo => repo.findOneOrFail(project.id))
             .then((project: Project) => {
-                expect(project).toMatchObject({ name: 'Hope' })
+                expect(project).toMatchObject(attributes)
             })
     })
 
     it('should delete a project', async () => {
+        const project = await findProject()
+
         await request(app)
-            .delete('/projects/1')
+            .delete(`/projects/${project.id}`)
             .expect(200)
 
-        const result = await getRepository(Project).then(repo => repo.findOne(1))
+        const result = await getRepository(Project).then(repo => repo.findOne(project.id))
 
         expect(result).toBeUndefined()
     })
