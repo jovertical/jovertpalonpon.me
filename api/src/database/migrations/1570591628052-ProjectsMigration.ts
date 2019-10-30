@@ -9,8 +9,9 @@ export class ProjectsMigration1570591628052 implements MigrationInterface {
                 columns: [
                     {
                         name: 'id',
-                        type: 'int',
-                        isPrimary: true
+                        type: 'uuid',
+                        isPrimary: true,
+                        isUnique: true,
                     },
 
                     {
