@@ -5,7 +5,7 @@ on:
     branches:
       - master
     paths:
-    - 'site/**'
+      - "site/**"
 
 jobs:
   Build-Deploy:
@@ -16,8 +16,6 @@ jobs:
 
       - name: Move files to root
         run: cp -r site/. . && rm -r api site dashboard
-
-      - run: npm i -g yarn
 
       - name: Install dependencies
         run: yarn install

@@ -13,7 +13,7 @@
     "format": "./node_modules/.bin/prettier --write \"{components,constants,pages,styles}/**/*{.ts,.tsx,.css}\"",
     "test:lint": "./node_modules/.bin/eslint --ext .ts,.tsx .",
     "test:unit": "./node_modules/.bin/jest --passWithNoTests",
-    "test": "yarn test:lint --silent && yarn test:unit --silent"
+    "test": "yarn test:lint --quiet && yarn test:unit --silent"
   },
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
