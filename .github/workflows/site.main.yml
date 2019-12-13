@@ -5,8 +5,8 @@ on:
     branches:
       - master
       - fix/site-deploy-to-netlify
-    paths:
-      - "site/**"
+    # paths:
+    #   - "site/**"
 
 jobs:
   Build-Deploy:
@@ -15,7 +15,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v1
 
-      - name: Install dependencies
+      - name: Build
         working-directory: ./site
         run: |
           yarn install
