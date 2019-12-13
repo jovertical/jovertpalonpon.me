@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
-const Button = dynamic(() => import('../components/Button'))
+const Button = dynamic(() => import('@components/Button'))
 
 const Header: React.FC = (): React.ReactElement => {
   const [menuOpen, setMenuOpen] = useState(false)

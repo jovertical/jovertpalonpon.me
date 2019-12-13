@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import { social as socialLinks } from '../constants/links'
+import { social as socialLinks } from '@constants/links'
 
 const Footer: React.FC = (): React.ReactElement => (
   <footer className="tw-bg-blue-500 tw-text-white">

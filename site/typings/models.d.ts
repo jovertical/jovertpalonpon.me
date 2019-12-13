@@ -1,7 +1,7 @@
 interface Project {
-    id: string
-    name: string
-    description: string
-    imageUrl?: string
-    projectUrl?: string
+  id: string
+  name: string
+  description: string
+  imageUrl?: string
+  projectUrl?: string
 }

@@ -9,28 +9,26 @@
     </a>
 </p>
 
-## About
-
-This is the frontend of the site.
-
 ## Quick Start
 
 1. Run `yarn install` to install the javascript dependencies.
-2. Run `yarn dev` to start the development server.
-3. You can view the app here: http://localhost:3000
+2. Install the now CLI tool: `yarn global add now@latest`
+3. Copy the environment file: `cp .env.example .env.build`
+4. Run `yarn dev` to start the development server.
+5. The app can be visited here: http://localhost:3000
 
 ## Testing
 
-You can run unit tests with:
+Run unit tests with:
 
 ```
-npm run test:unit
+yarn test:unit
 ```
 
 ## Linting
 
-You can run the linter with:
+Run the linter with:
 
 ```
-npm run test:lint
+yarn test:lint
 ```

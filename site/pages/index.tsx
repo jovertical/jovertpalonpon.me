@@ -1,9 +1,9 @@
 import React from 'react'
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
-import Layout from '../components/Layout'
-import * as SKILLS from '../constants/skills'
-const Button = dynamic(() => import('../components/Button'))
+import Layout from '@components/Layout'
+import * as SKILLS from '@constants/skills'
+const Button = dynamic(() => import('@components/Button'))
 
 const Index: React.FC = (): React.ReactElement => {
   const projects: Project[] = [

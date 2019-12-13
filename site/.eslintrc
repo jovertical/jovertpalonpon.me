@@ -1,15 +1,21 @@
 {
   "parser": "@typescript-eslint/parser",
-  "extends": [
-    "plugin:@typescript-eslint/recommended",
-    "prettier/@typescript-eslint",
-    "plugin:react/recommended"
-  ],
   "parserOptions": {
     "ecmaVersion": 2019,
     "sourceType": "module",
     "ecmaFeatures": {
       "jsx": true
+    }
+  },
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "prettier/@typescript-eslint",
+    "plugin:react/recommended"
+  ],
+  "plugins": ["prettier"],
+  "settings": {
+    "react": {
+      "version": "detect"
     }
   }
 }

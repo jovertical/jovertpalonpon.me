@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@now/next"
+    }
+  ],
+  "build": {
+    "env": {
+      "API_URL": "@api-url"
+    }
+  },
+  "github": {
+    "silent": true
+  }
+}

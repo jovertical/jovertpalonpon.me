@@ -6,16 +6,18 @@
     "url": "https://palonponjovertlota.me"
   },
   "scripts": {
-    "dev": "next",
+    "dev": "now dev",
     "build": "next build",
     "export": "yarn build && next export",
     "start": "next start",
-    "format": "./node_modules/.bin/prettier --write \"{components,constants,pages,styles}/**/*{.ts,.tsx,.css}\"",
+    "format": "./node_modules/.bin/prettier --write \"{components,constants,pages,styles,typings}/**/*{.ts,.tsx,.css}\"",
     "test:lint": "./node_modules/.bin/eslint --ext .ts,.tsx .",
     "test:unit": "./node_modules/.bin/jest --passWithNoTests",
     "test": "yarn test:lint --quiet && yarn test:unit --silent"
   },
   "dependencies": {
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.7.4",
+    "@babel/plugin-proposal-optional-chaining": "^7.7.5",
     "@zeit/next-css": "^1.0.1",
     "next": "^9.0.7",
     "react": "^16.10.2",

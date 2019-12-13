@@ -1,5 +1,5 @@
 import React from 'react'
-import Layout from '../components/Layout'
+import Layout from '@components/Layout'
 
 const Projects: React.FC = (): React.ReactElement => (
   <Layout>
