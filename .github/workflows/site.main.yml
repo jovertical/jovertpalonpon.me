@@ -5,8 +5,8 @@ on:
     branches:
       - master
       - fix/site-deploy-to-netlify
-    # paths:
-    #   - "site/**"
+    paths:
+      - "site/**"
 
 jobs:
   Build-Deploy:
