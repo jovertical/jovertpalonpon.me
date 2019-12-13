@@ -1,5 +1,6 @@
 const path = require('path')
-const withCSS = require('@zeit/next-css')
+const withCss = require('@zeit/next-css')
+const withPurgeCss = require('next-purgecss')
 
 const config = {
   webpack(config) {
@@ -14,4 +15,10 @@ const config = {
   },
 }
 
-module.exports = withCSS(config)
+module.exports = withCss(withPurgeCss({
+  purgeCssEnabled: ({ dev, isServer }) => (!dev && !isServer),
+  purgeCss: {
+    defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || []
+  },
+  ...config
+}))

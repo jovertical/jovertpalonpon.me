@@ -67,7 +67,7 @@ const Index: React.FC = (): React.ReactElement => {
 
       <section className="tw--mt-32 tw-mx-5 lg:tw-mx-40">
         <div className="tw-flex tw-flex-wrap tw--mx-2">
-          <div className="tw-w-full lg:tw-w-1/3 tw-px-2 tw-mb-5 lg:tw-mg-0">
+          <div className="tw-w-full lg:tw-w-1/3 tw-px-2 tw-mb-5 lg:tw-mb-0">
             <div className="tw-h-full tw-text-center tw-p-8 tw-bg-white tw-rounded tw-border hover:tw-shadow-lg">
               <div className="tw-m-5">
                 <svg
@@ -110,8 +110,7 @@ const Index: React.FC = (): React.ReactElement => {
               </ul>
             </div>
           </div>
-
-          <div className="tw-w-full lg:tw-w-1/3 tw-px-2 tw-mb-5 lg:tw-mg-0">
+          <div className="tw-w-full lg:tw-w-1/3 tw-px-2 tw-mb-5 lg:tw-mb-0">
             <div className="tw-h-full tw-text-center tw-p-8 tw-bg-white tw-rounded tw-border hover:tw-shadow-lg">
               <div className="tw-m-5">
                 <svg
@@ -154,8 +153,7 @@ const Index: React.FC = (): React.ReactElement => {
               </ul>
             </div>
           </div>
-
-          <div className="tw-w-full lg:tw-w-1/3 tw-px-2 tw-mb-5 lg:tw-mg-0">
+          <div className="tw-w-full lg:tw-w-1/3 tw-px-2 tw-mb-5 lg:tw-mb-0">
             <div className="tw-h-full tw-text-center tw-p-8 tw-bg-white tw-rounded tw-border hover:tw-shadow-lg">
               <div className="tw-m-5">
                 <svg
@@ -203,7 +201,6 @@ const Index: React.FC = (): React.ReactElement => {
 
       <section className="tw-my-32 tw-mx-5 lg:tw-mx-40 tw-text-center">
         <h1 className="tw-font-bold tw-text-2xl tw-mb-10">Featured Projects</h1>
-
         <div className="tw-flex tw-flex-wrap tw--mx-2 tw-mb-10">
           {projects.map(project => (
             <div
@@ -211,7 +208,7 @@ const Index: React.FC = (): React.ReactElement => {
               className="project tw-w-full lg:tw-w-1/3 tw-px-2 tw-mb-5 lg:tw-mb-0"
             >
               <div
-                className="content tw-h-0 tw-w-full tw-relative tw-bg-cover tw-bg-center tw-rounded-lg hover:tw-bg-gray-800"
+                className="content tw-w-full tw-h-0 tw-pt-16:9 tw-relative tw-bg-cover tw-bg-center tw-rounded-lg hover:tw-bg-gray-800"
                 style={{
                   backgroundImage: `url("${project.imageUrl}")`
                 }}
@@ -236,10 +233,6 @@ const Index: React.FC = (): React.ReactElement => {
       </section>
 
       <style jsx>{`
-        .project .content {
-          padding-top: 56.25%;
-        }
-
         .project .content:hover {
           background-image: none !important;
         }

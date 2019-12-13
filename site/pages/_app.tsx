@@ -9,7 +9,11 @@ export default class App extends Next {
     return (
       <>
         <style global jsx>{`
-          @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500,700,800,900&display=swap');
+          @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap');
+
+          html {
+            box-sizing: border-box;
+          }
 
           body {
             font-family: 'Open Sans', sans-serif;
