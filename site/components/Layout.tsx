@@ -3,17 +3,17 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 
 interface Props {
-    children?: React.ReactNode
+  children?: React.ReactNode
 }
 
 const Layout: React.FC = (props: Props): React.ReactElement => (
-    <div>
-        <Header />
+  <div>
+    <Header />
 
-        <main className="tw-mb-5">{props.children}</main>
+    <main className="tw-mb-5">{props.children}</main>
 
-        <Footer />
-    </div>
+    <Footer />
+  </div>
 )
 
 export default Layout

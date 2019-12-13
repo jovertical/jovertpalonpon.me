@@ -1,23 +1,23 @@
 .btn {
-    @apply tw-inline-block tw-px-5 tw-py-2 tw-rounded-full tw-text-white tw-text-sm tw-tracking-wide tw-font-semibold;
+  @apply tw-inline-block tw-px-5 tw-py-2 tw-rounded-full tw-text-white tw-text-sm tw-tracking-wide tw-font-semibold;
 }
 
 .btn:focus {
-    @apply tw-outline-none;
+  @apply tw-outline-none;
 }
 
 .btn-primary {
-    @apply tw-bg-transparent tw-border tw-border-2 tw-border-blue-500 tw-text-blue-500;
+  @apply tw-bg-transparent tw-border tw-border-2 tw-border-blue-500 tw-text-blue-500;
 }
 
 .btn-primary:hover {
-    @apply tw-bg-blue-500 tw-text-white;
+  @apply tw-bg-blue-500 tw-text-white;
 }
 
 .btn-primary:focus {
-    @apply tw-shadow-outline;
+  @apply tw-shadow-outline;
 }
 
 .btn-primary:active {
-    @apply tw-bg-blue-700;
+  @apply tw-bg-blue-700;
 }
