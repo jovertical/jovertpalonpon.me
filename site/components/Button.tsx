@@ -1,34 +1,36 @@
 import React from 'react'
+import cx from 'classnames'
 
-export enum Types {
-  button = 'button',
-  reset = 'reset',
-  submit = 'submit'
-}
+type Variant =
+  | 'primary'
+  | 'secondary'
+  | 'success'
+  | 'warning'
+  | 'danger'
+  | 'text'
 
-export enum Kinds {
-  primary = 'primary',
-  secondary = 'secondary',
-  success = 'success',
-  warning = 'warning',
-  danger = 'danger'
-}
-
-interface Props {
-  type?: Types
-  kind?: Kinds
+interface Props extends React.ButtonHTMLAttributes<{}> {
+  variant?: Variant
   children?: React.ReactNode
   className?: string
 }
 
-const Button: React.FC = ({
-  type = Types.button,
-  kind = Kinds.primary,
+const Button: React.FC<Props> = ({
+  variant = 'primary',
   children,
   className = '',
   ...other
-}: Props): React.ReactElement => (
-  <button type={type} className={`btn btn-${kind} ${className}`} {...other}>
+}): React.ReactElement => (
+  <button
+    className={cx(
+      'tw-inline-block tw-px-5 tw-py-2 tw-rounded-full tw-text-white tw-text-sm tw-tracking-wide tw-font-semibold focus:tw-outline-none',
+      {
+        'tw-bg-transparent hover:tw-bg-blue-500 tw-border-2 tw-border-blue-500 tw-text-blue-500 hover:tw-text-white focus:tw-shadow-outline':
+          variant === 'primary'
+      }
+    )}
+    {...other}
+  >
     {children}
   </button>
 )

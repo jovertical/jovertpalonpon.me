@@ -6,6 +6,7 @@
     "paths": {
       "@components/*": ["components/*"],
       "@constants/*": ["constants/*"],
+      "@helpers/*": ["helpers/*"],
       "@styles/*": ["styles/*"]
     },
     "allowJs": true,
