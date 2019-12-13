@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - fix/site-deploy-to-netlify
     paths:
       - "site/**"
 
