@@ -8,12 +8,12 @@
     "scripts": {
         "dev": "next",
         "build": "next build",
-        "export": "npm run build && next export",
+        "export": "yarn build && next export",
         "start": "next start",
         "format": "./node_modules/.bin/prettier --write \"{components,pages,styles}/**/*{.ts,.tsx,.css}\"",
         "test:lint": "./node_modules/.bin/eslint --ext .ts,.tsx .",
         "test:unit": "./node_modules/.bin/jest --passWithNoTests",
-        "test": "npm run test:lint --silent && npm run test:unit --silent"
+        "test": "yarn test:lint --silent && yarn test:unit --silent"
     },
     "dependencies": {
         "@zeit/next-css": "^1.0.1",
