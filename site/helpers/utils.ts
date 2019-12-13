@@ -14,7 +14,7 @@ export function random(min: number, max: number): number {
  * @param from The number where the range should start.
  * @param to The number where the range should end.
  */
-export function* range(from: number, to: number): IterableIterator<{}> {
+export function* range(from: number, to: number): IterableIterator<number> {
   for (let i = from; i <= to; i++) {
     yield i
   }
