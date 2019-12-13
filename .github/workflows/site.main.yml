@@ -15,17 +15,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v1
 
-      - name: Move files to root
-        run: cp -r site/. . && rm -r api site dashboard
-
       - name: Install dependencies
-        run: yarn install
-
-      - name: Run the test suite
-        run: yarn test
-
-      - name: Run production build
-        run: yarn export
+        working-directory: ./site
+        run: |
+          yarn install
+          yarn test
+          yarn export
 
       - name: Publish to Netlify
         uses: netlify/actions/cli@master
@@ -33,4 +28,4 @@ jobs:
           NETLIFY_AUTH_TOKEN: ${{ secrets.SITE_NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.SITE_NETLIFY_API_ID }}
         with:
-          args: deploy
+          args: deploy --dir=site
