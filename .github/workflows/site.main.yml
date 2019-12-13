@@ -17,14 +17,16 @@ jobs:
       - name: Move files to root
         run: cp -r site/. . && rm -r api site dashboard
 
-      - name: Install Node.js dependencies
-        run: npm install
+      - run: npm i -g yarn
+
+      - name: Install dependencies
+        run: yarn install
 
       - name: Run the test suite
-        run: npm run test
+        run: yarn test
 
       - name: Run production build
-        run: npm run export
+        run: yarn export
 
       - name: Publish to Netlify
         uses: netlify/actions/cli@master
