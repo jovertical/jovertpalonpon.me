@@ -15,8 +15,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v1
 
+      - name: Move files to root
+        run: cp -r api/. . && rm -r api site dashboard
+
       - name: Build
-        working-directory: ./api
         run: |
           yarn install
           yarn test
@@ -34,7 +36,7 @@ jobs:
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
         with:
-          args: container:push -a jovertpalonpon web --workdir api
+          args: container:push -a jovertpalonpon web
 
       - name: Release from Heroku
         uses: actions/heroku@master
