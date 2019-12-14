@@ -32,10 +32,9 @@ jobs:
       - name: Push to Heroku
         uses: actions/heroku@master
         env:
-          GITHUB_WORKSPACE: ${{ github.workspace }}/api
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
         with:
-          args: container:push -a jovertpalonpon web
+          args: container:push -a jovertpalonpon web --workdir api
 
       - name: Release from Heroku
         uses: actions/heroku@master
