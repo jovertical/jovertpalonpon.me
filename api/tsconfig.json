@@ -1,20 +1,20 @@
 {
-    "compilerOptions": {
-        "target": "es5",
-        "lib": ["es6", "dom"],
-        "module": "commonjs",
-        "outDir": "dist",
-        "strict": true,
-        "sourceMap": false,
-        "baseUrl": ".",
-        "paths": {
-            "*": ["node_modules/"],
-            "typings/*": ["src/typings/*"]
-        },
-        "emitDecoratorMetadata": true,
-        "experimentalDecorators": true,
-        "removeComments": true
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["es6", "dom"],
+    "module": "commonjs",
+    "outDir": "dist",
+    "strict": true,
+    "sourceMap": false,
+    "baseUrl": ".",
+    "paths": {
+      "*": ["node_modules/"],
+      "typings/*": ["src/typings/*"]
     },
-    "include": ["src/**/*.ts"],
-    "exclude": ["src/tests/**/*.spec.ts"]
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "removeComments": true
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["src/tests/**/*.spec.ts"]
 }

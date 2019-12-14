@@ -6,15 +6,15 @@ import { getRepository } from '../helpers'
  * Seed sample project data.
  */
 export const seedProjects = (): Promise<void> => {
-    return getRepository(Project).then((repo: Repository<Project>) => {
-        repo.save({
-            name: 'Caribbean Waterpark'
-        })
-
-        repo.save({
-            name: 'Workgalore'
-        })
+  return getRepository(Project).then((repo: Repository<Project>) => {
+    repo.save({
+      name: 'Caribbean Waterpark'
     })
+
+    repo.save({
+      name: 'Workgalore'
+    })
+  })
 }
 
 /**
@@ -23,7 +23,7 @@ export const seedProjects = (): Promise<void> => {
  * @param id The key of the model
  */
 export const findProject = (id = undefined): Promise<Project> => {
-    return getRepository(Project).then((repo: Repository<Project>) => {
-        return repo.findOneOrFail(id)
-    })
+  return getRepository(Project).then((repo: Repository<Project>) => {
+    return repo.findOneOrFail(id)
+  })
 }

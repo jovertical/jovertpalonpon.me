@@ -22,8 +22,8 @@ const server = new InversifyExpressServer(container)
 
 // Configure express
 server.setConfig((app: express.Application) => {
-    // Add body parsers
-    app.use(bodyParser.json())
+  // Add body parsers
+  app.use(bodyParser.json())
 })
 
 const app = server.build()

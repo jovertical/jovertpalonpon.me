@@ -4,8 +4,8 @@ on:
   push:
     branches:
       - master
-    # paths:
-    #   - "api/**"
+    paths:
+      - "api/**"
 
 jobs:
   Build-Deploy:
@@ -20,9 +20,6 @@ jobs:
           yarn install
           yarn test
           yarn build
-
-      - name: Set `api` directory as working directory
-        run: echo ::set-env name=PROJECT_DIR::"$GITHUB_WORKSPACE/api"
 
       - name: Login to Heroku
         uses: actions/heroku@master

@@ -9,4 +9,6 @@ import app from './bootstrap'
 app.set('port', process.env.PORT || 8080)
 
 // Sets server port and logs message on success
-app.listen(app.get('port'), () => console.log('App running on port: ', app.get('port')))
+app.listen(app.get('port'), () =>
+  console.log('App running on port: ', app.get('port'))
+)
