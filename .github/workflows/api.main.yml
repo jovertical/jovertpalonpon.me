@@ -4,8 +4,8 @@ on:
   push:
     branches:
       - master
-    paths:
-      - "api/**"
+    # paths:
+    #   - "api/**"
 
 jobs:
   Build-Deploy:
@@ -31,6 +31,7 @@ jobs:
       - name: Push to Heroku
         uses: actions/heroku@master
         env:
+          GITHUB_WORKSPACE: ${{ github.workspace }}/api
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
         with:
           args: container:push -a jovertpalonpon web
