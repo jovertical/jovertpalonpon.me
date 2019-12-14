@@ -1,20 +1,21 @@
 ## Quick Start
 
-1. Run `npm install` to install the javascript dependencies.
-2. Run `npm run dev` to start the development server.
+1. Run `yarn install` to install the dependencies.
+2. Run `yarn tm:run` to initialize the database.
+3. Run `yarn dev` to start the development server.
 
 ## Testing
 
-You can run unit tests with:
+Run unit tests with:
 
 ```
-npm run test:unit
+yarn test:unit
 ```
 
 ## Linting
 
-You can run the linter with:
+Run the linter with:
 
 ```
-npm run test:lint
+yarn test:lint
 ```

@@ -4,7 +4,7 @@
     "author": {
         "name": "Jovert Palonpon",
         "email": "palonponjovertlota@gmail.com",
-        "url": "https://palonponjovertlota.me"
+        "url": "https://jovertpalonpon.me"
     },
     "main": "dist/app.js",
     "scripts": {
@@ -15,10 +15,10 @@
         "test:lint": "./node_modules/.bin/eslint ./src --ext .ts",
         "test:unit": "cross-env NODE_ENV=testing ./node_modules/.bin/jest",
         "test:coverage": "cross-env NODE_ENV=testing ./node_modules/.bin/jest --coverage",
-        "test": "npm run test:lint --silent && npm run test:unit",
-        "tm:run": "npx ts-node ./node_modules/.bin/typeorm migration:run -f ormconfig",
-        "tm:revert": "npx ts-node ./node_modules/.bin/typeorm migration:revert -f ormconfig",
-        "ts:clear": "npx ts-node ./node_modules/.bin/typeorm schema:drop -f ormconfig"
+        "test": "yarn test:lint --quiet && yarn test:unit --silent",
+        "tm:run": "yarn ts-node ./node_modules/.bin/typeorm migration:run -f ormconfig",
+        "tm:revert": "yarn ts-node ./node_modules/.bin/typeorm migration:revert -f ormconfig",
+        "ts:clear": "yarn ts-node ./node_modules/.bin/typeorm schema:drop -f ormconfig"
     },
     "dependencies": {
         "body-parser": "^1.19.0",

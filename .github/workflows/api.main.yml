@@ -14,17 +14,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v1
 
-      - name: Move files to root
-        run: cp -r api/. . && rm -r api site dashboard
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Run the test suite
-        run: npm run test
-
-      - name: Run production build
-        run: npm run build
+      - name: Build
+        working-directory: ./api
+        run: |
+          yarn install
+          yarn test
+          yarn build
 
       - name: Login to Heroku
         uses: actions/heroku@master
@@ -38,11 +33,11 @@ jobs:
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
         with:
-          args: container:push -a palonponjovertlota web
+          args: container:push -a jovertpalonpon web
 
       - name: Release from Heroku
         uses: actions/heroku@master
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
         with:
-          args: container:release -a palonponjovertlota web
+          args: container:release -a jovertpalonpon web
