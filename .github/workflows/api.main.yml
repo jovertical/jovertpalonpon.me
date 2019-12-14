@@ -14,8 +14,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v1
 
+      - name: Move files to root
+        run: cp -r api/. . && rm -r api site dashboard
+
       - name: Build
-        working-directory: ./api
         run: |
           yarn install
           yarn test
