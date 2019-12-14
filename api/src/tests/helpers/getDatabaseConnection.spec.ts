@@ -1,4 +1,4 @@
-import { getDatabaseConnection } from '../../helpers'
+import { getDatabaseConnection } from '../../helpers/utils'
 
 describe('getDatabaseConnection', () => {
   it('should give the database connection name', () => {

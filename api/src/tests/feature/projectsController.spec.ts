@@ -3,7 +3,7 @@ import { cleanUpMetadata } from 'inversify-express-utils'
 import * as request from 'supertest'
 import app from '../../bootstrap'
 import Project from '../../app/models/Project'
-import { getRepository } from '../../helpers'
+import { getRepository } from '../../helpers/utils'
 import { seedProjects, findProject } from '../utils'
 
 describe('Projects', () => {

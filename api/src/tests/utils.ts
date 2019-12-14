@@ -1,6 +1,6 @@
 import { Repository } from 'typeorm'
 import Project from '../app/models/Project'
-import { getRepository } from '../helpers'
+import { getRepository } from '../helpers/utils'
 
 /**
  * Seed sample project data.

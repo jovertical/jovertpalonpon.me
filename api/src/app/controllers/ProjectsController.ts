@@ -13,7 +13,7 @@ import {
 import { Repository } from 'typeorm'
 import Project from '../models/Project'
 import Controller from './Controller'
-import { getRepository, now, validate } from '../../helpers'
+import { getRepository, now, validate } from '../../helpers/utils'
 
 const validation = validate([
   body('name')

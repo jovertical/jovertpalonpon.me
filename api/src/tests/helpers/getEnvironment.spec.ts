@@ -1,4 +1,4 @@
-import { getEnvironment } from '../../helpers'
+import { getEnvironment } from '../../helpers/utils'
 
 describe('getEnvironment', () => {
   it('should give the environment', () => {
