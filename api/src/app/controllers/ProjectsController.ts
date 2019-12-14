@@ -1,5 +1,4 @@
 import { Request, Response } from 'express'
-import { body } from 'express-validator'
 import {
   controller,
   httpGet,
@@ -10,16 +9,13 @@ import {
   response,
   requestParam
 } from 'inversify-express-utils'
+import * as uuid from 'uuid/v4'
 import { Repository } from 'typeorm'
 import Project from '../models/Project'
+import { getRepository, now } from '../../helpers/utils'
 import Controller from './Controller'
-import { getRepository, now, validate } from '../../helpers/utils'
-
-const validation = validate([
-  body('name')
-    .not()
-    .isEmpty()
-])
+import storeValidation from '../validations/ProjectsStoreValidation'
+import updateValidation from '../validations/ProjectsUpdateValidation'
 
 @controller('/projects')
 export default class ProjectsController extends Controller {
@@ -38,15 +34,18 @@ export default class ProjectsController extends Controller {
   /**
    * Create a new project
    */
-  @httpPost('/', validation)
+  @httpPost('/', storeValidation)
   public async store(
     @request() req: Request,
     @response() res: Response
   ): Promise<Response> {
     const project = await this.repo().then((repo: Repository<Project>) =>
       repo.save({
+        uuid: uuid(),
         name: req.body.name,
-        description: req.body.description
+        description: req.body.description,
+        startDate: req.body.startDate,
+        projectUrl: req.body.projectUrl
       })
     )
 
@@ -56,7 +55,7 @@ export default class ProjectsController extends Controller {
   /**
    * Update a project
    */
-  @httpPatch('/:id', validation)
+  @httpPatch('/:id', updateValidation)
   public async update(
     @request() req: Request,
     @response() res: Response,
@@ -67,6 +66,8 @@ export default class ProjectsController extends Controller {
         const project = await repo.findOneOrFail(id)
         project.name = req.body.name
         project.description = req.body.description
+        project.startDate = req.body.startDate
+        project.projectUrl = req.body.projectUrl
         project.updatedAt = now()
 
         return this.repo().then(repo => repo.save(project))

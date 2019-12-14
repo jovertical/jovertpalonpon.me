@@ -8,4 +8,10 @@ export default class Project extends Model {
 
   @Column({ nullable: true })
   description?: string
+
+  @Column()
+  startDate?: string
+
+  @Column({ nullable: true })
+  projectUrl?: string
 }

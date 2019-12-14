@@ -1,5 +1,6 @@
 import 'reflect-metadata'
 import { cleanUpMetadata } from 'inversify-express-utils'
+import * as moment from 'moment'
 import * as request from 'supertest'
 import app from '../../bootstrap'
 import Project from '../../app/models/Project'
@@ -25,12 +26,19 @@ describe('Projects', () => {
   })
 
   it('should create a project', async () => {
+    const attributes = {
+      name: 'Hackdawg',
+      startDate: moment()
+        .subtract(1, 'year')
+        .format('YYYY-MM-DD')
+    }
+
     await request(app)
       .post('/projects')
-      .send({ name: 'Hackdawg' })
+      .send(attributes)
       .expect(201)
       .then(response => {
-        expect(response.body).toMatchObject({ name: 'Hackdawg' })
+        expect(response.body).toMatchObject(attributes)
       })
 
     await getRepository(Project)
@@ -44,7 +52,13 @@ describe('Projects', () => {
 
   it('should update a project', async () => {
     const project = await findProject()
-    const attributes = { name: 'Hope', description: 'Bot that cares' }
+    const attributes = {
+      name: 'Hope',
+      description: 'Bot that cares',
+      startDate: moment()
+        .subtract(1, 'month')
+        .format('YYYY-MM-DD')
+    }
 
     await request(app)
       .patch(`/projects/${project.id}`)

@@ -14,6 +14,11 @@ export class ProjectsMigration1570591628052 implements MigrationInterface {
           },
 
           {
+            name: 'uuid',
+            type: 'varchar'
+          },
+
+          {
             name: 'name',
             type: 'varchar'
           },
@@ -22,6 +27,17 @@ export class ProjectsMigration1570591628052 implements MigrationInterface {
             name: 'description',
             type: 'text',
             isNullable: true
+          },
+
+          {
+            name: 'projectUrl',
+            type: 'varchar',
+            isNullable: true
+          },
+
+          {
+            name: 'startedAt',
+            type: 'date'
           },
 
           {
