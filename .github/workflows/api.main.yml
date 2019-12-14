@@ -4,9 +4,8 @@ on:
   push:
     branches:
       - master
-      - fix/api-deploy-to-heroku
-    # paths:
-    #   - "api/**"
+    paths:
+      - "api/**"
 
 jobs:
   Build-Deploy:
