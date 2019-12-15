@@ -11,5 +11,8 @@ export default [
   check('startDate')
     .not()
     .isEmpty()
+    .isBefore(now()),
+  check('featuredAt')
+    .if(check('featuredAt').exists())
     .isBefore(now())
 ]

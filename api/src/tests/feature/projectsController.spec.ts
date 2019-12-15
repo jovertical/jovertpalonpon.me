@@ -19,6 +19,17 @@ describe('Projects', () => {
       .get('/projects')
       .expect(200)
       .then(response => {
+        expect(response.body).toHaveLength(2)
+        expect(response.body).toContainEqual(
+          expect.objectContaining({ name: 'Caribbean Waterpark' })
+        )
+      })
+
+    await request(app)
+      .get('/projects?featured')
+      .expect(200)
+      .then(response => {
+        expect(response.body).toHaveLength(1)
         expect(response.body).toContainEqual(
           expect.objectContaining({ name: 'Workgalore' })
         )

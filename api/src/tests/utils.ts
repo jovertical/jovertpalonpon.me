@@ -1,7 +1,7 @@
 import * as uuid from 'uuid/v4'
 import { Repository } from 'typeorm'
 import Project from '../app/models/Project'
-import { getRepository } from '../helpers/utils'
+import { getRepository, now } from '../helpers/utils'
 
 /**
  * Seed sample project data.
@@ -11,7 +11,8 @@ export const seedProjects = (): Promise<void> => {
     repo.save({
       uuid: uuid(),
       name: 'Workgalore',
-      startDate: '2019-06-16'
+      startDate: '2019-06-16',
+      featuredAt: now()
     })
 
     repo.save({

@@ -41,6 +41,12 @@ export class ProjectsMigration1570591628052 implements MigrationInterface {
           },
 
           {
+            name: 'featuredAt',
+            type: 'timestamp without time zone',
+            isNullable: true
+          },
+
+          {
             name: 'createdAt',
             type: 'timestamp without time zone'
           },

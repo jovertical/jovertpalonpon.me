@@ -14,4 +14,7 @@ export default class Project extends Model {
 
   @Column({ nullable: true })
   projectUrl?: string
+
+  @Column({ nullable: true })
+  featuredAt?: string
 }

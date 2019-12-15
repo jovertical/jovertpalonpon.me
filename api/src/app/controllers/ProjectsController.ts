@@ -10,7 +10,7 @@ import {
   requestParam
 } from 'inversify-express-utils'
 import * as uuid from 'uuid/v4'
-import { Repository } from 'typeorm'
+import { FindManyOptions, Not, Repository, Equal } from 'typeorm'
 import Project from '../models/Project'
 import { getRepository, now } from '../../helpers/utils'
 import validateMiddleware from '../middlewares/validateMiddleware'
@@ -24,9 +24,18 @@ export default class ProjectsController extends Controller {
    * Get a list of projects
    */
   @httpGet('/')
-  public async list(@response() res: Response): Promise<Response> {
+  public async list(
+    @request() req: Request,
+    @response() res: Response
+  ): Promise<Response> {
+    const options: FindManyOptions = {}
+
+    if (req.query.hasOwnProperty('featured')) {
+      options.where = { featuredAt: Not(Equal('')) }
+    }
+
     const projects = await this.repo().then((repo: Repository<Project>) =>
-      repo.find()
+      repo.find(options)
     )
 
     return res.send(projects)
@@ -46,7 +55,8 @@ export default class ProjectsController extends Controller {
         name: req.body.name,
         description: req.body.description,
         startDate: req.body.startDate,
-        projectUrl: req.body.projectUrl
+        projectUrl: req.body.projectUrl,
+        featuredAt: req.body.featuredAt
       })
     )
 
@@ -69,6 +79,7 @@ export default class ProjectsController extends Controller {
         project.description = req.body.description
         project.startDate = req.body.startDate
         project.projectUrl = req.body.projectUrl
+        project.featuredAt = req.body.featuredAt
         project.updatedAt = now()
 
         return this.repo().then(repo => repo.save(project))
