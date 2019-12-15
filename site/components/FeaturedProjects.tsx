@@ -34,34 +34,46 @@ const FeaturedProjects = () => {
           <Loader />
         ) : (
           <>
-            <div className="tw-flex tw-flex-wrap tw--mx-2 tw-mb-10">
-              {projects.slice(0, limit).map(project => (
-                <div
-                  key={project.id}
-                  className="project tw-w-full lg:tw-w-1/3 tw-px-2 tw-mb-5"
+            {projects.length === 0 ? (
+              <p>
+                No Projects Featured.{' '}
+                <a
+                  href="/projects"
+                  className="tw-text-blue-500 hover:tw-text-blue-400"
                 >
+                  View All?
+                </a>
+              </p>
+            ) : (
+              <div className="tw-flex tw-flex-wrap tw--mx-2 tw-mb-10">
+                {projects.slice(0, limit).map(project => (
                   <div
-                    className="content tw-w-full tw-h-0 tw-pt-16:9 tw-relative tw-bg-cover tw-bg-center tw-rounded-lg hover:tw-bg-gray-800"
-                    style={{
-                      backgroundImage: `url("${project.images?.[0].url ||
-                        '/svg/portfolio_essv.svg'}")`
-                    }}
+                    key={project.id}
+                    className="project tw-w-full lg:tw-w-1/3 tw-px-2 tw-mb-5"
                   >
-                    <div className="details tw-hidden tw-flex-col tw-justify-center tw-items-center tw-absolute tw-inset-0 tw-w-full tw-h-full tw-p-10">
-                      <p className="tw-text-white tw-mb-5">
-                        {project.description}
-                      </p>
+                    <div
+                      className="content tw-w-full tw-h-0 tw-pt-16:9 tw-relative tw-bg-cover tw-bg-center tw-rounded-lg hover:tw-bg-gray-800"
+                      style={{
+                        backgroundImage: `url("${project.images?.[0]?.url ??
+                          '/svg/portfolio_essv.svg'}")`
+                      }}
+                    >
+                      <div className="details tw-hidden tw-flex-col tw-justify-center tw-items-center tw-absolute tw-inset-0 tw-w-full tw-h-full tw-p-10">
+                        <p className="tw-text-white tw-mb-5">
+                          {project.description}
+                        </p>
 
-                      <Link href={`/projects/${project.uuid}`}>
-                        <Button>
-                          <p className="tw-text-white">View Project</p>
-                        </Button>
-                      </Link>
+                        <Link href={`/projects/${project.uuid}`}>
+                          <Button>
+                            <p className="tw-text-white">View Project</p>
+                          </Button>
+                        </Link>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            )}
 
             {projects.length > limit && (
               <div className="tw-w-full">
