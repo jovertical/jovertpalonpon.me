@@ -8,7 +8,7 @@ interface ApiResponse {
 /**
  * Convert the parameters into a query string
  */
-const queryString = (params: Object) => {
+const queryString = (params: Record<string, any>) => {
   return (
     '?' +
     Object.entries(params)
@@ -40,7 +40,7 @@ const request = (path: string, init: RequestInit): Promise<ApiResponse> => {
  */
 export const get = (
   path: string,
-  data?: Object,
+  data?: Record<string, any>,
   init?: RequestInit
 ): Promise<ApiResponse> => request(path + queryString(data ?? {}), { ...init })
 
@@ -49,7 +49,7 @@ export const get = (
  */
 export const post = (
   path: string,
-  data?: Object,
+  data?: Record<string, any>,
   init?: RequestInit
 ): Promise<ApiResponse> => {
   return request(path, {
