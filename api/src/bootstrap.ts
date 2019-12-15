@@ -1,15 +1,19 @@
 /**
  * Bootstrap file
  *
- * We initialize express here, set configurations (e.g. parsers) & declare endpoints.
+ * Here, We set configurations, register services, controllers etc.
  * This way, routes and default configurations are abstracted so that it can
  * be re-used somewhere else in the app.
  */
 import * as express from 'express'
 import * as bodyParser from 'body-parser'
+import * as cors from 'cors'
 import 'reflect-metadata'
 import { Container } from 'inversify'
 import { InversifyExpressServer } from 'inversify-express-utils'
+
+// Load the Environment variables
+require('dotenv').config()
 
 // Register controllers
 import './app/controllers/ProjectsController'
@@ -22,8 +26,8 @@ const server = new InversifyExpressServer(container)
 
 // Configure express
 server.setConfig((app: express.Application) => {
-  // Add body parsers
   app.use(bodyParser.json())
+  app.use(cors({ origin: process.env.CORS_ORIGIN }))
 })
 
 const app = server.build()
