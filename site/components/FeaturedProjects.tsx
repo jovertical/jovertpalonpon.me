@@ -26,10 +26,6 @@ const FeaturedProjects = () => {
     })
   }, [])
 
-  if (projects.length === 0) {
-    return null
-  }
-
   return (
     <>
       <div>
