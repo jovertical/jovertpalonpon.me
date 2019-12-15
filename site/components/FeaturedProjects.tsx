@@ -43,7 +43,8 @@ const FeaturedProjects = () => {
                   <div
                     className="content tw-w-full tw-h-0 tw-pt-16:9 tw-relative tw-bg-cover tw-bg-center tw-rounded-lg hover:tw-bg-gray-800"
                     style={{
-                      backgroundImage: `url("/svg/portfolio_essv.svg")`
+                      backgroundImage: `url("${project.images?.[0].url ||
+                        '/svg/portfolio_essv.svg'}")`
                     }}
                   >
                     <div className="details tw-hidden tw-flex-col tw-justify-center tw-items-center tw-absolute tw-inset-0 tw-w-full tw-h-full tw-p-10">
