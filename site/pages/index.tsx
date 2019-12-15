@@ -33,7 +33,7 @@ const Index: React.FC = (): React.ReactElement => {
 
   useEffect(() => {
     get('/projects').then(({ status, body }) => {
-      console.log(status)
+      console.table(body)
     })
   }, [])
 
