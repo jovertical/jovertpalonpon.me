@@ -1,7 +1,7 @@
 import { check } from 'express-validator'
-import { now, validate } from '../../helpers/utils'
+import { now } from '../../helpers/utils'
 
-export default validate([
+export default [
   check('name')
     .not()
     .isEmpty(),
@@ -12,4 +12,4 @@ export default validate([
     .not()
     .isEmpty()
     .isBefore(now())
-])
+]

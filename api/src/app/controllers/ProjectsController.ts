@@ -13,9 +13,10 @@ import * as uuid from 'uuid/v4'
 import { Repository } from 'typeorm'
 import Project from '../models/Project'
 import { getRepository, now } from '../../helpers/utils'
+import validateMiddleware from '../middlewares/validateMiddleware'
+import storeValidation from '../validations/projectsStoreValidation'
+import updateValidation from '../validations/projectsUpdateValidation'
 import Controller from './Controller'
-import storeValidation from '../validations/ProjectsStoreValidation'
-import updateValidation from '../validations/ProjectsUpdateValidation'
 
 @controller('/projects')
 export default class ProjectsController extends Controller {
@@ -34,7 +35,7 @@ export default class ProjectsController extends Controller {
   /**
    * Create a new project
    */
-  @httpPost('/', storeValidation)
+  @httpPost('/', validateMiddleware(storeValidation))
   public async store(
     @request() req: Request,
     @response() res: Response
@@ -55,7 +56,7 @@ export default class ProjectsController extends Controller {
   /**
    * Update a project
    */
-  @httpPatch('/:id', updateValidation)
+  @httpPatch('/:id', validateMiddleware(updateValidation))
   public async update(
     @request() req: Request,
     @response() res: Response,
