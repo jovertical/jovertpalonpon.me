@@ -4,7 +4,7 @@ import Button from '@components/Button'
 import Loader from '@components/Loader'
 import { get } from '@helpers/api'
 
-const limit = 5
+const limit = 3
 
 const FeaturedProjects = () => {
   const [loading, setLoading] = useState(false)
@@ -38,7 +38,7 @@ const FeaturedProjects = () => {
               {projects.slice(0, limit).map(project => (
                 <div
                   key={project.id}
-                  className="project tw-w-full lg:tw-w-1/3 tw-px-2 tw-mb-5 lg:tw-mb-0"
+                  className="project tw-w-full lg:tw-w-1/3 tw-px-2 tw-mb-5"
                 >
                   <div
                     className="content tw-w-full tw-h-0 tw-pt-16:9 tw-relative tw-bg-cover tw-bg-center tw-rounded-lg hover:tw-bg-gray-800"
