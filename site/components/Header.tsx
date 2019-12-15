@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
-import dynamic from 'next/dynamic'
 import cx from 'classnames'
+import Button from '@components/Button'
 import { range } from '@helpers/utils'
-const Button = dynamic(() => import('@components/Button'))
 
 const Header: React.FC = (): React.ReactElement => {
   const [menuOpen, setMenuOpen] = useState(false)

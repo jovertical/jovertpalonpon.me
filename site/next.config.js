@@ -18,7 +18,17 @@ const config = {
 module.exports = withCss(withPurgeCss({
   purgeCssEnabled: ({ dev, isServer }) => (!dev && !isServer),
   purgeCss: {
-    whitelist: () => ['spinner', 'bar', 'peg'],
+    whitelist: () => [
+      'spinner',
+      'bar',
+      'peg',
+      'loader',
+      'one',
+      'two',
+      'three',
+      'four',
+      'five'
+    ],
     whitelistPatterns: [
       /nprogress/,
     ],

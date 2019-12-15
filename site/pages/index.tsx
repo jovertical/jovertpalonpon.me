@@ -1,42 +1,9 @@
-import React, { useEffect } from 'react'
-import Link from 'next/link'
-import dynamic from 'next/dynamic'
+import React from 'react'
+import FeaturedProjects from '@components/FeaturedProjects'
 import Layout from '@components/Layout'
 import * as SKILLS from '@constants/skills'
-import { get } from '@helpers/api'
-const Button = dynamic(() => import('@components/Button'))
 
 const Index: React.FC = (): React.ReactElement => {
-  const projects: Project[] = [
-    {
-      id: 'AE2S-GHS7-1RZ5-89AE',
-      name: 'Workgalore',
-      description: 'Find work from dozens of websites. All in one place.',
-      imageUrl: '/png/workgalore.png'
-    },
-
-    {
-      id: 'AE2S-GHS7-1RZ5-S9AE',
-      name: 'Laravel React Admin',
-      description: 'A fully featured custom content management system (CMS).',
-      imageUrl: '/png/laravel-react-admin.png'
-    },
-
-    {
-      id: 'BE2S-GHS2-1RZ5-S9AE',
-      name: 'Caribbean Waterpark',
-      description:
-        'Elegant booking system with landing page for Caribbean Waterpark Resort.',
-      imageUrl: '/png/caribbean-waterpark.png'
-    }
-  ]
-
-  useEffect(() => {
-    get('/projects').then(({ status, body }) => {
-      console.table(body)
-    })
-  }, [])
-
   return (
     <Layout>
       <section className="tw-pt-5">
@@ -207,48 +174,8 @@ const Index: React.FC = (): React.ReactElement => {
       </section>
 
       <section className="tw-my-32 tw-mx-5 lg:tw-mx-40 tw-text-center">
-        <h1 className="tw-font-bold tw-text-2xl tw-mb-10">Featured Projects</h1>
-        <div className="tw-flex tw-flex-wrap tw--mx-2 tw-mb-10">
-          {projects.map(project => (
-            <div
-              key={project.id}
-              className="project tw-w-full lg:tw-w-1/3 tw-px-2 tw-mb-5 lg:tw-mb-0"
-            >
-              <div
-                className="content tw-w-full tw-h-0 tw-pt-16:9 tw-relative tw-bg-cover tw-bg-center tw-rounded-lg hover:tw-bg-gray-800"
-                style={{
-                  backgroundImage: `url("${project.imageUrl ||
-                    '/svg/portfolio_essv.svg'}")`
-                }}
-              >
-                <div className="details tw-hidden tw-flex-col tw-justify-center tw-items-center tw-absolute tw-inset-0 tw-w-full tw-h-full tw-p-10">
-                  <p className="tw-text-white tw-mb-5">{project.description}</p>
-
-                  <Button>
-                    <p className="tw-text-white">View Project</p>
-                  </Button>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div className="tw-w-full">
-          <Link href="/projects">
-            <Button>View All</Button>
-          </Link>
-        </div>
+        <FeaturedProjects />
       </section>
-
-      <style jsx>{`
-        .project .content:hover {
-          background-image: none !important;
-        }
-
-        .project .content:hover .details {
-          display: flex;
-        }
-      `}</style>
     </Layout>
   )
 }

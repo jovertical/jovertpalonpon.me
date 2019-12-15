@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import cx from 'classnames'
 
 type Variant =
@@ -36,4 +36,5 @@ const Button: React.FC<Props> = ({
   </button>
 )
 
-export default Button
+// @TODO: remove `forwardRef` once Next.js' warning (when this component is used as child) is gone.
+export default forwardRef((props: Props, ref) => <Button {...props} />)
