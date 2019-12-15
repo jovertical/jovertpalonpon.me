@@ -13,7 +13,8 @@
     },
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "removeComments": true
+    "removeComments": true,
+    "strictPropertyInitialization": false
   },
   "include": ["src/**/*.ts"],
   "exclude": ["src/tests/**/*.spec.ts"]

@@ -21,7 +21,7 @@ import Controller from './Controller'
 @controller('/projects')
 export default class ProjectsController extends Controller {
   /**
-   * Get a list of Projects
+   * Get a list of Project
    */
   @httpGet('/')
   public async list(
