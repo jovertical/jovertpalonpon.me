@@ -2,6 +2,7 @@ import 'reflect-metadata'
 import { cleanUpMetadata } from 'inversify-express-utils'
 import * as moment from 'moment'
 import * as request from 'supertest'
+import { Repository } from 'typeorm'
 import app from '../../bootstrap'
 import Project from '../../app/models/Project'
 import { getRepository } from '../../helpers/utils'
@@ -61,6 +62,18 @@ describe('Projects', () => {
       })
   })
 
+  it('should show a project', async () => {
+    const project = await findProject()
+
+    await request(app)
+      .get(`/projects/${project.uuid}`)
+      .send(project)
+      .expect(200)
+      .then(response => {
+        expect(response.body).toMatchObject(project)
+      })
+  })
+
   it('should update a project', async () => {
     const project = await findProject()
     const attributes = {
@@ -72,7 +85,7 @@ describe('Projects', () => {
     }
 
     await request(app)
-      .patch(`/projects/${project.id}`)
+      .patch(`/projects/${project.uuid}`)
       .send(attributes)
       .expect(200)
       .then(response => {
@@ -80,7 +93,9 @@ describe('Projects', () => {
       })
 
     await getRepository(Project)
-      .then(repo => repo.findOneOrFail(project.id))
+      .then((repo: Repository<Project>) =>
+        repo.findOneOrFail({ uuid: project.uuid })
+      )
       .then((project: Project) => {
         expect(project).toMatchObject(attributes)
       })
@@ -88,14 +103,15 @@ describe('Projects', () => {
 
   it('should delete a project', async () => {
     const project = await findProject()
+    const key = project.uuid
 
     await request(app)
-      .delete(`/projects/${project.id}`)
+      .delete(`/projects/${key}`)
       .expect(200)
 
-    const result = await getRepository(Project).then(repo =>
-      repo.findOne(project.id)
-    )
+    const result = await getRepository(Project)
+      .then((repo: Repository<Project>) => repo.findOneOrFail({ uuid: key }))
+      .catch(error => console.log(error))
 
     expect(result).toBeUndefined()
   })

@@ -21,7 +21,7 @@ import Controller from './Controller'
 @controller('/projects')
 export default class ProjectsController extends Controller {
   /**
-   * Get a list of projects
+   * Get a list of Projects
    */
   @httpGet('/')
   public async list(
@@ -42,7 +42,7 @@ export default class ProjectsController extends Controller {
   }
 
   /**
-   * Create a new project
+   * Create a Project
    */
   @httpPost('/', validateMiddleware(storeValidation))
   public async store(
@@ -64,17 +64,32 @@ export default class ProjectsController extends Controller {
   }
 
   /**
-   * Update a project
+   * Show a Project
    */
-  @httpPatch('/:id', validateMiddleware(updateValidation))
+  @httpGet('/:key')
+  public async show(
+    @response() res: Response,
+    @requestParam('key') key: string
+  ): Promise<Response> {
+    const project = await this.repo().then((repo: Repository<Project>) =>
+      repo.findOneOrFail({ uuid: key })
+    )
+
+    return res.send(project)
+  }
+
+  /**
+   * Update a Project
+   */
+  @httpPatch('/:key', validateMiddleware(updateValidation))
   public async update(
     @request() req: Request,
     @response() res: Response,
-    @requestParam('id') id: string
+    @requestParam('key') key: string
   ): Promise<Response> {
     const project = await this.repo().then(
       async (repo: Repository<Project>) => {
-        const project = await repo.findOneOrFail(id)
+        const project = await repo.findOneOrFail({ uuid: key })
         project.name = req.body.name
         project.description = req.body.description
         project.startDate = req.body.startDate
@@ -90,15 +105,15 @@ export default class ProjectsController extends Controller {
   }
 
   /**
-   * Delete a project
+   * Delete a Project
    */
-  @httpDelete('/:id')
+  @httpDelete('/:key')
   public async delete(
     @response() res: Response,
-    @requestParam('id') id: string
+    @requestParam('key') key: string
   ): Promise<Response> {
     await this.repo().then(async (repo: Repository<Project>) => {
-      const project = await repo.findOneOrFail(id)
+      const project = await repo.findOneOrFail({ uuid: key })
 
       return repo.remove([project])
     })
