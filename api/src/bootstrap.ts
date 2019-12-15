@@ -27,7 +27,9 @@ const server = new InversifyExpressServer(container)
 // Configure express
 server.setConfig((app: express.Application) => {
   app.use(bodyParser.json())
-  app.use(cors({ origin: process.env.CORS_ORIGIN }))
+  app.use(
+    cors({ origin: process.env.CORS_ORIGIN || 'https://jovertpalonpon.me' })
+  )
 })
 
 const app = server.build()
