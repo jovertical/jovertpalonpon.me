@@ -5,71 +5,62 @@ import ProjectImage from './app/models/ProjectImage'
 import { getRepository, now } from './helpers/utils'
 
 console.log('Seeding Projects...')
-getRepository(Project).then((projectRepo: Repository<Project>) => {
-  getRepository(ProjectImage).then(async (repo: Repository<ProjectImage>) => {
-    const image = await repo.save({
-      url: '/png/pushfit.png'
-    })
+getRepository(Project)
+  .then((projectRepo: Repository<Project>) => {
+    getRepository(ProjectImage).then(async (repo: Repository<ProjectImage>) => {
+      const pushfitImages = await repo.save([{ url: '/png/pushfit.png' }])
 
-    projectRepo.save({
-      uuid: uuid(),
-      name: 'Pushfit',
-      description:
-        "PushFit is the internet's premier video platform for fitness enthusists.",
-      startDate: '2019-02-25',
-      projectUrl: 'https://pushfit.tv',
-      featuredAt: now(),
-      images: [image]
-    })
-  })
+      await projectRepo.save({
+        uuid: uuid(),
+        name: 'Pushfit',
+        description:
+          "PushFit is the internet's premier video platform for fitness enthusists.",
+        startDate: '2019-02-25',
+        projectUrl: 'https://pushfit.tv',
+        featuredAt: now(),
+        images: pushfitImages
+      })
 
-  getRepository(ProjectImage).then(async (repo: Repository<ProjectImage>) => {
-    const image = await repo.save({
-      url: '/png/workgalore.png'
-    })
+      const workgaloreImages = await repo.save([{ url: '/png/workgalore.png' }])
 
-    projectRepo.save({
-      uuid: uuid(),
-      name: 'Workgalore',
-      description: 'Find work from dozens of websites, all in one place.',
-      startDate: '2019-06-16',
-      projectUrl: 'https://work-galore.com',
-      featuredAt: now(),
-      images: [image]
-    })
-  })
+      await projectRepo.save({
+        uuid: uuid(),
+        name: 'Workgalore',
+        description: 'Find work from dozens of websites, all in one place.',
+        startDate: '2019-06-16',
+        projectUrl: 'https://work-galore.com',
+        featuredAt: now(),
+        images: workgaloreImages
+      })
 
-  getRepository(ProjectImage).then(async (repo: Repository<ProjectImage>) => {
-    const image = await repo.save({
-      url: '/png/laravel-react-admin.png'
-    })
+      const lraImages = await repo.save([
+        { url: '/png/laravel-react-admin.png' }
+      ])
 
-    projectRepo.save({
-      uuid: uuid(),
-      name: 'Laravel React Admin',
-      description: 'A fully featured custom content management system (CMS).',
-      startDate: '2018-11-05',
-      projectUrl: 'https://laravel-react-admin.herokuapp.com',
-      featuredAt: now(),
-      images: [image]
-    })
-  })
+      await projectRepo.save({
+        uuid: uuid(),
+        name: 'Laravel React Admin',
+        description: 'A fully featured custom content management system (CMS).',
+        startDate: '2018-11-05',
+        projectUrl: 'https://laravel-react-admin.herokuapp.com',
+        featuredAt: now(),
+        images: lraImages
+      })
 
-  getRepository(ProjectImage).then(async (repo: Repository<ProjectImage>) => {
-    const image = await repo.save({
-      url: '/png/caribbean-waterpark.png'
-    })
+      const cwImages = await repo.save([
+        { url: '/png/caribbean-waterpark.png' },
+        { url: '/png/caribbean-waterpark-2.png' }
+      ])
 
-    projectRepo.save({
-      uuid: uuid(),
-      name: 'Caribbean Waterpark',
-      description:
-        'Elegant booking system with landing page for Caribbean Waterpark Resort.',
-      startDate: '2018-01-22',
-      projectUrl: 'https://caribbean-waterpark.herokuapp.com',
-      images: [image]
+      await projectRepo.save({
+        uuid: uuid(),
+        name: 'Caribbean Waterpark',
+        description:
+          'Elegant booking system with landing page for Caribbean Waterpark Resort.',
+        startDate: '2018-01-22',
+        projectUrl: 'https://caribbean-waterpark.herokuapp.com',
+        images: cwImages
+      })
     })
   })
-
-  console.log('Finished seeding Projects!')
-})
+  .finally(() => console.log('Finished seeding Projects!'))

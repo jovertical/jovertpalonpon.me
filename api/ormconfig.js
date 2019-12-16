@@ -26,8 +26,8 @@ module.exports = [
   {
     ...config,
     name: 'default',
-    type: 'sqlite',
-    database: 'src/database/database.sqlite',
+    type: 'postgres',
+    url: process.env.DATABASE_URL,
   },
 
   {
