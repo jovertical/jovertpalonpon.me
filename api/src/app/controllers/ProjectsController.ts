@@ -9,7 +9,6 @@ import {
   response,
   requestParam
 } from 'inversify-express-utils'
-import * as uuid from 'uuid/v4'
 import { FindManyOptions, Not, Repository, Equal } from 'typeorm'
 import Project from '../models/Project'
 import { getRepository, now } from '../../helpers/utils'
@@ -51,7 +50,6 @@ export default class ProjectsController extends Controller {
   ): Promise<Response> {
     const project = await this.repo().then((repo: Repository<Project>) =>
       repo.save({
-        uuid: uuid(),
         name: req.body.name,
         description: req.body.description,
         startDate: req.body.startDate,
@@ -66,13 +64,13 @@ export default class ProjectsController extends Controller {
   /**
    * Show a Project
    */
-  @httpGet('/:key')
+  @httpGet('/:slug')
   public async show(
     @response() res: Response,
-    @requestParam('key') key: string
+    @requestParam('slug') slug: string
   ): Promise<Response> {
     const project = await this.repo().then((repo: Repository<Project>) =>
-      repo.findOneOrFail({ uuid: key })
+      repo.findOneOrFail({ slug })
     )
 
     return res.send(project)
@@ -81,15 +79,15 @@ export default class ProjectsController extends Controller {
   /**
    * Update a Project
    */
-  @httpPatch('/:key', validateMiddleware(updateValidation))
+  @httpPatch('/:slug', validateMiddleware(updateValidation))
   public async update(
     @request() req: Request,
     @response() res: Response,
-    @requestParam('key') key: string
+    @requestParam('slug') slug: string
   ): Promise<Response> {
     const project = await this.repo().then(
       async (repo: Repository<Project>) => {
-        const project = await repo.findOneOrFail({ uuid: key })
+        const project = await repo.findOneOrFail({ slug })
         project.name = req.body.name
         project.description = req.body.description
         project.startDate = req.body.startDate
@@ -107,13 +105,13 @@ export default class ProjectsController extends Controller {
   /**
    * Delete a Project
    */
-  @httpDelete('/:key')
+  @httpDelete('/:slug')
   public async delete(
     @response() res: Response,
-    @requestParam('key') key: string
+    @requestParam('slug') slug: string
   ): Promise<Response> {
     await this.repo().then(async (repo: Repository<Project>) => {
-      const project = await repo.findOneOrFail({ uuid: key })
+      const project = await repo.findOneOrFail({ slug })
 
       return repo.remove([project])
     })

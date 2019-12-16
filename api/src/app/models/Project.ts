@@ -7,6 +7,9 @@ export default class Project extends Model {
   @Column()
   name: string
 
+  @Column()
+  slug: string
+
   @Column({ nullable: true })
   description?: string
 

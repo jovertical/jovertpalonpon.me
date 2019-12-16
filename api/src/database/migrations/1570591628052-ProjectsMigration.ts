@@ -14,12 +14,12 @@ export class ProjectsMigration1570591628052 implements MigrationInterface {
           },
 
           {
-            name: 'uuid',
+            name: 'name',
             type: 'varchar'
           },
 
           {
-            name: 'name',
+            name: 'slug',
             type: 'varchar'
           },
 

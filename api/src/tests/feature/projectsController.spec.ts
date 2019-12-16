@@ -66,7 +66,7 @@ describe('Projects', () => {
     const project = await findProject()
 
     await request(app)
-      .get(`/projects/${project.uuid}`)
+      .get(`/projects/${project.slug}`)
       .send(project)
       .expect(200)
       .then(response => {
@@ -85,7 +85,7 @@ describe('Projects', () => {
     }
 
     await request(app)
-      .patch(`/projects/${project.uuid}`)
+      .patch(`/projects/${project.slug}`)
       .send(attributes)
       .expect(200)
       .then(response => {
@@ -94,7 +94,7 @@ describe('Projects', () => {
 
     await getRepository(Project)
       .then((repo: Repository<Project>) =>
-        repo.findOneOrFail({ uuid: project.uuid })
+        repo.findOneOrFail({ slug: project.slug })
       )
       .then((project: Project) => {
         expect(project).toMatchObject(attributes)
@@ -103,14 +103,15 @@ describe('Projects', () => {
 
   it('should delete a project', async () => {
     const project = await findProject()
-    const key = project.uuid
 
     await request(app)
-      .delete(`/projects/${key}`)
+      .delete(`/projects/${project.slug}`)
       .expect(200)
 
     const result = await getRepository(Project)
-      .then((repo: Repository<Project>) => repo.findOneOrFail({ uuid: key }))
+      .then((repo: Repository<Project>) =>
+        repo.findOneOrFail({ slug: project.slug })
+      )
       .catch(error => console.log(error))
 
     expect(result).toBeUndefined()
