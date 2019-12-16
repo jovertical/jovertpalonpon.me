@@ -23,7 +23,7 @@ const Header: React.FC = (): React.ReactElement => {
         </div>
 
         <div className="tw-px-4">
-          <Link href="/blog">
+          <Link href="/">
             <a className="hover:tw-text-blue-500">Blog</a>
           </Link>
         </div>
@@ -70,13 +70,13 @@ const Header: React.FC = (): React.ReactElement => {
             </div>
 
             <div className="tw-py-2">
-              <Link href="/blog">
+              <Link href="/">
                 <a className="hover:tw-text-blue-500">Blog</a>
               </Link>
             </div>
 
             <div className="tw-py-2">
-              <Link href="/contact">
+              <Link href="/">
                 <Button>Contact</Button>
               </Link>
             </div>
