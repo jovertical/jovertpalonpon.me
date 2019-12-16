@@ -5,7 +5,7 @@ import * as request from 'supertest'
 import { Repository } from 'typeorm'
 import app from '../../bootstrap'
 import Project from '../../app/models/Project'
-import { getRepository } from '../../helpers/utils'
+import { getRepository, slugify } from '../../helpers/utils'
 import { seedProjects, findProject } from '../utils'
 
 describe('Projects', () => {
@@ -39,6 +39,7 @@ describe('Projects', () => {
 
   it('should create a project', async () => {
     const attributes = {
+      slug: slugify('Hackdawg'),
       name: 'Hackdawg',
       startDate: moment()
         .subtract(1, 'year')
@@ -66,7 +67,7 @@ describe('Projects', () => {
     const project = await findProject()
 
     await request(app)
-      .get(`/projects/${project.uuid}`)
+      .get(`/projects/${project.slug}`)
       .send(project)
       .expect(200)
       .then(response => {
@@ -76,7 +77,9 @@ describe('Projects', () => {
 
   it('should update a project', async () => {
     const project = await findProject()
+    const newSlug = slugify('Hope')
     const attributes = {
+      slug: newSlug,
       name: 'Hope',
       description: 'Bot that cares',
       startDate: moment()
@@ -85,7 +88,7 @@ describe('Projects', () => {
     }
 
     await request(app)
-      .patch(`/projects/${project.uuid}`)
+      .patch(`/projects/${project.slug}`)
       .send(attributes)
       .expect(200)
       .then(response => {
@@ -94,24 +97,23 @@ describe('Projects', () => {
 
     await getRepository(Project)
       .then((repo: Repository<Project>) =>
-        repo.findOneOrFail({ uuid: project.uuid })
+        repo.findOneOrFail({ slug: newSlug })
       )
-      .then((project: Project) => {
-        expect(project).toMatchObject(attributes)
+      .then((updatedProject: Project) => {
+        expect(updatedProject).toMatchObject(attributes)
       })
   })
 
   it('should delete a project', async () => {
-    const project = await findProject()
-    const key = project.uuid
+    const { slug } = await findProject()
 
     await request(app)
-      .delete(`/projects/${key}`)
+      .delete(`/projects/${slug}`)
       .expect(200)
 
-    const result = await getRepository(Project)
-      .then((repo: Repository<Project>) => repo.findOneOrFail({ uuid: key }))
-      .catch(error => console.log(error))
+    const result = await getRepository(
+      Project
+    ).then((repo: Repository<Project>) => repo.findOne({ slug }))
 
     expect(result).toBeUndefined()
   })

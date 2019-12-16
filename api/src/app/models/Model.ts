@@ -5,9 +5,6 @@ export default class Model {
   @PrimaryGeneratedColumn()
   id?: number
 
-  @Column()
-  uuid?: string
-
   @Column({ default: now() })
   createdAt?: string
 

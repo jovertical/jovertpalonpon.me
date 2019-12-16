@@ -14,7 +14,7 @@ export class ProjectsMigration1570591628052 implements MigrationInterface {
           },
 
           {
-            name: 'uuid',
+            name: 'slug',
             type: 'varchar'
           },
 
