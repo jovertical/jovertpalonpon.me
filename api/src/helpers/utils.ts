@@ -5,6 +5,12 @@ import {
   Repository
 } from 'typeorm'
 import * as moment from 'moment'
+import si from 'slugify'
+
+/**
+ * Simple wrapper function to "slugify" a string
+ */
+export const slugify = (text: string): string => si(text, { lower: true })
 
 /**
  * Gives the application's environment.

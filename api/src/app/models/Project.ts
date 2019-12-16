@@ -5,6 +5,9 @@ import ProjectImage from './ProjectImage'
 @Entity({ name: 'projects' })
 export default class Project extends Model {
   @Column()
+  slug: string
+
+  @Column()
   name: string
 
   @Column({ nullable: true })
