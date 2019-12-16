@@ -3,13 +3,14 @@
     "target": "es5",
     "lib": ["es6", "dom"],
     "module": "commonjs",
+    "moduleResolution": "node",
     "outDir": "dist",
     "strict": true,
     "sourceMap": false,
-    "baseUrl": ".",
+    "baseUrl": "./",
     "paths": {
-      "*": ["node_modules/"],
-      "typings/*": ["src/typings/*"]
+      "@app/*": ["src/app/*"],
+      "@helpers/*": ["src/helpers/*"]
     },
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -17,5 +18,5 @@
     "strictPropertyInitialization": false
   },
   "include": ["src/**/*.ts"],
-  "exclude": ["src/tests/**/*.spec.ts"]
+  "exclude": ["node_modules"]
 }

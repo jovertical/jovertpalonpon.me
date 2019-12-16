@@ -1,5 +1,5 @@
 import { check } from 'express-validator'
-import { now } from '../../helpers/utils'
+import { now } from '@helpers/utils'
 
 export default [
   check('name')

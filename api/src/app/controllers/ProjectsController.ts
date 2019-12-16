@@ -10,11 +10,11 @@ import {
   requestParam
 } from 'inversify-express-utils'
 import { FindManyOptions, Not, Repository, Equal } from 'typeorm'
-import Project from '../models/Project'
-import { getRepository, now, slugify } from '../../helpers/utils'
-import validateMiddleware from '../middlewares/validateMiddleware'
-import storeValidation from '../validations/projectsStoreValidation'
-import updateValidation from '../validations/projectsUpdateValidation'
+import Project from '@app/models/Project'
+import validateMiddleware from '@app/middlewares/validateMiddleware'
+import storeValidation from '@app/validations/projectsStoreValidation'
+import updateValidation from '@app/validations/projectsUpdateValidation'
+import { getRepository, now, slugify } from '@helpers/utils'
 import Controller from './Controller'
 
 @controller('/projects')

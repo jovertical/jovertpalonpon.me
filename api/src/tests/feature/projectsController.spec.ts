@@ -4,8 +4,8 @@ import * as moment from 'moment'
 import * as request from 'supertest'
 import { Repository } from 'typeorm'
 import app from '../../bootstrap'
-import Project from '../../app/models/Project'
-import { getRepository, slugify } from '../../helpers/utils'
+import Project from '@app/models/Project'
+import { getRepository, slugify } from '@helpers/utils'
 import { seedProjects, findProject } from '../utils'
 
 describe('Projects', () => {

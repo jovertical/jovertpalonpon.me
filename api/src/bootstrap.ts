@@ -5,18 +5,20 @@
  * This way, routes and default configurations are abstracted so that it can
  * be re-used somewhere else in the app.
  */
+import 'module-alias/register'
+import 'reflect-metadata'
 import * as express from 'express'
 import * as bodyParser from 'body-parser'
 import * as cors from 'cors'
-import 'reflect-metadata'
+import * as dotenv from 'dotenv'
 import { Container } from 'inversify'
 import { InversifyExpressServer } from 'inversify-express-utils'
 
 // Load the Environment variables
-require('dotenv').config()
+dotenv.config()
 
 // Register controllers
-import './app/controllers/ProjectsController'
+import '@app/controllers/ProjectsController'
 
 // Create the container
 const container = new Container()

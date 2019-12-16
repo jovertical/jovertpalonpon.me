@@ -1,6 +1,6 @@
 import { Repository } from 'typeorm'
-import Project from '../app/models/Project'
-import { getRepository, now, slugify } from '../helpers/utils'
+import Project from '@app/models/Project'
+import { getRepository, now, slugify } from '@helpers/utils'
 
 /**
  * Seed sample project data.
