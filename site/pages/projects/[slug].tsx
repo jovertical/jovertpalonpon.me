@@ -7,7 +7,7 @@ const Project: React.FC = () => {
 
   return (
     <Layout>
-      <p>Project: {router.query.key}</p>
+      <p>Project: {router.query.slug}</p>
     </Layout>
   )
 }

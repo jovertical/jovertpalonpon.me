@@ -1,6 +1,6 @@
 interface Project {
   id: number
-  uuid: string
+  slug: string
   name: string
   description: string
   startDate?: string

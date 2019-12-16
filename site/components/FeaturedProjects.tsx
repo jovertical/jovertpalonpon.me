@@ -6,7 +6,7 @@ import { get } from '@helpers/api'
 
 const limit = 3
 
-const FeaturedProjects = () => {
+const FeaturedProjects = (): React.ReactElement => {
   const [loading, setLoading] = useState(false)
   const [projects, setProjects] = useState<Project[]>([])
 
@@ -63,7 +63,7 @@ const FeaturedProjects = () => {
                           {project.description}
                         </p>
 
-                        <Link href={`/projects/${project.uuid}`}>
+                        <Link href={`/projects/${project.slug}`}>
                           <Button>
                             <p className="tw-text-white">View Project</p>
                           </Button>
