@@ -10,7 +10,7 @@ const config = {
       '/': { page: '/' },
     }
 
-    const res = await fetch(process.env.API_URL + '/projects')
+    const res = await fetch('https://jovertpalonpon.herokuapp.com/projects')
     const projects = await res.json()
 
     projects.forEach(({ slug }) => {
