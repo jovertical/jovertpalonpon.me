@@ -10,7 +10,7 @@ const config = {
       '/': { page: '/' },
     }
 
-    const res = await fetch(this.env.API_URL + '/projects')
+    const res = await fetch(process.env.API_URL + '/projects')
     const projects = await res.json()
 
     projects.forEach(({ slug }) => {
@@ -22,7 +22,7 @@ const config = {
     return paths
   },
   env: {
-    API_URL: process.env.API_URL || 'http://localhost:8080'
+    API_URL: process.env.API_URL
   },
   webpack(config) {
     config.resolve.alias['@components'] = path.join(__dirname, 'components')
