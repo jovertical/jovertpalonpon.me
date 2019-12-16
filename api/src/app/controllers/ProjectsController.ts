@@ -11,7 +11,7 @@ import {
 } from 'inversify-express-utils'
 import { FindManyOptions, Not, Repository, Equal } from 'typeorm'
 import Project from '../models/Project'
-import { getRepository, now } from '../../helpers/utils'
+import { getRepository, now, slugify } from '../../helpers/utils'
 import validateMiddleware from '../middlewares/validateMiddleware'
 import storeValidation from '../validations/projectsStoreValidation'
 import updateValidation from '../validations/projectsUpdateValidation'
@@ -50,6 +50,7 @@ export default class ProjectsController extends Controller {
   ): Promise<Response> {
     const project = await this.repo().then((repo: Repository<Project>) =>
       repo.save({
+        slug: slugify(req.body.name),
         name: req.body.name,
         description: req.body.description,
         startDate: req.body.startDate,
@@ -88,6 +89,7 @@ export default class ProjectsController extends Controller {
     const project = await this.repo().then(
       async (repo: Repository<Project>) => {
         const project = await repo.findOneOrFail({ slug })
+        project.slug = slugify(req.body.name)
         project.name = req.body.name
         project.description = req.body.description
         project.startDate = req.body.startDate

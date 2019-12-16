@@ -5,10 +5,10 @@ import ProjectImage from './ProjectImage'
 @Entity({ name: 'projects' })
 export default class Project extends Model {
   @Column()
-  name: string
+  slug: string
 
   @Column()
-  slug: string
+  name: string
 
   @Column({ nullable: true })
   description?: string
