@@ -3,14 +3,16 @@ const fetch = require('isomorphic-unfetch')
 const withCss = require('@zeit/next-css')
 const withPurgeCss = require('next-purgecss')
 
+const API_URL = process.env.API_URL || 'https://jovertpalonpon.herokuapp.com'
 const config = {
   exportTrailingSlash: true,
   exportPathMap: async function () {
     const paths = {
       '/': { page: '/' },
+      '/projects': { page: '/projects' },
     }
 
-    const res = await fetch('https://jovertpalonpon.herokuapp.com/projects')
+    const res = await fetch(API_URL + '/projects')
     const projects = await res.json()
 
     projects.forEach(({ slug }) => {
@@ -22,7 +24,7 @@ const config = {
     return paths
   },
   env: {
-    API_URL: process.env.API_URL
+    API_URL
   },
   webpack(config) {
     config.resolve.alias['@components'] = path.join(__dirname, 'components')
