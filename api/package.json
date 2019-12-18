@@ -51,6 +51,7 @@
     "eslint": "^6.5.1",
     "eslint-config-prettier": "^6.4.0",
     "eslint-plugin-prettier": "^3.1.1",
+    "husky": "^3.1.0",
     "jest": "^24.9.0",
     "nodemon": "^1.19.3",
     "prettier": "^1.18.2",
@@ -62,5 +63,10 @@
   },
   "engines": {
     "node": ">=10.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn test"
+    }
   }
 }
