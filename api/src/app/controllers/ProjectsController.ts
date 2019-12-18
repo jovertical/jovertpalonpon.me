@@ -12,8 +12,7 @@ import {
 import { FindManyOptions, Not, Repository, Equal } from 'typeorm'
 import Project from 'app/models/Project'
 import validateMiddleware from 'app/middlewares/validateMiddleware'
-import storeValidation from 'app/validations/projectsStoreValidation'
-import updateValidation from 'app/validations/projectsUpdateValidation'
+import { storeValidation, updateValidation } from 'app/validations/projectsValidation'
 import { getRepository, now, slugify } from 'helpers/utils'
 import Controller from './Controller'
 

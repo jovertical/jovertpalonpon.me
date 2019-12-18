@@ -1,7 +1,7 @@
 import { check } from 'express-validator'
 import { now } from 'helpers/utils'
 
-export default [
+export const storeValidation = [
   check('name')
     .not()
     .isEmpty(),
@@ -15,4 +15,8 @@ export default [
   check('featuredAt')
     .if(check('featuredAt').exists())
     .isBefore(now())
+]
+
+export const updateValidation = [
+  ...storeValidation
 ]

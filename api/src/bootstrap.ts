@@ -17,7 +17,7 @@ import { InversifyExpressServer } from 'inversify-express-utils'
 dotenv.config()
 
 // Register controllers
-import './app/controllers/ProjectsController'
+import 'app/controllers/ProjectsController'
 
 // Create the container
 const container = new Container()
