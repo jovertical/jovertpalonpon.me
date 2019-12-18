@@ -1,16 +1,12 @@
 import React from 'react'
-import Link from 'next/link'
+import Logo from '@components/Logo'
 import { social as socialLinks } from '@constants/links'
 
 const Footer: React.FC = (): React.ReactElement => (
   <footer className="tw-bg-blue-500 tw-text-white">
     <div className="tw-text-center lg:tw-w-1/2 tw-p-5 lg:tw-p-32 tw-mx-auto">
-      <div className="tw-mb-5">
-        <Link href="/">
-          <a title="home" className="tw-font-bold">
-            Jovert P.
-          </a>
-        </Link>
+      <div className="tw-mb-5 tw-inline-block">
+        <Logo variant="white" />
       </div>
 
       <p className="tw-mb-10 lg:tw-text-lg tw-text-gray-400">
