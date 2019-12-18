@@ -1,7 +1,7 @@
 import { Repository } from 'typeorm'
-import Project from './app/models/Project'
-import ProjectImage from './app/models/ProjectImage'
-import { getRepository, now, slugify } from './helpers/utils'
+import Project from 'app/models/Project'
+import ProjectImage from 'app/models/ProjectImage'
+import { getRepository, now, slugify } from 'helpers/utils'
 
 console.log('Seeding Projects...')
 getRepository(Project)

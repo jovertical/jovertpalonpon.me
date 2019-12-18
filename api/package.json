@@ -8,14 +8,14 @@
   },
   "main": "dist/app.js",
   "scripts": {
-    "build": "rimraf dist && tsc",
-    "prod": "cross-env NODE_ENV=production node dist/app.js",
-    "dev": "cross-env NODE_ENV=development node_modules/.bin/nodemon --exec ts-node src/app.ts --watch src",
+    "build": "cross-env NODE_PATH=dist rimraf dist && tsc",
+    "prod": "cross-env NODE_PATH=dist NODE_ENV=production node dist/app.js",
+    "dev": "cross-env NODE_PATH=src NODE_ENV=development node_modules/.bin/nodemon --exec ts-node src/app.ts --watch src",
     "format": "node_modules/.bin/prettier --write \"src/**/*.ts\"",
     "seed": "yarn ts-node src/seeder.ts",
-    "test:lint": "node_modules/.bin/eslint src --ext .ts",
-    "test:unit": "cross-env NODE_ENV=testing node_modules/.bin/jest",
-    "test:coverage": "cross-env NODE_ENV=testing node_modules/.bin/jest --coverage",
+    "test:lint": "cross-env NODE_PATH=src node_modules/.bin/eslint src --ext .ts",
+    "test:unit": "cross-env NODE_PATH=src NODE_ENV=testing node_modules/.bin/jest",
+    "test:coverage": "cross-env NODE_PATH=src NODE_ENV=testing node_modules/.bin/jest --coverage",
     "test": "yarn test:lint --quiet && yarn test:unit --silent",
     "tm:run": "yarn ts-node node_modules/.bin/typeorm migration:run -f ormconfig",
     "tm:revert": "yarn ts-node node_modules/.bin/typeorm migration:revert -f ormconfig",
@@ -30,7 +30,6 @@
     "express-validator": "^6.2.0",
     "inversify": "^5.0.1",
     "inversify-express-utils": "^6.3.2",
-    "module-alias": "^2.2.2",
     "moment": "^2.24.0",
     "pg": "^7.12.1",
     "reflect-metadata": "^0.1.13",
@@ -62,10 +61,6 @@
     "typescript": "^3.6.4"
   },
   "engines": {
-    "node": ">=10.0.0"
-  },
-  "_moduleAliases": {
-    "@app": "src/app",
-    "@helpers": "src/helpers"
+    "node": ">=13.0.0"
   }
 }

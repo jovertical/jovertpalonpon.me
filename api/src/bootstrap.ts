@@ -5,7 +5,6 @@
  * This way, routes and default configurations are abstracted so that it can
  * be re-used somewhere else in the app.
  */
-import 'module-alias/register'
 import 'reflect-metadata'
 import * as express from 'express'
 import * as bodyParser from 'body-parser'
@@ -18,7 +17,7 @@ import { InversifyExpressServer } from 'inversify-express-utils'
 dotenv.config()
 
 // Register controllers
-import '@app/controllers/ProjectsController'
+import './app/controllers/ProjectsController'
 
 // Create the container
 const container = new Container()
