@@ -17,6 +17,4 @@ export const storeValidation = [
     .isBefore(now())
 ]
 
-export const updateValidation = [
-  ...storeValidation
-]
+export const updateValidation = [...storeValidation]
