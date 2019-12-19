@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from 'react'
+import Link from 'next/link'
 import Card from '@components/Card'
-import Icon from '@components/Icon'
-import CalendarIcon from '@components/Icons/Calendar'
-import GithubIcon from '@components/Icons/Github'
-import LinkIcon from '@components/Icons/Link'
 import Layout from '@components/Layout'
 import Loader from '@components/Loader'
 import Text from '@components/Text'
@@ -48,63 +45,31 @@ const Projects: React.FC = () => {
                 key={project.id}
                 className="tw-flex tw-flex-col lg:tw-flex-row tw-mb-3 lg:tw-mb-5"
               >
-                <div className="tw-w-full lg:tw-w-40 tw-mr-5">
-                  <img
-                    src={project.images?.[0]?.url}
-                    alt={project.name}
-                    className="tw-h-32 tw-object-cover tw-object-center"
+                <div className="tw-w-full lg:tw-w-64 tw-mb-5 lg:tw-mb-0 tw-mr-5">
+                  <div
+                    className="tw-w-full tw-h-0 tw-pt-11:8 tw-bg-cover tw-bg-center"
+                    style={{
+                      backgroundImage: `url('${project.images?.[0]?.url}')`
+                    }}
                   />
                 </div>
 
-                <div className="tw-relative tw-w-full tw-h-32 tw-mt-2 tw-text-left">
+                <div className="tw-relative tw-w-full tw-h-32 tw-text-left">
                   <div className="tw-flex tw-justify-between">
-                    <a
-                      href={`/projects/${project.slug}`}
-                      className="hover:tw-text-blue-500"
-                    >
-                      <Text className="tw-mb-2">{project.name}</Text>
-                    </a>
-
-                    <span className="tw-flex">
-                      <Icon variant="secondary" className="tw-mr-1">
-                        <CalendarIcon />
-                      </Icon>
-                      <Text>{project.startDate}</Text>
-                    </span>
+                    <Link href={`/projects/${project.slug}`}>
+                      <a
+                        title={`View ${project.name}`}
+                        className="hover:tw-text-blue-500"
+                      >
+                        <Text weight="bold" className="tw-mb-2">
+                          {project.name}
+                        </Text>
+                      </a>
+                    </Link>
                   </div>
                   <Text variant="sub" className="tw-mb-2">
                     {project.description}
                   </Text>
-                  <div className="tw-absolute tw-bottom-0">
-                    {project.githubUrl && (
-                      <span className="tw-mr-1 lg:tw-mr-2">
-                        <a
-                          href={project.githubUrl}
-                          title="Github Repository"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <Icon variant="secondary">
-                            <GithubIcon />
-                          </Icon>
-                        </a>
-                      </span>
-                    )}
-                    {project.projectUrl && (
-                      <span className="tw-mr-1 lg:tw-mr-2">
-                        <a
-                          href={project.projectUrl}
-                          title="Project URL"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <Icon variant="secondary">
-                            <LinkIcon />
-                          </Icon>
-                        </a>
-                      </span>
-                    )}
-                  </div>
                 </div>
               </Card>
             ))}
