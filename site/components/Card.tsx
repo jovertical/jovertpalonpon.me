@@ -1,7 +1,20 @@
 import React from 'react'
+import cx from 'classnames'
 
-const Card: React.FC = ({ children }) => (
-  <div className="tw-h-full tw-text-center tw-p-8 tw-bg-white tw-rounded tw-border hover:tw-shadow-lg">
+interface Props extends React.HtmlHTMLAttributes<{}> {
+  expand?: boolean
+}
+
+const Card: React.FC<Props> = ({ expand = false, children, className }) => (
+  <div
+    className={cx(
+      'tw-h-full tw-text-center tw-bg-white tw-rounded tw-border hover:tw-shadow-lg',
+      {
+        'tw-p-8': !expand
+      },
+      className
+    )}
+  >
     {children}
   </div>
 )

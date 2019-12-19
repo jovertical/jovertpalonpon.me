@@ -5,7 +5,7 @@ const withPurgeCss = require('next-purgecss')
 
 const API_URL = process.env.API_URL || 'https://jovertpalonpon.herokuapp.com'
 const config = {
-  exportTrailingSlash: true,
+  exportTrailingSlash: process.env.NODE_ENV === 'production',
   exportPathMap: async function () {
     const paths = {
       '/': { page: '/' },

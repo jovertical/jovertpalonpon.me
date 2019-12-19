@@ -4,6 +4,7 @@ interface Project {
   name: string
   description: string
   startDate?: string
+  githubUrl?: string
   projectUrl?: string
   featuredAt?: string
   images?: ProjectImage[]
