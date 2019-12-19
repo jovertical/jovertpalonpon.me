@@ -56,7 +56,7 @@ export default class ProjectsController extends Controller {
         name: req.body.name,
         description: req.body.description,
         startDate: req.body.startDate,
-        githubUrl: req.body.githubUrl,
+        sourceUrl: req.body.sourceUrl,
         projectUrl: req.body.projectUrl,
         featuredAt: req.body.featuredAt
       })
@@ -96,7 +96,7 @@ export default class ProjectsController extends Controller {
         project.name = req.body.name
         project.description = req.body.description
         project.startDate = req.body.startDate
-        project.githubUrl = req.body.githubUrl
+        project.sourceUrl = req.body.sourceUrl
         project.projectUrl = req.body.projectUrl
         project.featuredAt = req.body.featuredAt
         project.updatedAt = now()

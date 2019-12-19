@@ -30,7 +30,7 @@ export class ProjectsMigration1570591628052 implements MigrationInterface {
           },
 
           {
-            name: 'githubUrl',
+            name: 'sourceUrl',
             type: 'varchar',
             isNullable: true
           },

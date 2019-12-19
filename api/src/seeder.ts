@@ -24,7 +24,7 @@ getRepository(Project)
         description:
           'My personal website where I showcase my work as a professional.',
         startDate: '2019-10-02',
-        githubUrl: 'https://github.com/palonponjovertlota/me',
+        sourceUrl: 'https://github.com/palonponjovertlota/me',
         projectUrl: 'https://jovertpalonpon.me',
         featuredAt: now(),
         images: await repo.save([{ url: '/png/projects/my-website.png' }])
@@ -45,7 +45,7 @@ getRepository(Project)
         name: 'Laravel React Admin',
         description: 'A fully featured custom content management system (CMS).',
         startDate: '2018-11-05',
-        githubUrl: 'https://github.com/palonponjovertlota/laravel-react-admin',
+        sourceUrl: 'https://github.com/palonponjovertlota/laravel-react-admin',
         projectUrl: 'https://laravel-react-admin.herokuapp.com',
         featuredAt: now(),
         images: await repo.save([
@@ -59,7 +59,7 @@ getRepository(Project)
         description:
           'Elegant booking system with landing page for Caribbean Waterpark Resort.',
         startDate: '2018-01-22',
-        githubUrl: 'https://github.com/palonponjovertlota/caribean-waterpark',
+        sourceUrl: 'https://github.com/palonponjovertlota/caribean-waterpark',
         projectUrl: 'https://caribbean-waterpark.herokuapp.com',
         images: await repo.save([
           { url: '/png/projects/caribbean-waterpark.png' }
