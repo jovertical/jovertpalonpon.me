@@ -21,7 +21,7 @@ const Icon: React.FC<Props> = ({
       {
         'tw-w-4': size === 'sm',
         'tw-w-6': size === 'md',
-        'tw-w-10': size === 'lg',
+        'tw-w-8': size === 'lg',
         'tw-text-blue-500 hover:tw-text-blue-700': variant === 'primary',
         'tw-text-gray-500 hover:tw-text-gray-700': variant === 'secondary'
       },
