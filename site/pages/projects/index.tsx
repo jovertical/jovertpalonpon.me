@@ -11,6 +11,8 @@ const Projects: React.FC = () => {
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
+    setLoading(true)
+
     get('/projects').then(({ status, body }) => {
       switch (status) {
         case 200:
@@ -26,12 +28,12 @@ const Projects: React.FC = () => {
 
   return (
     <Layout>
-      <div className="tw-mb-10 tw-py-16 tw-px-5 lg:tw-px-0 tw-text-center tw-bg-blue-500">
+      <div className="tw-mb-10 tw-py-16 tw-px-5 lg:tw-px-0 tw-text-center tw-bg-blue">
         <Text variant="h4" weight="bold" className="tw-text-white tw-mb-5">
           My Projects
         </Text>
         <Text variant="h6" className="tw-text-white">
-          Here is a list of projects that I&apos;ve worked on
+          Here is a list of projects that I've worked on
         </Text>
       </div>
 
@@ -59,7 +61,7 @@ const Projects: React.FC = () => {
                     <Link href={`/projects/${project.slug}`}>
                       <a
                         title={`View ${project.name}`}
-                        className="hover:tw-text-blue-500"
+                        className="hover:tw-text-blue"
                       >
                         <Text weight="bold" className="tw-mb-2">
                           {project.name}

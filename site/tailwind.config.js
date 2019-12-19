@@ -19,6 +19,11 @@ module.exports = {
       '3d': ['40px', '-60px', '-130px'],
     },
     extend: {
+      colors: {
+        blue: '#4299e1',
+        'blue-lighter': '#63b3ed',
+        'blue-darker': '#2b6cb0'
+      },
       inset: {
         '1/2': '50%',
       },

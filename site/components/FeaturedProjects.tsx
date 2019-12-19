@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Button from '@components/Button'
 import Loader from '@components/Loader'
+import Text from '@components/Text'
 import { get } from '@helpers/api'
 
 const limit = 3
@@ -29,21 +30,23 @@ const FeaturedProjects = (): React.ReactElement => {
   return (
     <>
       <div>
-        <h1 className="tw-font-bold tw-text-2xl tw-mb-10">Featured Projects</h1>
+        <Text variant="h5" weight="bold" className="tw-mb-10">
+          Featured Projects
+        </Text>
         {loading ? (
           <Loader />
         ) : (
           <>
             {projects.length === 0 ? (
-              <p>
+              <Text>
                 No Projects Featured.{' '}
                 <a
                   href="/projects"
-                  className="tw-text-blue-500 hover:tw-text-blue-400"
+                  className="tw-text-blue hover:tw-text-blue-lighter"
                 >
                   View All?
                 </a>
-              </p>
+              </Text>
             ) : (
               <div className="tw-flex tw-flex-wrap tw--mx-2 tw-mb-10">
                 {projects.slice(0, limit).map(project => (

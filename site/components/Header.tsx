@@ -17,13 +17,13 @@ const Header: React.FC = (): React.ReactElement => {
 
         <div className="tw-px-4">
           <Link href="/projects">
-            <a className="hover:tw-text-blue-500">Projects</a>
+            <a className="hover:tw-text-blue">Projects</a>
           </Link>
         </div>
 
         <div className="tw-px-4">
           <Link href="/">
-            <a className="hover:tw-text-blue-500">Blog</a>
+            <a className="hover:tw-text-blue">Blog</a>
           </Link>
         </div>
 
@@ -63,13 +63,13 @@ const Header: React.FC = (): React.ReactElement => {
 
             <div className="tw-py-2">
               <Link href="/projects">
-                <a className="hover:tw-text-blue-500">Projects</a>
+                <a className="hover:tw-text-blue">Projects</a>
               </Link>
             </div>
 
             <div className="tw-py-2">
               <Link href="/">
-                <a className="hover:tw-text-blue-500">Blog</a>
+                <a className="hover:tw-text-blue">Blog</a>
               </Link>
             </div>
 

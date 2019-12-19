@@ -10,7 +10,7 @@ import Text from '@components/Text'
 import { social as socialLinks } from '@constants/links'
 
 const Footer: React.FC = (): React.ReactElement => (
-  <footer className="tw-bg-blue-500 tw-text-white">
+  <footer className="tw-bg-blue tw-text-white">
     <div className="tw-text-center lg:tw-w-1/2 tw-p-5 lg:tw-p-32 tw-mx-auto">
       <div className="tw-mb-5 tw-inline-block">
         <Logo variant="white" />
@@ -30,7 +30,7 @@ const Footer: React.FC = (): React.ReactElement => (
           className="tw-mx-4 lg:tw-mx-5"
         >
           <Icon variant="custom">
-            <GithubIcon className="tw-border-2 tw-border-blue-400 hover:tw-border-white hover:tw-border-none hover:tw-text-blue-500 hover:tw-bg-white tw-rounded-full tw-p-2" />
+            <GithubIcon className="tw-border-2 tw-border-blue-lighter hover:tw-border-white hover:tw-border-none hover:tw-text-blue hover:tw-bg-white tw-rounded-full tw-p-2" />
           </Icon>
         </a>
 
@@ -42,7 +42,7 @@ const Footer: React.FC = (): React.ReactElement => (
           className="tw-mx-4 lg:tw-mx-5"
         >
           <Icon variant="custom">
-            <DribbbleIcon className="tw-border-2 tw-border-blue-400 hover:tw-border-white hover:tw-border-none hover:tw-text-blue-500 hover:tw-bg-white tw-rounded-full tw-p-2" />
+            <DribbbleIcon className="tw-border-2 tw-border-blue-lighter hover:tw-border-white hover:tw-border-none hover:tw-text-blue hover:tw-bg-white tw-rounded-full tw-p-2" />
           </Icon>
         </a>
 
@@ -54,7 +54,7 @@ const Footer: React.FC = (): React.ReactElement => (
           className="tw-mx-4 lg:tw-mx-5"
         >
           <Icon variant="custom">
-            <LinkedinIcon className="tw-border-2 tw-border-blue-400 hover:tw-border-white hover:tw-border-none hover:tw-text-blue-500 hover:tw-bg-white tw-rounded-full tw-p-2" />
+            <LinkedinIcon className="tw-border-2 tw-border-blue-lighter hover:tw-border-white hover:tw-border-none hover:tw-text-blue hover:tw-bg-white tw-rounded-full tw-p-2" />
           </Icon>
         </a>
 
@@ -66,7 +66,7 @@ const Footer: React.FC = (): React.ReactElement => (
           className="tw-mx-4 lg:tw-mx-5"
         >
           <Icon variant="custom">
-            <TwitterIcon className="tw-border-2 tw-border-blue-400 hover:tw-border-white hover:tw-border-none hover:tw-text-blue-500 hover:tw-bg-white tw-rounded-full tw-p-2" />
+            <TwitterIcon className="tw-border-2 tw-border-blue-lighter hover:tw-border-white hover:tw-border-none hover:tw-text-blue hover:tw-bg-white tw-rounded-full tw-p-2" />
           </Icon>
         </a>
 
@@ -76,7 +76,7 @@ const Footer: React.FC = (): React.ReactElement => (
           className="tw-mx-4 lg:tw-mx-5"
         >
           <Icon variant="custom">
-            <MessageIcon className="tw-border-2 tw-border-blue-400 hover:tw-border-white hover:tw-border-none hover:tw-text-blue-500 hover:tw-bg-white tw-rounded-full tw-p-2" />
+            <MessageIcon className="tw-border-2 tw-border-blue-lighter hover:tw-border-white hover:tw-border-none hover:tw-text-blue hover:tw-bg-white tw-rounded-full tw-p-2" />
           </Icon>
         </a>
       </div>
