@@ -4,6 +4,7 @@ interface Project {
   name: string
   description: string
   startDate?: string
+  sourceUrl?: string
   projectUrl?: string
   featuredAt?: string
   images?: ProjectImage[]

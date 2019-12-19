@@ -2,15 +2,14 @@ import React from 'react'
 import Header from '@components/Header'
 import Footer from '@components/Footer'
 
-interface Props {
-  children?: React.ReactNode
-}
-
-const Layout: React.FC = (props: Props): React.ReactElement => (
-  <div>
+const Layout: React.FC<React.HtmlHTMLAttributes<{}>> = ({
+  children,
+  ...other
+}) => (
+  <div {...other}>
     <Header />
 
-    <main className="tw-mb-5">{props.children}</main>
+    <main className="tw-mb-5">{children}</main>
 
     <Footer />
   </div>

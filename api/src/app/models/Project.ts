@@ -17,6 +17,9 @@ export default class Project extends Model {
   startDate: string
 
   @Column({ nullable: true })
+  sourceUrl?: string
+
+  @Column({ nullable: true })
   projectUrl?: string
 
   @Column({ nullable: true })

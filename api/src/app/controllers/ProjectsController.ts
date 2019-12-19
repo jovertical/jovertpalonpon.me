@@ -12,7 +12,10 @@ import {
 import { FindManyOptions, Not, Repository, Equal } from 'typeorm'
 import Project from 'app/models/Project'
 import validateMiddleware from 'app/middlewares/validateMiddleware'
-import { storeValidation, updateValidation } from 'app/validations/projectsValidation'
+import {
+  storeValidation,
+  updateValidation
+} from 'app/validations/projectsValidation'
 import { getRepository, now, slugify } from 'helpers/utils'
 import Controller from './Controller'
 
@@ -53,6 +56,7 @@ export default class ProjectsController extends Controller {
         name: req.body.name,
         description: req.body.description,
         startDate: req.body.startDate,
+        sourceUrl: req.body.sourceUrl,
         projectUrl: req.body.projectUrl,
         featuredAt: req.body.featuredAt
       })
@@ -92,6 +96,7 @@ export default class ProjectsController extends Controller {
         project.name = req.body.name
         project.description = req.body.description
         project.startDate = req.body.startDate
+        project.sourceUrl = req.body.sourceUrl
         project.projectUrl = req.body.projectUrl
         project.featuredAt = req.body.featuredAt
         project.updatedAt = now()

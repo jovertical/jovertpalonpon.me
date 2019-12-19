@@ -30,6 +30,12 @@ export class ProjectsMigration1570591628052 implements MigrationInterface {
           },
 
           {
+            name: 'sourceUrl',
+            type: 'varchar',
+            isNullable: true
+          },
+
+          {
             name: 'projectUrl',
             type: 'varchar',
             isNullable: true
