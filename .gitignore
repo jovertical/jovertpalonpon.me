@@ -1,3 +1,5 @@
-yarn-error.log
-node_modules
+.env.build
+/out
+/.next
+/node_modules
 .DS_Store
