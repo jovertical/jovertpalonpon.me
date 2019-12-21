@@ -66,7 +66,10 @@ const FeaturedProjects = (): React.ReactElement => {
                           {project.description}
                         </p>
 
-                        <Link href={`/projects/${project.slug}`}>
+                        <Link
+                          href="/projects/[slug]"
+                          as={`/projects/${project.slug}`}
+                        >
                           <Button>
                             <p className="tw-text-white">View Project</p>
                           </Button>

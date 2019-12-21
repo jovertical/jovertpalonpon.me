@@ -58,7 +58,10 @@ const Projects: React.FC = () => {
 
                 <div className="tw-relative tw-w-full tw-h-32 tw-text-left">
                   <div className="tw-flex tw-justify-between">
-                    <Link href={`/projects/${project.slug}`}>
+                    <Link
+                      href="/projects/[slug]"
+                      as={`/projects/${project.slug}`}
+                    >
                       <a
                         title={`View ${project.name}`}
                         className="hover:tw-text-blue"
