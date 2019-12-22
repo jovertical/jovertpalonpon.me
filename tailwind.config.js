@@ -37,6 +37,7 @@ module.exports = {
   variants: {
     backgroundImage: ['hover'],
     backgroundColor: ['hover'],
+    borderWidth: ['responsive', 'hover'],
     display: ['responsive', 'hover', 'focus']
   },
   plugins: [

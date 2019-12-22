@@ -1,11 +1,14 @@
 import React, { useState } from 'react'
-import Link from 'next/link'
+import NextLink from 'next/link'
+import { useRouter } from 'next/router'
 import cx from 'classnames'
 import Button from '@components/Button'
+import Link from '@components/Link'
 import Logo from '@components/Logo'
 import { range } from '@helpers/utils'
 
 const Header: React.FC = (): React.ReactElement => {
+  const router = useRouter()
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
@@ -16,21 +19,24 @@ const Header: React.FC = (): React.ReactElement => {
         </div>
 
         <div className="tw-px-4">
-          <Link href="/projects">
-            <a className="hover:tw-text-blue">Projects</a>
+          <Link
+            href="/projects"
+            className={cx({
+              'tw-text-blue': router.asPath === '/projects'
+            })}
+          >
+            Projects
           </Link>
         </div>
 
         <div className="tw-px-4">
-          <Link href="/">
-            <a className="hover:tw-text-blue">Blog</a>
-          </Link>
+          <Link href="/">Blog</Link>
         </div>
 
         <div className="tw-px-4">
-          <Link href="/contact">
-            <Button>Contact</Button>
-          </Link>
+          <NextLink href="/contact">
+            <Button variant="primary">Contact</Button>
+          </NextLink>
         </div>
       </div>
 
@@ -62,21 +68,17 @@ const Header: React.FC = (): React.ReactElement => {
             </div>
 
             <div className="tw-py-2">
-              <Link href="/projects">
-                <a className="hover:tw-text-blue">Projects</a>
-              </Link>
+              <Link href="/projects">Projects</Link>
             </div>
 
             <div className="tw-py-2">
-              <Link href="/">
-                <a className="hover:tw-text-blue">Blog</a>
-              </Link>
+              <Link href="/">Blog</Link>
             </div>
 
             <div className="tw-py-2">
-              <Link href="/">
+              <NextLink href="/">
                 <Button>Contact</Button>
-              </Link>
+              </NextLink>
             </div>
           </div>
         )}
