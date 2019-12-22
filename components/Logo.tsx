@@ -14,21 +14,20 @@ const Logo: React.FC<Props> = ({
   ...other
 }) => (
   <Link href="/">
-    <a title="home">
-      <img
-        alt="Logo"
-        src={variant === 'secondary' ? '/png/logo-white.png' : '/png/logo.png'}
-        className={cx(
-          {
-            'tw-w-16': size === 'sm',
-            'tw-w-20': size === 'md',
-            'tw-w-24': size === 'lg'
-          },
-          className
-        )}
-        {...other}
-      />
-    </a>
+    <img
+      alt="Logo"
+      src={variant === 'secondary' ? '/png/logo-white.png' : '/png/logo.png'}
+      className={cx(
+        'tw-cursor-pointer',
+        {
+          'tw-w-16': size === 'sm',
+          'tw-w-20': size === 'md',
+          'tw-w-24': size === 'lg'
+        },
+        className
+      )}
+      {...other}
+    />
   </Link>
 )
 

@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import NextLink from 'next/link'
 import { useRouter } from 'next/router'
 import cx from 'classnames'
 import Button from '@components/Button'
@@ -34,9 +33,7 @@ const Header: React.FC = (): React.ReactElement => {
         </div>
 
         <div className="tw-px-4">
-          <NextLink href="/contact">
-            <Button variant="primary">Contact</Button>
-          </NextLink>
+          <Button variant="primary">Contact</Button>
         </div>
       </div>
 
@@ -76,9 +73,9 @@ const Header: React.FC = (): React.ReactElement => {
             </div>
 
             <div className="tw-py-2">
-              <NextLink href="/">
+              <Link href="/" variant="custom">
                 <Button>Contact</Button>
-              </NextLink>
+              </Link>
             </div>
           </div>
         )}

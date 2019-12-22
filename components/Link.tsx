@@ -1,27 +1,26 @@
-import React from 'react'
+import React, { forwardRef, useRef } from 'react'
 import NextLink from 'next/link'
 import cx from 'classnames'
-import { UrlObject } from 'url'
 
-interface Props {
+interface Props extends React.AnchorHTMLAttributes<{}> {
   href?: string
-  as?: string | UrlObject
-  variant?: 'primary' | 'secondary'
+  variant?: 'primary' | 'secondary' | 'custom'
   className?: string
   children: React.ReactNode
 }
 
-const Link: React.FC<Props> = ({
-  href = '/',
-  as = undefined,
-  variant = 'primary',
-  children,
-  className,
-  ...other
-}) => (
-  <NextLink href={href} as={as}>
+interface LinkProps extends Props {
+  as?: string
+}
+
+// eslint-disable-next-line
+const RawLink: React.FC<Props> = forwardRef(
+  ({ href, variant, className, children, ...other }, ref) => (
     <a
+      title={href}
+      href={href}
       className={cx(
+        'tw-cursor-pointer',
         {
           'hover:tw-text-blue': variant === 'primary',
           'tw-text-white hover:tw-underline': variant === 'secondary'
@@ -32,7 +31,24 @@ const Link: React.FC<Props> = ({
     >
       {children}
     </a>
-  </NextLink>
+  )
 )
+
+export const ExternalLink: React.FC<Props> = ({ ...other }) => (
+  <RawLink target="_blank" rel="noopener noreferrer" {...other} />
+)
+
+const Link: React.FC<LinkProps> = ({
+  href = '/',
+  as = undefined,
+  variant = 'primary',
+  ...other
+}) => {
+  return (
+    <NextLink href={href} as={as}>
+      <RawLink href={undefined} variant={variant} {...other} />
+    </NextLink>
+  )
+}
 
 export default Link
