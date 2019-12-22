@@ -13,7 +13,7 @@ const Footer: React.FC = (): React.ReactElement => (
   <footer className="tw-bg-blue tw-text-white">
     <div className="tw-text-center lg:tw-w-1/2 tw-p-5 lg:tw-p-32 tw-mx-auto">
       <div className="tw-mb-5 tw-inline-block">
-        <Logo variant="secondary" />
+        <Logo variant="secondary" size="lg" />
       </div>
 
       <Text variant="h6" className="tw-mb-10 tw-text-gray-400">

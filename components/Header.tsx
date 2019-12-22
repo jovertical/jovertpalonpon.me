@@ -15,7 +15,7 @@ const Header: React.FC = (): React.ReactElement => {
     <nav className="tw-py-5">
       <div className="tw-hidden lg:tw-flex tw-items-center tw-w-4/5 tw-mx-auto">
         <div className="tw-flex-grow">
-          <Logo />
+          <Logo size="sm" />
         </div>
 
         <div className="tw-px-4">
