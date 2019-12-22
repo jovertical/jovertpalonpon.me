@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import Link from 'next/link'
 import Card from '@components/Card'
 import Layout from '@components/Layout'
 import Loader from '@components/Loader'
+import Link from '@components/Link'
 import Text from '@components/Text'
 import { get } from '@helpers/api'
 
@@ -62,14 +62,9 @@ const Projects: React.FC = () => {
                       href="/projects/[slug]"
                       as={`/projects/${project.slug}`}
                     >
-                      <a
-                        title={`View ${project.name}`}
-                        className="hover:tw-text-blue"
-                      >
-                        <Text weight="bold" className="tw-mb-2">
-                          {project.name}
-                        </Text>
-                      </a>
+                      <Text weight="bold" className="tw-mb-2">
+                        {project.name}
+                      </Text>
                     </Link>
                   </div>
                   <Text variant="sub" className="tw-mb-2">
