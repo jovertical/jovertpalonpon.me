@@ -68,7 +68,10 @@ const Index: React.FC = (): React.ReactElement => (
             </Text>
 
             <Text className="tw-mb-10">
-              {SKILLS.frontendLanguages.map(lang => lang + ', ')}
+              {SKILLS.frontendLanguages.map(
+                (lang, i) =>
+                  lang + (i + 1 === SKILLS.frontendLanguages.length ? '' : ', ')
+              )}
             </Text>
 
             <Text variant="h6" className="tw-mb-2 tw-text-blue">
@@ -111,7 +114,10 @@ const Index: React.FC = (): React.ReactElement => (
             </Text>
 
             <Text className="tw-mb-10">
-              {SKILLS.backendLanguages.map(lang => lang + ', ')}
+              {SKILLS.backendLanguages.map(
+                (lang, i) =>
+                  lang + (i + 1 === SKILLS.backendLanguages.length ? '' : ', ')
+              )}
             </Text>
 
             <Text variant="h6" className="tw-mb-2 tw-text-blue">
@@ -145,7 +151,7 @@ const Index: React.FC = (): React.ReactElement => (
 
             <Text className="tw-h-32 tw-mb-10">
               My interest in DevOps and cloud has just developed over the years,
-              its just fulfilling to see your app being a reality.I ensure that
+              its just fulfilling to see your app being a reality. I ensure that
               the app is secure &amp; scalable.
             </Text>
 
@@ -154,7 +160,10 @@ const Index: React.FC = (): React.ReactElement => (
             </Text>
 
             <Text className="tw-mb-10">
-              {SKILLS.devOpsTools.map(tool => tool + ', ')}
+              {SKILLS.devOpsTools.map(
+                (lang, i) =>
+                  lang + (i + 1 === SKILLS.devOpsTools.length ? '' : ', ')
+              )}
             </Text>
 
             <Text variant="h6" className="tw-mb-2 tw-text-blue">
