@@ -10,6 +10,8 @@ interface Project {
   images?: ProjectImage[]
   createdAt: string
   updatedAt: string
+  previousProject?: Project
+  nextProject?: Project
 }
 
 interface ProjectImage {

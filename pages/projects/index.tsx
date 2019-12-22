@@ -42,7 +42,7 @@ const Projects: React.FC = () => {
           <Loader />
         ) : (
           <div>
-            {projects.map(project => (
+            {projects.map((project, i) => (
               <Card
                 key={project.id}
                 className="tw-flex tw-flex-col lg:tw-flex-row tw-mb-3 lg:tw-mb-5"

@@ -23,13 +23,16 @@ const Header: React.FC = (): React.ReactElement => {
             className={cx({
               'tw-text-blue': router.asPath === '/projects'
             })}
+            variant="primary"
           >
             Projects
           </Link>
         </div>
 
         <div className="tw-px-4">
-          <Link href="/">Blog</Link>
+          <Link href="/" variant="primary">
+            Blog
+          </Link>
         </div>
 
         <div className="tw-px-4">

@@ -1,10 +1,10 @@
-import React, { forwardRef, useRef } from 'react'
+import React, { forwardRef } from 'react'
 import NextLink from 'next/link'
 import cx from 'classnames'
 
 interface Props extends React.AnchorHTMLAttributes<{}> {
   href?: string
-  variant?: 'primary' | 'secondary' | 'custom'
+  variant?: 'default' | 'primary' | 'secondary' | 'custom'
   className?: string
   children: React.ReactNode
 }
@@ -22,6 +22,7 @@ const RawLink: React.FC<Props> = forwardRef(
       className={cx(
         'tw-cursor-pointer',
         {
+          'hover:tw-underline': variant === 'default',
           'hover:tw-text-blue': variant === 'primary',
           'tw-text-white hover:tw-underline': variant === 'secondary'
         },
@@ -41,7 +42,7 @@ export const ExternalLink: React.FC<Props> = ({ ...other }) => (
 const Link: React.FC<LinkProps> = ({
   href = '/',
   as = undefined,
-  variant = 'primary',
+  variant = 'default',
   ...other
 }) => {
   return (
