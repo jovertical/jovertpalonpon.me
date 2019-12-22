@@ -4,6 +4,7 @@ export const frontendLanguages: string[] = [
   'Javascript',
   'Typescript',
   'React.js',
+  'Redux',
   'jQuery',
   'Sass'
 ]
@@ -11,6 +12,7 @@ export const frontendLanguages: string[] = [
 export const frontendTools: string[] = [
   'Webpack',
   'Next.js',
+  'Jest',
   'Tailwind CSS',
   'Material UI',
   'Bootstrap',
@@ -21,22 +23,23 @@ export const backendLanguages: string[] = [
   'PHP',
   'MySQL',
   'Laravel',
-  'Lumen',
-  'Slim',
-  'Codeigniter',
-  'Wordpress'
+  'Wordpress',
+  'Typescript',
+  'Node.js',
+  'Express.js'
 ]
 
 export const backendTools: string[] = [
   'PHPUnit',
   'PHP CS Fixer',
-  'PHP Insights'
+  'PHP Insights',
+  'Jest'
 ]
 
 export const devOpsTools: string[] = [
   'Github Actions',
   'Docker',
-  'Kubernetes',
+  'Docker Compose',
   'Nginx',
   'Apache'
 ]
@@ -45,5 +48,6 @@ export const cloudPlatforms: string[] = [
   'Google Cloud Platform (GCP)',
   'Amazon Web Services (AWS)',
   'Heroku',
-  'Netlify'
+  'Netlify',
+  'Now'
 ]
