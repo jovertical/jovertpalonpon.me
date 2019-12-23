@@ -6,6 +6,7 @@ interface Project {
   startDate?: string
   sourceUrl?: string
   projectUrl?: string
+  iconUrl?: string
   featuredAt?: string
   images?: ProjectImage[]
   createdAt: string
