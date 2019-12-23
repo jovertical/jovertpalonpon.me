@@ -4,9 +4,23 @@ const withCss = require('@zeit/next-css')
 const withPurgeCss = require('next-purgecss')
 
 const API_URL = process.env.API_URL || 'https://jovertpalonpon.herokuapp.com'
+const isProduction = process.env.NODE_ENV === 'production'
 const config = {
-  exportTrailingSlash: process.env.NODE_ENV === 'production',
-  exportPathMap: async function () {
+  env: {
+    API_URL
+  },
+  webpack(config) {
+    config.resolve.alias['@components'] = path.join(__dirname, 'components')
+    config.resolve.alias['@constants'] = path.join(__dirname, 'constants')
+    config.resolve.alias['@helpers'] = path.join(__dirname, 'helpers')
+    config.resolve.alias['@styles'] = path.join(__dirname, 'styles')
+    return config
+  },
+}
+
+if (isProduction) {
+  config.exportTrailingSlash = true
+  config.exportPathMap = async function () {
     const paths = {
       '/': { page: '/' },
       '/projects': { page: '/projects' },
@@ -22,17 +36,7 @@ const config = {
     })
 
     return paths
-  },
-  env: {
-    API_URL
-  },
-  webpack(config) {
-    config.resolve.alias['@components'] = path.join(__dirname, 'components')
-    config.resolve.alias['@constants'] = path.join(__dirname, 'constants')
-    config.resolve.alias['@helpers'] = path.join(__dirname, 'helpers')
-    config.resolve.alias['@styles'] = path.join(__dirname, 'styles')
-    return config
-  },
+  }
 }
 
 module.exports = withCss(withPurgeCss({
@@ -51,6 +55,7 @@ module.exports = withCss(withPurgeCss({
     ],
     whitelistPatterns: [
       /nprogress/,
+      /ril/,
     ],
     defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || []
   },

@@ -26,7 +26,9 @@ const Button: React.FC<Props> = ({
       'tw-inline-block tw-px-5 tw-py-2 tw-rounded-full tw-text-white tw-text-sm tw-tracking-wide tw-font-semibold focus:tw-outline-none',
       {
         'tw-bg-transparent hover:tw-bg-blue tw-border-2 tw-border-blue tw-text-blue hover:tw-text-white focus:tw-shadow-outline':
-          variant === 'primary'
+          variant === 'primary',
+        'tw-bg-white tw-border-2 tw-border-white tw-text-gray-900 hover:tw-text-blue focus:tw-shadow-outline':
+          variant === 'secondary'
       },
       className
     )}

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import Link from 'next/link'
 import Button from '@components/Button'
 import Loader from '@components/Loader'
+import Link from '@components/Link'
 import Text from '@components/Text'
 import { get } from '@helpers/api'
 
@@ -40,12 +40,9 @@ const FeaturedProjects = (): React.ReactElement => {
             {projects.length === 0 ? (
               <Text>
                 No Projects Featured.{' '}
-                <a
-                  href="/projects"
-                  className="tw-text-blue hover:tw-text-blue-lighter"
-                >
-                  View All?
-                </a>
+                <Link href="/projects" className="tw-text-blue">
+                  View All
+                </Link>
               </Text>
             ) : (
               <div className="tw-flex tw-flex-wrap tw--mx-2 tw-mb-10">
@@ -66,10 +63,12 @@ const FeaturedProjects = (): React.ReactElement => {
                           {project.description}
                         </p>
 
-                        <Link href={`/projects/${project.slug}`}>
-                          <Button>
-                            <p className="tw-text-white">View Project</p>
-                          </Button>
+                        <Link
+                          href="/projects/[slug]"
+                          as={`/projects/${project.slug}`}
+                          variant="custom"
+                        >
+                          <Button variant="secondary">View Project</Button>
                         </Link>
                       </div>
                     </div>

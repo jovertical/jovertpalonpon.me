@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.facebook-icon:hover {
+  background-color: #3866b8;
+}
+
+.twitter-icon:hover {
+  background-color: #00a2f9;
+}

@@ -1,6 +1,11 @@
 module.exports = {
   prefix: 'tw-',
   theme: {
+    linearGradients: {
+      colors: {
+        'blue-darker-blue': ['#2b6cb0', '#4299e1'],
+      }
+    },
     rotate: {
       '45': '45deg',
       '90': '90deg',
@@ -37,9 +42,21 @@ module.exports = {
   variants: {
     backgroundImage: ['hover'],
     backgroundColor: ['hover'],
+    borderWidth: ['responsive', 'hover'],
     display: ['responsive', 'hover', 'focus']
   },
   plugins: [
+    function ({ addUtilities }) {
+      const newUtilities = {
+        '.cursor-zoom-in': {
+          cursor: 'zoom-in',
+          cursor: '-webkit-zoom-in',
+          cursor: '-moz-zoom-in',
+        },
+      }
+      addUtilities(newUtilities, ['responsive'])
+    },
+    require('tailwindcss-gradients')(),
     require('tailwindcss-transforms')(),
     require('tailwindcss-transitions')(),
   ]
