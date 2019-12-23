@@ -11,7 +11,7 @@ import Text from '@components/Text'
 import { social as socialLinks } from '@constants/links'
 
 const Footer: React.FC = (): React.ReactElement => (
-  <footer className="tw-bg-blue tw-text-white">
+  <footer className="tw-bg-gradient-t-blue-darker-blue tw-text-white">
     <div className="tw-text-center lg:tw-w-1/2 tw-p-5 lg:tw-p-32 tw-mx-auto">
       <div className="tw-mb-5 tw-inline-block">
         <Logo variant="secondary" size="lg" />

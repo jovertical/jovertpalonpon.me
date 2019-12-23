@@ -44,7 +44,7 @@ const Project: React.FC = () => {
         <Loader />
       ) : (
         <>
-          <div className="tw-py-16 tw-bg-blue">
+          <div className="tw-py-16 tw-bg-gradient-r-blue-darker-blue">
             <div className="lg:tw-w-3/4 tw-mx-auto">
               <Text variant="h4" weight="bold" className="tw-text-white">
                 {project?.name}
@@ -88,11 +88,11 @@ const Project: React.FC = () => {
             </span>
 
             <div className="tw-flex">
-              <Icon variant="custom" className="tw-mx-4">
+              <Icon variant="custom" size="sm" className="tw-mx-3">
                 <FacebookIcon className="facebook-icon tw-rounded-full tw-p-2 tw-bg-gray-500 tw-text-white" />
               </Icon>
 
-              <Icon variant="custom" className="tw-mx-4">
+              <Icon variant="custom" size="sm" className="tw-mx-3">
                 <TwitterIcon className="twitter-icon tw-rounded-full tw-p-2 tw-bg-gray-500 tw-text-white" />
               </Icon>
             </div>

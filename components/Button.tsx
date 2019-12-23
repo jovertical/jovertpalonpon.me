@@ -27,7 +27,7 @@ const Button: React.FC<Props> = ({
       {
         'tw-bg-transparent hover:tw-bg-blue tw-border-2 tw-border-blue tw-text-blue hover:tw-text-white focus:tw-shadow-outline':
           variant === 'primary',
-        'tw-bg-transparent hover:tw-bg-white tw-border-2 tw-border-white tw-text-white hover:tw-text-blue focus:tw-shadow-outline':
+        'tw-bg-white tw-border-2 tw-border-white tw-text-gray-900 hover:tw-text-blue focus:tw-shadow-outline':
           variant === 'secondary'
       },
       className

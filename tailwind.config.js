@@ -1,6 +1,11 @@
 module.exports = {
   prefix: 'tw-',
   theme: {
+    linearGradients: {
+      colors: {
+        'blue-darker-blue': ['#2b6cb0', '#4299e1'],
+      }
+    },
     rotate: {
       '45': '45deg',
       '90': '90deg',
@@ -41,6 +46,7 @@ module.exports = {
     display: ['responsive', 'hover', 'focus']
   },
   plugins: [
+    require('tailwindcss-gradients')(),
     require('tailwindcss-transforms')(),
     require('tailwindcss-transitions')(),
   ]
