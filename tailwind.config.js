@@ -46,6 +46,16 @@ module.exports = {
     display: ['responsive', 'hover', 'focus']
   },
   plugins: [
+    function ({ addUtilities }) {
+      const newUtilities = {
+        '.cursor-zoom-in': {
+          cursor: 'zoom-in',
+          cursor: '-webkit-zoom-in',
+          cursor: '-moz-zoom-in',
+        },
+      }
+      addUtilities(newUtilities, ['responsive'])
+    },
     require('tailwindcss-gradients')(),
     require('tailwindcss-transforms')(),
     require('tailwindcss-transitions')(),

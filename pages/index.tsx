@@ -6,7 +6,7 @@ import * as SKILLS from '@constants/skills'
 
 const Index: React.FC = (): React.ReactElement => (
   <Layout>
-    <section className="tw-pt-5">
+    <section className="tw-pt-5 tw-bg-white">
       <div className="tw-py-16 tw-px-5 lg:tw-px-0 tw-text-center">
         <Text variant="h3" weight="bold" className="tw-mb-5">
           Full Stack Developer

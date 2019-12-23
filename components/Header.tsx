@@ -11,7 +11,7 @@ const Header: React.FC = (): React.ReactElement => {
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
-    <nav className="tw-py-5">
+    <nav className="tw-py-5 tw-bg-white">
       <div className="tw-hidden lg:tw-flex tw-items-center tw-w-4/5 tw-mx-auto">
         <div className="tw-flex-grow">
           <Logo size="sm" />

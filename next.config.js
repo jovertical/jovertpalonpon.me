@@ -55,6 +55,7 @@ module.exports = withCss(withPurgeCss({
     ],
     whitelistPatterns: [
       /nprogress/,
+      /ril/,
     ],
     defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || []
   },
