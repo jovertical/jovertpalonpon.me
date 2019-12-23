@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
+import LazyLoad from 'react-lazyload'
 import Button from '@components/Button'
 import Icon from '@components/Icon'
 import AngleLeftIcon from '@components/Icons/AngleLeft'
@@ -165,10 +166,12 @@ const Project: React.FC = () => {
                   className="tw-w-full lg:tw-w-1/3 tw-mb-4 tw-px-2 tw-cursor-zoom-in"
                   onClick={(): void => setActiveImage(i)}
                 >
-                  <div
-                    style={{ backgroundImage: `url("${image.url}")` }}
-                    className="tw-pt-11:8 tw-h-0 tw-bg-cover tw-bg-center tw-rounded"
-                  />
+                  <LazyLoad>
+                    <div
+                      style={{ backgroundImage: `url("${image.url}")` }}
+                      className="tw-pt-11:8 tw-h-0 tw-bg-cover tw-bg-center tw-rounded"
+                    />
+                  </LazyLoad>
                 </div>
               ))}
               <Lightbox

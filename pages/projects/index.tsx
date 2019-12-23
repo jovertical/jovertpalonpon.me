@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import LazyLoad from 'react-lazyload'
 import Card from '@components/Card'
 import Layout from '@components/Layout'
 import Loader from '@components/Loader'
@@ -48,12 +49,14 @@ const Projects: React.FC = () => {
                 className="tw-flex tw-flex-col lg:tw-flex-row tw-mb-3 lg:tw-mb-5"
               >
                 <div className="tw-w-full lg:tw-w-64 tw-mb-5 lg:tw-mb-0 tw-mr-5">
-                  <div
-                    className="tw-w-full tw-h-0 tw-pt-11:8 tw-bg-cover tw-bg-center"
-                    style={{
-                      backgroundImage: `url('${project.images?.[0]?.url}')`
-                    }}
-                  />
+                  <LazyLoad>
+                    <div
+                      className="tw-w-full tw-h-0 tw-pt-11:8 tw-bg-cover tw-bg-center"
+                      style={{
+                        backgroundImage: `url('${project.images?.[0]?.url}')`
+                      }}
+                    />
+                  </LazyLoad>
                 </div>
 
                 <div className="tw-relative tw-w-full tw-h-32 tw-text-left">

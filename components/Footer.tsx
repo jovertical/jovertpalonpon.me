@@ -1,4 +1,5 @@
 import React from 'react'
+import LazyLoad from 'react-lazyload'
 import Icon from '@components/Icon'
 import DribbbleIcon from '@components/Icons/Dribbble'
 import GithubIcon from '@components/Icons/Github'
@@ -14,7 +15,9 @@ const Footer: React.FC = (): React.ReactElement => (
   <footer className="tw-bg-gradient-t-blue-darker-blue tw-text-white">
     <div className="tw-text-center lg:tw-w-1/2 tw-p-5 lg:tw-p-32 tw-mx-auto">
       <div className="tw-mb-5 tw-inline-block">
-        <Logo variant="secondary" size="lg" />
+        <LazyLoad>
+          <Logo variant="secondary" size="lg" />
+        </LazyLoad>
       </div>
 
       <Text variant="h6" className="tw-mb-10 tw-text-white">

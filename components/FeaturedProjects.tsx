@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import LazyLoad from 'react-lazyload'
 import Button from '@components/Button'
 import Loader from '@components/Loader'
 import Link from '@components/Link'
@@ -51,27 +52,29 @@ const FeaturedProjects = (): React.ReactElement => {
                     key={project.id}
                     className="project tw-w-full lg:tw-w-1/3 tw-px-2 tw-mb-5"
                   >
-                    <div
-                      className="content tw-w-full tw-h-0 tw-pt-16:9 tw-relative tw-bg-cover tw-bg-center tw-rounded-lg hover:tw-bg-gray-800"
-                      style={{
-                        backgroundImage: `url("${project.images?.[0]?.url ??
-                          '/svg/portfolio_essv.svg'}")`
-                      }}
-                    >
-                      <div className="details tw-hidden tw-flex-col tw-justify-center tw-items-center tw-absolute tw-inset-0 tw-w-full tw-h-full tw-p-10">
-                        <p className="tw-text-white tw-mb-5">
-                          {project.description}
-                        </p>
+                    <LazyLoad>
+                      <div
+                        className="content tw-w-full tw-h-0 tw-pt-16:9 tw-relative tw-bg-cover tw-bg-center tw-rounded-lg hover:tw-bg-gray-800"
+                        style={{
+                          backgroundImage: `url("${project.images?.[0]?.url ??
+                            '/svg/portfolio_essv.svg'}")`
+                        }}
+                      >
+                        <div className="details tw-hidden tw-flex-col tw-justify-center tw-items-center tw-absolute tw-inset-0 tw-w-full tw-h-full tw-p-10">
+                          <p className="tw-text-white tw-mb-5">
+                            {project.description}
+                          </p>
 
-                        <Link
-                          href="/projects/[slug]"
-                          as={`/projects/${project.slug}`}
-                          variant="custom"
-                        >
-                          <Button variant="secondary">View Project</Button>
-                        </Link>
+                          <Link
+                            href="/projects/[slug]"
+                            as={`/projects/${project.slug}`}
+                            variant="custom"
+                          >
+                            <Button variant="secondary">View Project</Button>
+                          </Link>
+                        </div>
                       </div>
-                    </div>
+                    </LazyLoad>
                   </div>
                 ))}
               </div>
