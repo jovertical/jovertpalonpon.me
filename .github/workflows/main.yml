@@ -3,7 +3,7 @@ name: Actions
 on:
   push:
     branches:
-      - master
+      - '!master'
 
 jobs:
   Build-Deploy:
