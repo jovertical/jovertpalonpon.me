@@ -1,5 +1,15 @@
-interface Project {
+interface Model {
   id: number
+  createdAt: string
+  updatedAt: string
+}
+
+interface Tag extends Model {
+  name: string
+  description?: string
+}
+
+interface Project extends Model {
   slug: string
   name: string
   description: string
@@ -9,8 +19,7 @@ interface Project {
   iconUrl?: string
   featuredAt?: string
   images?: ProjectImage[]
-  createdAt: string
-  updatedAt: string
+  tags?: Tag[]
   previousProject?: Project
   nextProject?: Project
 }

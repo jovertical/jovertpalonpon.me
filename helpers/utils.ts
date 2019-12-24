@@ -1,4 +1,23 @@
 /**
+ * Shorten a given text
+ *
+ * @param subject The text to truncate
+ * @param limit Length where to cut the text
+ * @param delimiter The text to be appended
+ */
+export function truncate(
+  subject: string,
+  limit: number,
+  delimiter = '...'
+): string {
+  if (subject.length <= limit) {
+    return subject
+  }
+
+  return subject.slice(0, limit) + delimiter
+}
+
+/**
  * Create a randomly scoped number
  *
  * @param min Lowest number to create

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import LazyLoad from 'react-lazyload'
+import cx from 'classnames'
 import Button from '@components/Button'
 import Icon from '@components/Icon'
 import AngleLeftIcon from '@components/Icons/AngleLeft'
@@ -59,11 +60,24 @@ const Project: React.FC = () => {
                   <ExternalLink href={project?.projectUrl} variant="custom">
                     <Text
                       variant="sub"
-                      className="tw-text-gray-300 hover:tw-text-gray-100 tw-cursor-pointer tw-mb-5"
+                      className="tw-text-gray-300 hover:tw-text-gray-100 tw-cursor-pointer tw-mb-2"
                     >
                       {project?.projectUrl}
                     </Text>
                   </ExternalLink>
+                  <div className="tw-flex tw-justify-center lg:tw-justify-start tw-flex-wrap tw--mx-1 tw-mb-5">
+                    {project?.tags?.map(tag => (
+                      <Link
+                        href={`/projects?tag=${tag.name}`}
+                        className="tw-mx-1 tw-mt-2 tw-px-3 tw-py-1 tw-rounded-full tw-bg-blue hover:tw-bg-blue-darker"
+                        variant="custom"
+                      >
+                        <Text variant="sub" className="tw-text-white">
+                          {tag.name}
+                        </Text>
+                      </Link>
+                    ))}
+                  </div>
                   <Text className="tw-text-white tw-mb-5 lg:tw-h-24 lg:tw-mb-0">
                     {project?.description}
                   </Text>
@@ -108,21 +122,21 @@ const Project: React.FC = () => {
               </div>
             </div>
             <div className="tw-hidden lg:tw-flex tw-justify-between tw-px-10 tw-py-4 tw-bg-gray-300">
-              <span className="tw-flex tw-items-center">
-                {project?.previousProject !== null && (
-                  <>
-                    <Icon variant="custom" className="tw-mr-2">
-                      <ArrowLeftIcon className="tw-text-gray-700" />
-                    </Icon>
-                    <Link
-                      href="/projects/[slug]"
-                      as={`/projects/${project?.previousProject?.slug}`}
-                      className="tw-text-gray-700"
-                    >
-                      Previous Project
-                    </Link>
-                  </>
-                )}
+              <span
+                className={cx('tw-flex tw-items-center', {
+                  'tw-invisible': project?.previousProject === null
+                })}
+              >
+                <Icon variant="custom" className="tw-mr-2">
+                  <ArrowLeftIcon className="tw-text-gray-700" />
+                </Icon>
+                <Link
+                  href="/projects/[slug]"
+                  as={`/projects/${project?.previousProject?.slug}`}
+                  className="tw-text-gray-700"
+                >
+                  Previous Project
+                </Link>
               </span>
 
               <div className="tw-flex">
@@ -135,21 +149,21 @@ const Project: React.FC = () => {
                 </Icon>
               </div>
 
-              <span className="tw-flex tw-items-center">
-                {project?.nextProject !== null && (
-                  <>
-                    <Link
-                      href="/projects/[slug]"
-                      as={`/projects/${project?.nextProject?.slug}`}
-                      className="tw-mr-2 tw-text-gray-700"
-                    >
-                      Next Project
-                    </Link>
-                    <Icon variant="custom">
-                      <ArrowRightIcon className="tw-text-gray-700" />
-                    </Icon>
-                  </>
-                )}
+              <span
+                className={cx('tw-flex tw-items-center', {
+                  'tw-invisible': project?.nextProject === null
+                })}
+              >
+                <Link
+                  href="/projects/[slug]"
+                  as={`/projects/${project?.nextProject?.slug}`}
+                  className="tw-mr-2 tw-text-gray-700"
+                >
+                  Next Project
+                </Link>
+                <Icon variant="custom">
+                  <ArrowRightIcon className="tw-text-gray-700" />
+                </Icon>
               </span>
             </div>
           </section>
