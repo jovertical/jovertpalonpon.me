@@ -1,15 +1,20 @@
 /**
+ * Whether in Node.js environment or not.
+ */
+export const inServer = (): boolean => typeof window === 'undefined'
+
+/**
  * Shorten a given text
  *
  * @param subject The text to truncate
  * @param limit Length where to cut the text
  * @param delimiter The text to be appended
  */
-export function truncate(
+export const truncate = (
   subject: string,
   limit: number,
   delimiter = '...'
-): string {
+): string => {
   if (subject.length <= limit) {
     return subject
   }
@@ -23,7 +28,7 @@ export function truncate(
  * @param min Lowest number to create
  * @param max Highest number to create
  */
-export function random(min: number, max: number): number {
+export const random = (min: number, max: number): number => {
   return Math.floor(Math.random() * (max - min + 1)) + min
 }
 

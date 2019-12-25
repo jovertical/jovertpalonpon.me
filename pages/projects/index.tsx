@@ -6,6 +6,7 @@ import Card from '@components/Card'
 import Layout from '@components/Layout'
 import Loader from '@components/Loader'
 import Link from '@components/Link'
+import SEO from '@components/SEO'
 import Text from '@components/Text'
 import { get } from '@helpers/api'
 import { truncate } from '@helpers/utils'
@@ -34,6 +35,10 @@ const Projects: React.FC = () => {
 
   return (
     <Layout>
+      <SEO
+        title="Jovert's Projects"
+        description="Here is a list of projects I created and/or contributed to, from open source tools, start-up projects &amp; corporate software."
+      />
       <div className="tw-mb-10 tw-py-16 tw-px-5 lg:tw-px-0 tw-text-center tw-bg-blue">
         <Text variant="h4" weight="bold" className="tw-text-white tw-mb-5">
           My Projects

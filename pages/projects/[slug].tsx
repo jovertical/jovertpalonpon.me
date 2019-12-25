@@ -14,6 +14,7 @@ import Layout from '@components/Layout'
 import Lightbox from '@components/Lightbox'
 import Link, { ExternalLink } from '@components/Link'
 import Loader from '@components/Loader'
+import SEO from '@components/SEO'
 import Text from '@components/Text'
 import { get } from '@helpers/api'
 
@@ -46,6 +47,12 @@ const Project: React.FC = () => {
 
   return (
     <Layout>
+      <SEO
+        title={`Jovert's Projects: ${project?.name}`}
+        description={project?.description}
+        image={project?.image?.url}
+      />
+
       {loading ? (
         <Loader />
       ) : (
