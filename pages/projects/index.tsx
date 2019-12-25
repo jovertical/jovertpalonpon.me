@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
 import LazyLoad from 'react-lazyload'
 import Button from '@components/Button'
 import Card from '@components/Card'
@@ -10,13 +11,15 @@ import { get } from '@helpers/api'
 import { truncate } from '@helpers/utils'
 
 const Projects: React.FC = () => {
+  const router = useRouter()
+  const qp = new URLSearchParams(router.asPath.match(/\?.*/g)?.[0] ?? '?')
   const [projects, setProjects] = useState<Project[]>([])
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     setLoading(true)
 
-    get('/projects').then(({ status, body }) => {
+    get('/projects', { tag: qp.get('tag') }).then(({ status, body }) => {
       switch (status) {
         case 200:
           setProjects(body)
@@ -27,7 +30,7 @@ const Projects: React.FC = () => {
 
       setLoading(false)
     })
-  }, [])
+  }, [router])
 
   return (
     <Layout>
@@ -55,7 +58,7 @@ const Projects: React.FC = () => {
                     <div
                       className="tw-w-full tw-h-0 tw-pt-11:8 tw-bg-cover tw-bg-center"
                       style={{
-                        backgroundImage: `url('${project.images?.[0]?.url}')`
+                        backgroundImage: `url('${project.image?.url}')`
                       }}
                     />
                   </LazyLoad>
@@ -68,6 +71,7 @@ const Projects: React.FC = () => {
                   <div className="tw-flex tw-flex-wrap tw--mx-2 tw-mb-2">
                     {project?.tags?.map(tag => (
                       <Link
+                        key={tag.id}
                         href={`/projects?tag=${tag.name}`}
                         className="tw-mx-1 tw-mt-2 tw-px-2 tw-rounded-full tw-bg-gray-300"
                         variant="custom"

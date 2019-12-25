@@ -56,7 +56,7 @@ const FeaturedProjects = (): React.ReactElement => {
                       <div
                         className="content tw-w-full tw-h-0 tw-pt-16:9 tw-relative tw-bg-cover tw-bg-center tw-rounded-lg hover:tw-bg-gray-800"
                         style={{
-                          backgroundImage: `url("${project.images?.[0]?.url ??
+                          backgroundImage: `url("${project.image?.url ??
                             '/svg/portfolio_essv.svg'}")`
                         }}
                       >

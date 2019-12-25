@@ -68,6 +68,7 @@ const Project: React.FC = () => {
                   <div className="tw-flex tw-justify-center lg:tw-justify-start tw-flex-wrap tw--mx-1 tw-mb-5">
                     {project?.tags?.map(tag => (
                       <Link
+                        key={tag.id}
                         href={`/projects?tag=${tag.name}`}
                         className="tw-mx-1 tw-mt-2 tw-px-3 tw-py-1 tw-rounded-full tw-bg-blue hover:tw-bg-blue-darker"
                         variant="custom"

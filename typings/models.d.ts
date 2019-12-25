@@ -18,6 +18,7 @@ interface Project extends Model {
   projectUrl?: string
   iconUrl?: string
   featuredAt?: string
+  image?: ProjectImage
   images?: ProjectImage[]
   tags?: Tag[]
   previousProject?: Project
