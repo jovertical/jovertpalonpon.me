@@ -1,11 +1,12 @@
 import React from 'react'
+import { NextPage } from 'next'
 import FeaturedProjects from '@components/FeaturedProjects'
 import Layout from '@components/Layout'
 import SEO from '@components/SEO'
 import Text from '@components/Text'
 import * as SKILLS from '@constants/skills'
 
-const Index: React.FC = (): React.ReactElement => {
+const Index: NextPage = () => {
   return (
     <Layout>
       <SEO />

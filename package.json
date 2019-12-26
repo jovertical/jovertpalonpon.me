@@ -4,7 +4,6 @@
   "scripts": {
     "dev": "now dev",
     "build": "next build",
-    "export": "yarn build && next export",
     "start": "next start",
     "format": "./node_modules/.bin/prettier --write \"{components,constants,helpers,pages,styles,typings}/**/*{.ts,.tsx,.css}\"",
     "test:lint": "./node_modules/.bin/eslint --ext .ts,.tsx .",

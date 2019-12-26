@@ -1,4 +1,4 @@
-import fetch from 'unfetch'
+import fetch from 'isomorphic-unfetch'
 
 interface ApiResponse {
   status: number
