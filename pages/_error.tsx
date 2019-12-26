@@ -12,7 +12,6 @@ interface Props {
 const Error: NextPage<Props> = ({ statusCode }) => (
   <div className="tw-flex tw-flex-col lg:tw-flex-row tw-items-center tw-justify-center tw-h-screen">
     <div className="tw-w-4/5 lg:tw-w-1/3 tw-text-center lg:tw-text-left">
-      {statusCode}
       <Text variant="h4" weight="bold" className="tw-mb-2">
         {statusCode === 404
           ? 'You have come too far my friend'
