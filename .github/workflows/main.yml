@@ -20,6 +20,4 @@ jobs:
           yarn export
 
       - name: Deploy
-        run: ./node_modules/.bin/now
-        with:
-          args: --prod -t=${{ secrets.ZEIT_TOKEN }}
+        run: ./node_modules/.bin/now --prod -t=${{ secrets.ZEIT_TOKEN }}
