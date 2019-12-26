@@ -3,7 +3,7 @@ module.exports = {
   theme: {
     linearGradients: {
       colors: {
-        'blue-darker-blue': ['#2b6cb0', '#4299e1'],
+        'blue-darker-blue': ['#2b6cb0', '#059ae7'],
       }
     },
     rotate: {
@@ -25,7 +25,7 @@ module.exports = {
     },
     extend: {
       colors: {
-        blue: '#4299e1',
+        blue: '#059ae7',
         'blue-lighter': '#63b3ed',
         'blue-darker': '#2b6cb0'
       },

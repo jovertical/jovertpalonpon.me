@@ -1,5 +1,6 @@
 import React from 'react'
 import { NextPage } from 'next'
+import LazyLoad from 'react-lazyload'
 import FeaturedProjects from '@components/FeaturedProjects'
 import Layout from '@components/Layout'
 import SEO from '@components/SEO'
@@ -22,7 +23,9 @@ const Index: NextPage = () => {
         </div>
 
         <div className="tw-w-3/4 lg:tw-w-1/2 tw-mx-auto">
-          <img src="/svg/web_developer.svg" alt="Web Developer" />
+          <LazyLoad>
+            <img src="/svg/web_developer.svg" alt="Web Developer" />
+          </LazyLoad>
         </div>
       </section>
 

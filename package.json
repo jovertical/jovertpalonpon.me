@@ -19,8 +19,7 @@
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-image-lightbox": "^5.1.1",
-    "react-lazyload": "^2.6.5",
-    "unfetch": "^4.1.0"
+    "react-lazyload": "^2.6.5"
   },
   "devDependencies": {
     "@types/classnames": "^2.2.9",
