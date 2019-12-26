@@ -20,8 +20,6 @@ jobs:
           yarn export
 
       - name: Deploy
-        uses: actions/zeit-now@master
-        env:
-          ZEIT_TOKEN: ${{ secrets.ZEIT_TOKEN }}
+        run: ./node_modules/.bin/now
         with:
-          args: --prod
+          args: --prod -t=${{ secrets.ZEIT_TOKEN }}
