@@ -3,6 +3,7 @@ name: Actions
 on:
   push:
     branches:
+      - feat/deploy-to-zeit
       - '!master'
 
 jobs:
@@ -19,9 +20,8 @@ jobs:
           yarn export
 
       - name: Deploy
-        uses: netlify/actions/cli@master
+        uses: actions/zeit-now@master
         env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_API_ID }}
+          ZEIT_TOKEN: ${{ secrets.ZEIT_TOKEN }}
         with:
-          args: deploy
+          args: --prod
