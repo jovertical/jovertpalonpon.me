@@ -41,6 +41,7 @@
     "husky": "^3.1.0",
     "jest": "^24.9.0",
     "next-purgecss": "^3.1.2",
+    "now": "^16.7.0",
     "postcss-loader": "^3.0.0",
     "prettier": "^1.18.2",
     "tailwindcss": "^1.1.2",

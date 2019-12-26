@@ -3,7 +3,7 @@ name: Actions
 on:
   push:
     branches:
-      - '!master'
+      - master
 
 jobs:
   Build-Deploy:
@@ -16,12 +16,6 @@ jobs:
         run: |
           yarn install
           yarn test
-          yarn export
 
       - name: Deploy
-        uses: netlify/actions/cli@master
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_API_ID }}
-        with:
-          args: deploy
+        run: ./node_modules/.bin/now --prod --t ${{ secrets.ZEIT_TOKEN }}
