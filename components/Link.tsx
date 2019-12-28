@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react'
 import NextLink from 'next/link'
 import cx from 'classnames'
 
-interface Props extends React.AnchorHTMLAttributes<{}> {
+export interface Props extends React.AnchorHTMLAttributes<{}> {
   href?: string
   variant?: 'default' | 'primary' | 'secondary' | 'custom'
   className?: string

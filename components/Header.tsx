@@ -2,13 +2,71 @@ import React, { useState } from 'react'
 import { useRouter } from 'next/router'
 import cx from 'classnames'
 import Button from '@components/Button'
-import Link from '@components/Link'
+import Link, { ExternalLink, Props as LinkProps } from '@components/Link'
 import Logo from '@components/Logo'
+import { social } from '@constants/links'
 import { range } from '@helpers/utils'
+
+interface MenuLink extends LinkProps {
+  external?: boolean
+  active?: boolean
+  className?: string
+}
+
+const MenuLinkItem: React.FC<MenuLink> = ({
+  active,
+  external,
+  children,
+  className,
+  ...link
+}) => (
+  <div className={className}>
+    {external ? (
+      <ExternalLink {...link}>{children}</ExternalLink>
+    ) : (
+      <Link
+        {...link}
+        className={cx({
+          'tw-text-blue': active
+        })}
+      >
+        {children}
+      </Link>
+    )}
+  </div>
+)
 
 const Header: React.FC = (): React.ReactElement => {
   const router = useRouter()
   const [menuOpen, setMenuOpen] = useState(false)
+
+  const links: MenuLink[] = [
+    {
+      href: '/projects',
+      variant: 'primary',
+      children: 'Projects',
+      active: router.asPath === '/projects'
+    },
+
+    {
+      href: '/',
+      variant: 'primary',
+      children: 'Blog'
+    },
+
+    {
+      href: social.cv,
+      variant: 'primary',
+      children: 'Resumé',
+      external: true
+    },
+
+    {
+      href: '/',
+      variant: 'custom',
+      children: <Button>Contact</Button>
+    }
+  ]
 
   return (
     <nav className="tw-py-5 tw-bg-white">
@@ -17,27 +75,9 @@ const Header: React.FC = (): React.ReactElement => {
           <Logo size="sm" />
         </div>
 
-        <div className="tw-px-4">
-          <Link
-            href="/projects"
-            className={cx({
-              'tw-text-blue': router.asPath === '/projects'
-            })}
-            variant="primary"
-          >
-            Projects
-          </Link>
-        </div>
-
-        <div className="tw-px-4">
-          <Link href="/" variant="primary">
-            Blog
-          </Link>
-        </div>
-
-        <div className="tw-px-4">
-          <Button variant="primary">Contact</Button>
-        </div>
+        {links.map((link, i) => (
+          <MenuLinkItem key={i} className="tw-px-4" {...link} />
+        ))}
       </div>
 
       <div className="lg:tw-hidden">
@@ -67,19 +107,9 @@ const Header: React.FC = (): React.ReactElement => {
               <Logo />
             </div>
 
-            <div className="tw-py-2">
-              <Link href="/projects">Projects</Link>
-            </div>
-
-            <div className="tw-py-2">
-              <Link href="/">Blog</Link>
-            </div>
-
-            <div className="tw-py-2">
-              <Link href="/" variant="custom">
-                <Button>Contact</Button>
-              </Link>
-            </div>
+            {links.map((link, i) => (
+              <MenuLinkItem key={i} className="tw-py-2" {...link} />
+            ))}
           </div>
         )}
       </div>
