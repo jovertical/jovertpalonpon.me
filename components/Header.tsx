@@ -13,28 +13,28 @@ interface MenuLink extends LinkProps {
   className?: string
 }
 
-const MenuLinkItem: React.FC<MenuLink> = ({
+const MenuLink: React.FC<MenuLink> = ({
   active,
   external,
   children,
   className,
   ...link
 }) => (
-  <div className={className}>
-    {external ? (
-      <ExternalLink {...link}>{children}</ExternalLink>
-    ) : (
-      <Link
-        {...link}
-        className={cx({
-          'tw-text-blue': active
-        })}
-      >
-        {children}
-      </Link>
-    )}
-  </div>
-)
+    <div className={className}>
+      {external ? (
+        <ExternalLink {...link}>{children}</ExternalLink>
+      ) : (
+          <Link
+            {...link}
+            className={cx({
+              'tw-text-blue': active
+            })}
+          >
+            {children}
+          </Link>
+        )}
+    </div>
+  )
 
 const Header: React.FC = (): React.ReactElement => {
   const router = useRouter()
@@ -49,7 +49,6 @@ const Header: React.FC = (): React.ReactElement => {
     },
 
     {
-      href: '/',
       variant: 'primary',
       children: 'Blog'
     },
@@ -62,7 +61,6 @@ const Header: React.FC = (): React.ReactElement => {
     },
 
     {
-      href: '/',
       variant: 'custom',
       children: <Button>Contact</Button>
     }
@@ -76,7 +74,7 @@ const Header: React.FC = (): React.ReactElement => {
         </div>
 
         {links.map((link, i) => (
-          <MenuLinkItem key={i} className="tw-px-4" {...link} />
+          <MenuLink key={i} className="tw-px-4" {...link} />
         ))}
       </div>
 
@@ -108,7 +106,7 @@ const Header: React.FC = (): React.ReactElement => {
             </div>
 
             {links.map((link, i) => (
-              <MenuLinkItem key={i} className="tw-py-2" {...link} />
+              <MenuLink key={i} className="tw-py-2" {...link} />
             ))}
           </div>
         )}
