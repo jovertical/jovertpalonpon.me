@@ -20,21 +20,21 @@ const MenuLink: React.FC<MenuLink> = ({
   className,
   ...link
 }) => (
-    <div className={className}>
-      {external ? (
-        <ExternalLink {...link}>{children}</ExternalLink>
-      ) : (
-          <Link
-            {...link}
-            className={cx({
-              'tw-text-blue': active
-            })}
-          >
-            {children}
-          </Link>
-        )}
-    </div>
-  )
+  <div className={className}>
+    {external ? (
+      <ExternalLink {...link}>{children}</ExternalLink>
+    ) : (
+      <Link
+        {...link}
+        className={cx({
+          'tw-text-blue': active
+        })}
+      >
+        {children}
+      </Link>
+    )}
+  </div>
+)
 
 const Header: React.FC = (): React.ReactElement => {
   const router = useRouter()

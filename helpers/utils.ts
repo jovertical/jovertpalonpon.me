@@ -1,9 +1,4 @@
 /**
- * Whether in Node.js environment or not.
- */
-export const inServer = (): boolean => typeof window === 'undefined'
-
-/**
  * Shorten a given text
  *
  * @param subject The text to truncate
@@ -29,6 +24,14 @@ export const truncate = (
  * @param max Highest number to create
  */
 export const random = (min: number, max: number): number => {
+  if (min < 0 || max < 0) {
+    throw new Error('Numbers cannot be negative')
+  }
+
+  if (min > max) {
+    throw new Error('First number is higher than the Second number')
+  }
+
   return Math.floor(Math.random() * (max - min + 1)) + min
 }
 

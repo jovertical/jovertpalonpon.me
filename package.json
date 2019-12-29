@@ -7,7 +7,7 @@
     "start": "next start",
     "format": "./node_modules/.bin/prettier --write \"{components,constants,helpers,pages,styles,typings}/**/*{.ts,.tsx,.css}\"",
     "test:lint": "./node_modules/.bin/eslint --ext .ts,.tsx .",
-    "test:unit": "./node_modules/.bin/jest --passWithNoTests",
+    "test:unit": "./node_modules/.bin/jest",
     "test": "yarn test:lint --quiet && yarn test:unit --silent"
   },
   "dependencies": {
@@ -39,6 +39,7 @@
     "eslint-plugin-react": "^7.15.1",
     "husky": "^3.1.0",
     "jest": "^24.9.0",
+    "jest-transform-stub": "^2.0.0",
     "next-purgecss": "^3.1.2",
     "now": "^16.7.0",
     "postcss-loader": "^3.0.0",
@@ -47,6 +48,7 @@
     "tailwindcss-gradients": "^2.3.1",
     "tailwindcss-transforms": "^2.2.0",
     "tailwindcss-transitions": "^2.1.0",
+    "ts-jest": "^24.2.0",
     "typescript": "^3.7.3"
   },
   "engines": {
