@@ -1,6 +1,7 @@
 import React from 'react'
 import Next from 'next/app'
 import Router from 'next/router'
+import ReactGA from 'react-ga'
 import NProgress from 'nprogress'
 import '@styles/app.css'
 import '@styles/nprogress.css'
@@ -10,6 +11,13 @@ Router.events.on('routeChangeComplete', () => NProgress.done())
 Router.events.on('routeChangeError', () => NProgress.done())
 
 export default class App extends Next {
+  componentDidMount(): void {
+    if (process.env.NODE_ENV === 'production') {
+      ReactGA.initialize('UA-155139374-1')
+      ReactGA.pageview(window.location.pathname + window.location.search)
+    }
+  }
+
   render(): React.ReactElement {
     const { Component, pageProps } = this.props
 
