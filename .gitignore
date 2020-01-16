@@ -1,3 +1,5 @@
+ormconfig.env
+.env
 .env.build
 /out
 /.next

@@ -4,9 +4,10 @@ const withPurgeCss = require('next-purgecss')
 
 const config = {
   env: {
-    API_URL: process.env.API_URL || 'https://jovertpalonpon.herokuapp.com'
+    DATABASE_URL: process.env.DATABASE_URL
   },
   webpack(config) {
+    config.resolve.alias['@backend'] = path.join(__dirname, 'backend')
     config.resolve.alias['@components'] = path.join(__dirname, 'components')
     config.resolve.alias['@constants'] = path.join(__dirname, 'constants')
     config.resolve.alias['@helpers'] = path.join(__dirname, 'helpers')

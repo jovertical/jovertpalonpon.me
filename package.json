@@ -5,10 +5,13 @@
     "dev": "now dev",
     "build": "next build",
     "start": "next start",
-    "format": "./node_modules/.bin/prettier --write \"{components,constants,helpers,pages,styles,typings}/**/*{.ts,.tsx,.css}\"",
+    "format": "./node_modules/.bin/prettier --write \"{backend,components,constants,helpers,pages,styles,typings}/**/*{.ts,.tsx,.css}\"",
     "test:lint": "./node_modules/.bin/eslint --ext .ts,.tsx .",
     "test:unit": "./node_modules/.bin/jest",
-    "test": "yarn test:lint --quiet && yarn test:unit --silent"
+    "test": "yarn test:lint --quiet && yarn test:unit --silent",
+    "tm:run": "ts-node -O '{\"module\":\"commonjs\"}' node_modules/.bin/typeorm migration:run -f ormconfig.env",
+    "tm:revert": "ts-node -O '{\"module\":\"commonjs\"}' node_modules/.bin/typeorm migration:revert -f ormconfig.env",
+    "tm:clear-schema": "ts-node -O '{\"module\":\"commonjs\"}' node_modules/.bin/typeorm schema:drop -f ormconfig.env"
   },
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
@@ -16,11 +19,13 @@
     "isomorphic-unfetch": "^3.0.0",
     "next": "^9.0.7",
     "nprogress": "^0.2.0",
+    "pg": "^7.17.1",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-ga": "^2.7.0",
     "react-image-lightbox": "^5.1.1",
-    "react-lazyload": "^2.6.5"
+    "react-lazyload": "^2.6.5",
+    "typeorm": "^0.2.22"
   },
   "devDependencies": {
     "@types/classnames": "^2.2.9",
@@ -33,6 +38,7 @@
     "@typescript-eslint/eslint-plugin": "^2.3.2",
     "@typescript-eslint/parser": "^2.3.2",
     "autoprefixer": "^9.6.1",
+    "babel-preset-next-extras": "^1.0.0",
     "cssnano": "^4.1.10",
     "eslint": "^6.5.1",
     "eslint-config-prettier": "^6.3.0",
@@ -50,6 +56,7 @@
     "tailwindcss-transforms": "^2.2.0",
     "tailwindcss-transitions": "^2.1.0",
     "ts-jest": "^24.2.0",
+    "ts-node": "^8.6.2",
     "typescript": "^3.7.3"
   },
   "engines": {

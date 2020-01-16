@@ -8,7 +8,7 @@
   ],
   "build": {
     "env": {
-      "API_URL": "@api-url"
+      "DATABASE_URL": "@me-database-url"
     }
   },
   "github": {
