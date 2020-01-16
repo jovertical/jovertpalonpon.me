@@ -5,7 +5,7 @@ import connect from '@backend/services/db'
 
 export default async (
   req: NextApiRequest,
-  res: NextApiResponse
+  res: NextApiResponse<Project[]>
 ): Promise<void> => {
   const connection = await connect()
   const projectRepo = connection.getRepository(Project)
