@@ -8,7 +8,7 @@ interface ApiResponse {
 /**
  * Convert the parameters into a query string
  */
-const queryString = (params: Record<string, any>) => {
+const queryString = (params: Record<string, any>): string => {
   return (
     '?' +
     Object.entries(params)
@@ -20,19 +20,27 @@ const queryString = (params: Record<string, any>) => {
 /**
  * Sends a request.
  */
-const request = (path: string, init: RequestInit): Promise<ApiResponse> => {
+const request = async (
+  path: string,
+  init: RequestInit
+): Promise<ApiResponse> => {
   const { headers, ...config } = init
 
-  return fetch(process.env.API_URL + '/' + path.replace(/^\/|\/$/g, ''), {
-    ...config,
-    headers: {
-      'Content-Type': 'application/json',
-      ...headers
+  const res = await fetch(
+    `${process.env.APP_URL}/api/${path.replace(/^\/|\/$/g, '')}`,
+    {
+      ...config,
+      headers: {
+        'Content-Type': 'application/json',
+        ...headers
+      }
     }
-  }).then(async res => ({
+  )
+
+  return {
     status: res.status,
     body: res.ok ? await res.json() : {}
-  }))
+  }
 }
 
 /**

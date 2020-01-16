@@ -4,6 +4,7 @@ const withPurgeCss = require('next-purgecss')
 
 const config = {
   env: {
+    APP_URL: process.env.APP_URL,
     DATABASE_URL: process.env.DATABASE_URL
   },
   webpack(config) {

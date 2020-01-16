@@ -8,6 +8,7 @@
   ],
   "build": {
     "env": {
+      "APP_URL": "@me-app-url",
       "DATABASE_URL": "@me-database-url"
     }
   },
