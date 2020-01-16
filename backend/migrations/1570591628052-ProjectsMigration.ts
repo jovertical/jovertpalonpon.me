@@ -45,7 +45,7 @@ export class ProjectsMigration1570591628052 implements MigrationInterface {
             isNullable: true
           },
           {
-            name: 'startedAt',
+            name: 'startDate',
             type: 'date'
           },
           {

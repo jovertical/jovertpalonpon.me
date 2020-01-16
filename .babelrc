@@ -1,3 +1,4 @@
 {
-  "presets": ["next/babel", "next-extras"]
+  "presets": ["next/babel", "next-extras"],
+  "plugins": ["@babel/plugin-transform-block-scoping"]
 }

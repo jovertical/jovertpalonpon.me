@@ -5,6 +5,8 @@ import {
   ConnectionOptions
 } from 'typeorm'
 import Project from '@backend/entities/Project'
+import ProjectImage from '@backend/entities/ProjectImage'
+import Tag from '@backend/entities/Tag'
 
 const options: ConnectionOptions = {
   name: 'default',
@@ -13,7 +15,7 @@ const options: ConnectionOptions = {
   extra: {
     ssl: process.env.NODE_ENV === 'production'
   },
-  entities: [Project]
+  entities: [Project, ProjectImage, Tag]
 }
 
 /**
