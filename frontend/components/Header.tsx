@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import { useRouter } from 'next/router'
 import cx from 'classnames'
-import Button from '@frontend/components/Button'
 import Link, {
   ExternalLink,
   Props as LinkProps
 } from '@frontend/components/Link'
 import Logo from '@frontend/components/Logo'
+import Contact from '@frontend/components/Modals/Contact'
 import { social } from '@frontend/constants/links'
 import { range } from '@frontend/helpers/utils'
 
@@ -25,7 +25,9 @@ const MenuLink: React.FC<MenuLink> = ({
 }) => {
   return (
     <div className={className}>
-      {external ? (
+      {!link.href ? (
+        children
+      ) : external ? (
         <ExternalLink {...link}>{children}</ExternalLink>
       ) : (
         <Link
@@ -67,7 +69,7 @@ const Header: React.FC = (): React.ReactElement => {
 
     {
       variant: 'custom',
-      children: <Button>Contact</Button>
+      children: <Contact />
     }
   ]
 

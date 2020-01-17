@@ -41,6 +41,7 @@ class Document extends NextDocument {
         </Head>
         <body>
           <Main />
+          <div id="modal-portal" />
           <NextScript />
         </body>
       </Html>
