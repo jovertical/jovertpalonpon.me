@@ -19,8 +19,8 @@ const Error: NextPage<Props> = ({ statusCode }) => (
       </Text>
       <Text className="tw-mb-8">
         {statusCode === 404
-          ? 'Let me help you in your journey, resist and you will regret it! What do you need?'
-          : `Don't worry, it's on us and we are working to make the situation better, just chill for now!`}
+          ? 'Let me help you in your journey, What do you need?'
+          : `Something went wrong on our side, just chill for now!`}
       </Text>
       <div className="tw-flex tw-flex-col lg:tw-flex-row tw-justify-center lg:tw-justify-start">
         {statusCode === 404 ? (
@@ -30,7 +30,7 @@ const Error: NextPage<Props> = ({ statusCode }) => (
                 variant="primary"
                 className="tw-mb-4 lg:tw-mb-0 lg:tw-mr-4"
               >
-                I Want to Learn
+                Discover
               </Button>
             </Link>
             <Link variant="custom">
@@ -38,14 +38,14 @@ const Error: NextPage<Props> = ({ statusCode }) => (
             </Link>
           </>
         ) : (
-          <ExternalLink
-            href={`mailto:${socialLinks.email}`}
-            variant="custom"
-            title="Send me an Email"
-          >
-            <Button>Contact Me</Button>
-          </ExternalLink>
-        )}
+            <ExternalLink
+              href={`mailto:${socialLinks.email}`}
+              variant="custom"
+              title="Send me an Email"
+            >
+              <Button>Contact Me</Button>
+            </ExternalLink>
+          )}
       </div>
     </div>
     <div className="tw-hidden lg:tw-block tw-w-1/3">
