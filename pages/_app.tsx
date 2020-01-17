@@ -3,8 +3,8 @@ import Next from 'next/app'
 import Router from 'next/router'
 import ReactGA from 'react-ga'
 import NProgress from 'nprogress'
-import '@styles/app.css'
-import '@styles/nprogress.css'
+import '@frontend/styles/app.css'
+import '@frontend/styles/nprogress.css'
 
 Router.events.on('routeChangeStart', () => NProgress.start())
 Router.events.on('routeChangeComplete', () => NProgress.done())

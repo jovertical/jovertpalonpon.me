@@ -1,6 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
-import APP_URL from '@constants/links'
+import APP_URL from '@frontend/constants/links'
 
 const SEO: React.FC<SEO> = ({
   title = 'JovertPalonpon',

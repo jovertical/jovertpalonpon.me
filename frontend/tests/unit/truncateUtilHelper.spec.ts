@@ -1,4 +1,4 @@
-import { truncate } from '@helpers/utils'
+import { truncate } from '@frontend/helpers/utils'
 
 describe('Truncate Util Helper', () => {
   it('truncates a given text', () => {

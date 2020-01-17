@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import LazyLoad from 'react-lazyload'
-import Button from '@components/Button'
-import Loader from '@components/Loader'
-import Link from '@components/Link'
-import Text from '@components/Text'
-import { get } from '@helpers/api'
+import Button from '@frontend/components/Button'
+import Loader from '@frontend/components/Loader'
+import Link from '@frontend/components/Link'
+import Text from '@frontend/components/Text'
+import { get } from '@frontend/helpers/api'
 
 const limit = 3
 

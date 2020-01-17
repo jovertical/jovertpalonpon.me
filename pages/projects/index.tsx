@@ -1,14 +1,14 @@
 import React from 'react'
 import { NextPage } from 'next'
 import LazyLoad from 'react-lazyload'
-import Button from '@components/Button'
-import Card from '@components/Card'
-import Layout from '@components/Layout'
-import Link from '@components/Link'
-import SEO from '@components/SEO'
-import Text from '@components/Text'
-import { get } from '@helpers/api'
-import { truncate } from '@helpers/utils'
+import Button from '@frontend/components/Button'
+import Card from '@frontend/components/Card'
+import Layout from '@frontend/components/Layout'
+import Link from '@frontend/components/Link'
+import SEO from '@frontend/components/SEO'
+import Text from '@frontend/components/Text'
+import { get } from '@frontend/helpers/api'
+import { truncate } from '@frontend/helpers/utils'
 
 interface Props {
   projects: Project[]

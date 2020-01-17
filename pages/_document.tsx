@@ -4,16 +4,19 @@ import NextDocument, {
   Head,
   Main,
   NextScript,
-  DocumentContext
+  DocumentContext,
+  DocumentInitialProps
 } from 'next/document'
 
 class Document extends NextDocument {
-  static async getInitialProps(ctx: DocumentContext) {
+  static async getInitialProps(
+    ctx: DocumentContext
+  ): Promise<DocumentInitialProps> {
     const initialProps = await NextDocument.getInitialProps(ctx)
     return { ...initialProps }
   }
 
-  render() {
+  render(): React.ReactElement {
     return (
       <Html lang="en">
         <Head>

@@ -1,11 +1,14 @@
 import React, { useState } from 'react'
 import { useRouter } from 'next/router'
 import cx from 'classnames'
-import Button from '@components/Button'
-import Link, { ExternalLink, Props as LinkProps } from '@components/Link'
-import Logo from '@components/Logo'
-import { social } from '@constants/links'
-import { range } from '@helpers/utils'
+import Button from '@frontend/components/Button'
+import Link, {
+  ExternalLink,
+  Props as LinkProps
+} from '@frontend/components/Link'
+import Logo from '@frontend/components/Logo'
+import { social } from '@frontend/constants/links'
+import { range } from '@frontend/helpers/utils'
 
 interface MenuLink extends LinkProps {
   external?: boolean
@@ -19,22 +22,24 @@ const MenuLink: React.FC<MenuLink> = ({
   children,
   className,
   ...link
-}) => (
-  <div className={className}>
-    {external ? (
-      <ExternalLink {...link}>{children}</ExternalLink>
-    ) : (
-      <Link
-        {...link}
-        className={cx({
-          'tw-text-blue': active
-        })}
-      >
-        {children}
-      </Link>
-    )}
-  </div>
-)
+}) => {
+  return (
+    <div className={className}>
+      {external ? (
+        <ExternalLink {...link}>{children}</ExternalLink>
+      ) : (
+        <Link
+          {...link}
+          className={cx({
+            'tw-text-blue': active
+          })}
+        >
+          {children}
+        </Link>
+      )}
+    </div>
+  )
+}
 
 const Header: React.FC = (): React.ReactElement => {
   const router = useRouter()

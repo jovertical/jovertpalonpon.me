@@ -1,4 +1,4 @@
-import { random } from '@helpers/utils'
+import { random } from '@frontend/helpers/utils'
 
 describe('Random Util Helper', () => {
   it('gives a random scoped number', () => {

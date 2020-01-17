@@ -1,4 +1,4 @@
-import { range } from '@helpers/utils'
+import { range } from '@frontend/helpers/utils'
 
 describe('Range Util Helper', () => {
   it('gives an incremental array of numbers', () => {

@@ -5,7 +5,7 @@
     "dev": "now dev",
     "build": "next build",
     "start": "next start",
-    "format": "./node_modules/.bin/prettier --write \"{backend,components,constants,helpers,pages,styles,typings}/**/*{.ts,.tsx,.css}\"",
+    "format": "./node_modules/.bin/prettier --write \"{backend,frontend,pages,typings}/**/*{.ts,.tsx,.css}\"",
     "test:lint": "./node_modules/.bin/eslint --ext .ts,.tsx .",
     "test:unit": "./node_modules/.bin/jest",
     "test": "yarn test:lint --quiet && yarn test:unit --silent",

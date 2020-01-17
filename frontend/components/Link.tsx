@@ -15,24 +15,26 @@ interface LinkProps extends Props {
 
 // eslint-disable-next-line
 const RawLink: React.FC<Props> = forwardRef(
-  ({ href, variant, className, children, ...other }, ref) => (
-    <a
-      title={href}
-      href={href}
-      className={cx(
-        'tw-cursor-pointer',
-        {
-          'hover:tw-underline': variant === 'default',
-          'hover:tw-text-blue': variant === 'primary',
-          'tw-text-white hover:tw-underline': variant === 'secondary'
-        },
-        className
-      )}
-      {...other}
-    >
-      {children}
-    </a>
-  )
+  ({ href, variant, className, children, ...other }, ref) => {
+    return (
+      <a
+        title={href}
+        href={href}
+        className={cx(
+          'tw-cursor-pointer',
+          {
+            'hover:tw-underline': variant === 'default',
+            'hover:tw-text-blue': variant === 'primary',
+            'tw-text-white hover:tw-underline': variant === 'secondary'
+          },
+          className
+        )}
+        {...other}
+      >
+        {children}
+      </a>
+    )
+  }
 )
 
 export const ExternalLink: React.FC<Props> = ({ ...other }) => (

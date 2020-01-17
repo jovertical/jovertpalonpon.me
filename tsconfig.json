@@ -3,11 +3,8 @@
     "baseUrl": ".",
     "paths": {
       "@backend/*": ["backend/*"],
-      "@components/*": ["components/*"],
-      "@constants/*": ["constants/*"],
-      "@helpers/*": ["helpers/*"],
-      "@pages/*": ["pages/*"],
-      "@styles/*": ["styles/*"]
+      "@frontend/*": ["frontend/*"],
+      "@pages/*": ["pages/*"]
     },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],

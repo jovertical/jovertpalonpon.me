@@ -1,11 +1,11 @@
 import React from 'react'
 import { NextPage } from 'next'
 import LazyLoad from 'react-lazyload'
-import FeaturedProjects from '@components/FeaturedProjects'
-import Layout from '@components/Layout'
-import SEO from '@components/SEO'
-import Text from '@components/Text'
-import * as SKILLS from '@constants/skills'
+import FeaturedProjects from '@frontend/components/FeaturedProjects'
+import Layout from '@frontend/components/Layout'
+import SEO from '@frontend/components/SEO'
+import Text from '@frontend/components/Text'
+import * as SKILLS from '@frontend/constants/skills'
 
 const Index: NextPage = () => {
   return (
