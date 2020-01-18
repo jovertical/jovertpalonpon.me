@@ -9,7 +9,9 @@
   "build": {
     "env": {
       "APP_URL": "@me-app-url",
-      "DATABASE_URL": "@me-database-url"
+      "DATABASE_URL": "@me-database-url",
+      "MAIL_USERNAME": "@me-mail-username",
+      "MAIL_PASSWORD": "@me-mail-password"
     }
   },
   "github": {
