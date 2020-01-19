@@ -11,9 +11,9 @@ const Index: NextPage = () => {
   return (
     <Layout>
       <SEO />
-      <section className="tw-pt-5 tw-bg-white">
-        <div className="tw-py-16 tw-px-5 lg:tw-px-0 tw-text-center">
-          <Text variant="h3" weight="bold" className="tw-mb-5">
+      <section className="pt-5 bg-white">
+        <div className="py-16 px-5 lg:px-0 text-center">
+          <Text variant="h3" weight="bold" className="mb-5">
             Full Stack Developer
           </Text>
 
@@ -22,19 +22,19 @@ const Index: NextPage = () => {
           </Text>
         </div>
 
-        <div className="tw-w-3/4 lg:tw-w-1/2 tw-mx-auto">
+        <div className="w-3/4 lg:w-1/2 mx-auto">
           <LazyLoad>
             <img src="/svg/web_developer.svg" alt="Web Developer" />
           </LazyLoad>
         </div>
       </section>
 
-      <section className="tw-bg-blue tw-px-5 tw-pt-16 tw-pb-40 tw-text-center">
-        <Text variant="h4" weight="bold" className="tw-text-white tw-mb-4">
+      <section className="bg-blue px-5 pt-16 pb-40 text-center">
+        <Text variant="h4" weight="bold" className="text-white mb-4">
           Hi, {`I'm`} Jovert. Nice to meet you.
         </Text>
 
-        <Text variant="h6" className="lg:tw-w-1/2 tw-mx-auto tw-text-white">
+        <Text variant="h6" className="lg:w-1/2 mx-auto text-white">
           My journey began 2 years ago right after our capstone project when I
           started collaborating with my school mates in freelance projects for
           small businesses, my corporate career is spent for start-up companies
@@ -46,13 +46,13 @@ const Index: NextPage = () => {
         </Text>
       </section>
 
-      <section className="tw--mt-32 tw-mx-5 lg:tw-mx-40">
-        <div className="tw-flex tw-flex-wrap tw--mx-2">
-          <div className="tw-w-full lg:tw-w-1/3 tw-px-2 tw-mb-5 lg:tw-mb-0">
-            <div className="tw-h-full tw-text-center tw-p-8 tw-bg-white tw-rounded tw-border hover:tw-shadow-lg">
-              <div className="tw-m-5">
+      <section className="-mt-32 mx-5 lg:mx-40">
+        <div className="flex flex-wrap -mx-2">
+          <div className="w-full lg:w-1/3 px-2 mb-5 lg:mb-0">
+            <div className="h-full text-center p-8 bg-white rounded border hover:shadow-lg">
+              <div className="m-5">
                 <svg
-                  className="tw-fill-current tw-text-blue tw-h-16 tw-mx-auto"
+                  className="fill-current text-blue h-16 mx-auto"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                 >
@@ -60,21 +60,21 @@ const Index: NextPage = () => {
                 </svg>
               </div>
 
-              <Text variant="h6" weight="bold" className="tw-mb-4">
+              <Text variant="h6" weight="bold" className="mb-4">
                 Front-end Developer
               </Text>
 
-              <Text className="tw-h-32 tw-mb-10">
+              <Text className="h-32 mb-10">
                 I love to convert a design into code, ensure that it is
                 responsive and cross-browser compatible.I always tries to be the{' '}
                 {`"user"`} when doing frontend stuff.
               </Text>
 
-              <Text variant="h6" className="tw-mb-2 tw-text-blue">
+              <Text variant="h6" className="mb-2 text-blue">
                 Languages I Speak:
               </Text>
 
-              <Text className="tw-mb-10">
+              <Text className="mb-10">
                 {SKILLS.frontendLanguages.map(
                   (lang, i) =>
                     lang +
@@ -82,7 +82,7 @@ const Index: NextPage = () => {
                 )}
               </Text>
 
-              <Text variant="h6" className="tw-mb-2 tw-text-blue">
+              <Text variant="h6" className="mb-2 text-blue">
                 Dev Tools:
               </Text>
 
@@ -95,11 +95,11 @@ const Index: NextPage = () => {
               </ul>
             </div>
           </div>
-          <div className="tw-w-full lg:tw-w-1/3 tw-px-2 tw-mb-5 lg:tw-mb-0">
-            <div className="tw-h-full tw-text-center tw-p-8 tw-bg-white tw-rounded tw-border hover:tw-shadow-lg">
-              <div className="tw-m-5">
+          <div className="w-full lg:w-1/3 px-2 mb-5 lg:mb-0">
+            <div className="h-full text-center p-8 bg-white rounded border hover:shadow-lg">
+              <div className="m-5">
                 <svg
-                  className="tw-fill-current tw-text-blue tw-h-16 tw-mx-auto"
+                  className="fill-current text-blue h-16 mx-auto"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                 >
@@ -107,21 +107,21 @@ const Index: NextPage = () => {
                 </svg>
               </div>
 
-              <Text variant="h6" weight="bold" className="tw-mb-4">
+              <Text variant="h6" weight="bold" className="mb-4">
                 Back-end Developer
               </Text>
 
-              <Text className="tw-h-32 tw-mb-10">
+              <Text className="h-32 mb-10">
                 I love making simple to complex application backend systems, I
                 code with maintainability in mind by following industry-proven
                 coding standards.
               </Text>
 
-              <Text variant="h6" className="tw-mb-2 tw-text-blue">
+              <Text variant="h6" className="mb-2 text-blue">
                 Languages I Speak:
               </Text>
 
-              <Text className="tw-mb-10">
+              <Text className="mb-10">
                 {SKILLS.backendLanguages.map(
                   (lang, i) =>
                     lang +
@@ -129,7 +129,7 @@ const Index: NextPage = () => {
                 )}
               </Text>
 
-              <Text variant="h6" className="tw-mb-2 tw-text-blue">
+              <Text variant="h6" className="mb-2 text-blue">
                 Dev Tools:
               </Text>
 
@@ -142,11 +142,11 @@ const Index: NextPage = () => {
               </ul>
             </div>
           </div>
-          <div className="tw-w-full lg:tw-w-1/3 tw-px-2 tw-mb-5 lg:tw-mb-0">
-            <div className="tw-h-full tw-text-center tw-p-8 tw-bg-white tw-rounded tw-border hover:tw-shadow-lg">
-              <div className="tw-m-5">
+          <div className="w-full lg:w-1/3 px-2 mb-5 lg:mb-0">
+            <div className="h-full text-center p-8 bg-white rounded border hover:shadow-lg">
+              <div className="m-5">
                 <svg
-                  className="tw-fill-current tw-text-blue tw-h-16 tw-mx-auto"
+                  className="fill-current text-blue h-16 mx-auto"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                 >
@@ -154,28 +154,28 @@ const Index: NextPage = () => {
                 </svg>
               </div>
 
-              <Text variant="h6" weight="bold" className="tw-mb-4">
+              <Text variant="h6" weight="bold" className="mb-4">
                 DevOps Enthusiast
               </Text>
 
-              <Text className="tw-h-32 tw-mb-10">
+              <Text className="h-32 mb-10">
                 My interest in DevOps and cloud has just developed over the
                 years, its just fulfilling to see your app being a reality. I
                 ensure that the app is secure &amp; scalable.
               </Text>
 
-              <Text variant="h6" className="tw-mb-2 tw-text-blue">
+              <Text variant="h6" className="mb-2 text-blue">
                 Tools I use:
               </Text>
 
-              <Text className="tw-mb-10">
+              <Text className="mb-10">
                 {SKILLS.devOpsTools.map(
                   (lang, i) =>
                     lang + (i + 1 === SKILLS.devOpsTools.length ? '' : ', ')
                 )}
               </Text>
 
-              <Text variant="h6" className="tw-mb-2 tw-text-blue">
+              <Text variant="h6" className="mb-2 text-blue">
                 Cloud Platforms I deploy to:
               </Text>
 
@@ -191,7 +191,7 @@ const Index: NextPage = () => {
         </div>
       </section>
 
-      <section className="tw-my-32 tw-mx-5 lg:tw-mx-40 tw-text-center">
+      <section className="my-32 mx-5 lg:mx-40 text-center">
         <FeaturedProjects />
       </section>
     </Layout>

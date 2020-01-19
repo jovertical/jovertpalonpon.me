@@ -9,9 +9,9 @@ const Card: React.FC<Props> = ({ expand = false, children, className }) => {
   return (
     <div
       className={cx(
-        'tw-h-full tw-text-center tw-bg-white tw-rounded tw-border hover:tw-shadow-md',
+        'h-full text-center bg-white rounded border hover:shadow-md',
         {
-          'tw-p-8': !expand
+          'p-8': !expand
         },
         className
       )}

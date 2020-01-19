@@ -17,13 +17,13 @@ const Icon: React.FC<Props> = ({
 }) =>
   React.createElement('span', {
     className: cx(
-      'tw-inline-block tw-cursor-pointer tw-h-auto',
+      'inline-block cursor-pointer h-auto',
       {
-        'tw-w-4': size === 'sm',
-        'tw-w-6': size === 'md',
-        'tw-w-8': size === 'lg',
-        'tw-text-blue hover:tw-text-blue-darker': variant === 'primary',
-        'tw-text-gray-500 hover:tw-text-gray-700': variant === 'secondary'
+        'w-4': size === 'sm',
+        'w-6': size === 'md',
+        'w-8': size === 'lg',
+        'text-blue hover:text-blue-darker': variant === 'primary',
+        'text-gray-500 hover:text-gray-700': variant === 'secondary'
       },
       className
     ),

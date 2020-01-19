@@ -22,16 +22,16 @@ const Button: React.FC<Props> = ({
   return (
     <button
       className={cx(
-        'tw-inline-block tw-rounded-full tw-text-white tw-text-sm tw-tracking-wide tw-font-semibold focus:tw-outline-none',
+        'inline-block rounded-full text-white text-sm tracking-wide font-semibold focus:outline-none',
         {
-          'tw-px-3 tw-py-1 tw-text-sm': size === 'sm',
-          'tw-px-5 tw-py-2 tw-text-base': size === 'md',
-          'tw-px-7 tw-py-3 tw-text-lg': size === 'lg'
+          'px-3 py-1 text-sm': size === 'sm',
+          'px-5 py-2 text-base': size === 'md',
+          'px-7 py-3 text-lg': size === 'lg'
         },
         {
-          'tw-bg-blue tw-text-white hover:tw-shadow-md focus:tw-shadow-outline':
+          'bg-blue text-white hover:shadow-md focus:shadow-outline':
             variant === 'primary',
-          'tw-bg-white tw-border-2 tw-border-white tw-text-gray-900 hover:tw-text-blue focus:tw-shadow-outline':
+          'bg-white border-2 border-white text-gray-900 hover:text-blue focus:shadow-outline':
             variant === 'secondary'
         },
         className

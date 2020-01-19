@@ -21,11 +21,11 @@ const RawLink: React.FC<Props> = forwardRef(
         title={href}
         href={href}
         className={cx(
-          'tw-cursor-pointer',
+          'cursor-pointer',
           {
-            'hover:tw-underline': variant === 'default',
-            'hover:tw-text-blue': variant === 'primary',
-            'tw-text-white hover:tw-underline': variant === 'secondary'
+            'hover:underline': variant === 'default',
+            'hover:text-blue': variant === 'primary',
+            'text-white hover:underline': variant === 'secondary'
           },
           className
         )}

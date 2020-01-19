@@ -13,28 +13,28 @@ import { social as socialLinks } from '@frontend/constants/links'
 
 const Footer: React.FC = () => {
   return (
-    <footer className="tw-bg-gradient-t-blue-darker-blue tw-text-white">
-      <div className="tw-text-center lg:tw-w-1/2 tw-p-5 lg:tw-p-32 tw-mx-auto">
-        <div className="tw-mb-5 tw-inline-block">
+    <footer className="bg-gradient-t-blue-darker-blue text-white">
+      <div className="text-center lg:w-1/2 p-5 lg:p-32 mx-auto">
+        <div className="mb-5 inline-block">
           <LazyLoad>
             <Logo variant="secondary" size="lg" />
           </LazyLoad>
         </div>
 
-        <Text variant="h6" className="tw-mb-10 tw-text-white">
+        <Text variant="h6" className="mb-10 text-white">
           Anything is possible, Don&apos;t limit yourself on the things that you
           can do.
         </Text>
 
-        <div className="tw-mb-10">
+        <div className="mb-10">
           <ExternalLink
             href={socialLinks.github}
             variant="custom"
             title="My Github profile"
-            className="tw-mx-4 lg:tw-mx-5"
+            className="mx-4 lg:mx-5"
           >
             <Icon variant="custom">
-              <GithubIcon className="tw-border-2 tw-border-blue-lighter hover:tw-border-white hover:tw-border-none hover:tw-text-blue hover:tw-bg-white tw-rounded-full tw-p-2" />
+              <GithubIcon className="border-2 border-blue-lighter hover:border-white hover:border-none hover:text-blue hover:bg-white rounded-full p-2" />
             </Icon>
           </ExternalLink>
 
@@ -42,10 +42,10 @@ const Footer: React.FC = () => {
             href={socialLinks.dribbble}
             variant="custom"
             title="My Dribble profile"
-            className="tw-mx-4 lg:tw-mx-5"
+            className="mx-4 lg:mx-5"
           >
             <Icon variant="custom">
-              <DribbbleIcon className="tw-border-2 tw-border-blue-lighter hover:tw-border-white hover:tw-border-none hover:tw-text-blue hover:tw-bg-white tw-rounded-full tw-p-2" />
+              <DribbbleIcon className="border-2 border-blue-lighter hover:border-white hover:border-none hover:text-blue hover:bg-white rounded-full p-2" />
             </Icon>
           </ExternalLink>
 
@@ -53,10 +53,10 @@ const Footer: React.FC = () => {
             href={socialLinks.linkedin}
             variant="custom"
             title="My Linkedin profile"
-            className="tw-mx-4 lg:tw-mx-5"
+            className="mx-4 lg:mx-5"
           >
             <Icon variant="custom">
-              <LinkedinIcon className="tw-border-2 tw-border-blue-lighter hover:tw-border-white hover:tw-border-none hover:tw-text-blue hover:tw-bg-white tw-rounded-full tw-p-2" />
+              <LinkedinIcon className="border-2 border-blue-lighter hover:border-white hover:border-none hover:text-blue hover:bg-white rounded-full p-2" />
             </Icon>
           </ExternalLink>
 
@@ -64,10 +64,10 @@ const Footer: React.FC = () => {
             href={socialLinks.twitter}
             variant="custom"
             title="My Twitter profile"
-            className="tw-mx-4 lg:tw-mx-5"
+            className="mx-4 lg:mx-5"
           >
             <Icon variant="custom">
-              <TwitterIcon className="tw-border-2 tw-border-blue-lighter hover:tw-border-white hover:tw-border-none hover:tw-text-blue hover:tw-bg-white tw-rounded-full tw-p-2" />
+              <TwitterIcon className="border-2 border-blue-lighter hover:border-white hover:border-none hover:text-blue hover:bg-white rounded-full p-2" />
             </Icon>
           </ExternalLink>
 
@@ -75,18 +75,18 @@ const Footer: React.FC = () => {
             href={`mailto:${socialLinks.email}`}
             variant="custom"
             title="Send me an Email"
-            className="tw-mx-4 lg:tw-mx-5"
+            className="mx-4 lg:mx-5"
           >
             <Icon variant="custom">
-              <MessageIcon className="tw-border-2 tw-border-blue-lighter hover:tw-border-white hover:tw-border-none hover:tw-text-blue hover:tw-bg-white tw-rounded-full tw-p-2" />
+              <MessageIcon className="border-2 border-blue-lighter hover:border-white hover:border-none hover:text-blue hover:bg-white rounded-full p-2" />
             </Icon>
           </ExternalLink>
         </div>
 
-        <Text variant="sub" className="tw-mb-5 tw-text-gray-300">
+        <Text variant="sub" className="mb-5 text-gray-300">
           Handcrafted with
           <svg
-            className="tw-fill-current tw-text-red-500 tw-inline-block tw-mx-1 tw-h-5 tw-w-5"
+            className="fill-current text-red-500 inline-block mx-1 h-5 w-5"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
           >
@@ -95,8 +95,8 @@ const Footer: React.FC = () => {
           by me &copy; {new Date().getFullYear()}
         </Text>
 
-        <span className="tw-w-full tw-flex tw-justify-center tw-items-center">
-          <Text variant="sub" className="tw-text-gray-300 tw-mr-1">
+        <span className="w-full flex justify-center items-center">
+          <Text variant="sub" className="text-gray-300 mr-1">
             Made with
           </Text>
 
@@ -104,10 +104,10 @@ const Footer: React.FC = () => {
             href="https://tailwindcss.com"
             variant="custom"
             title="Tailwind CSS"
-            className="tw-mx-4 lg:tw-mx-5"
+            className="mx-4 lg:mx-5"
           >
             <svg
-              className="tw-fill-current tw-text-gray-300 tw-h-10"
+              className="fill-current text-gray-300 h-10"
               viewBox="0 0 64 64"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"

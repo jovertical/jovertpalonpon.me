@@ -25,21 +25,21 @@ const getElement = (variant: Variant): string => {
 const getFontSize = (variant: Variant): string => {
   switch (variant) {
     case 'h1':
-      return 'tw-text-5xl lg:tw-text-6xl'
+      return 'text-5xl lg:text-6xl'
     case 'h2':
-      return 'tw-text-4xl lg:tw-text-5xl'
+      return 'text-4xl lg:text-5xl'
     case 'h3':
-      return 'tw-text-3xl lg:tw-text-4xl'
+      return 'text-3xl lg:text-4xl'
     case 'h4':
-      return 'tw-text-2xl lg:tw-text-3xl'
+      return 'text-2xl lg:text-3xl'
     case 'h5':
-      return 'tw-text-xl lg:tw-text-2xl'
+      return 'text-xl lg:text-2xl'
     case 'h6':
-      return 'tw-text-lg lg:tw-text-xl'
+      return 'text-lg lg:text-xl'
     case 'sub':
-      return 'tw-text-sm'
+      return 'text-sm'
     default:
-      return 'tw-text-base'
+      return 'text-base'
   }
 }
 
@@ -56,9 +56,9 @@ const Text: React.FC<Props> = ({
     className: cx(
       getFontSize(variant),
       {
-        [`tw-font-${weight}`]: weight !== undefined,
-        [`tw-${transform}`]: transform !== undefined,
-        'tw-italic': italic
+        [`font-${weight}`]: weight !== undefined,
+        [`${transform}`]: transform !== undefined,
+        'italic': italic
       },
       className
     ),

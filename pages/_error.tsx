@@ -11,25 +11,25 @@ interface Props {
 
 const Error: NextPage<Props> = ({ statusCode }) => {
   return (
-    <div className="tw-flex tw-flex-col lg:tw-flex-row tw-items-center tw-justify-center tw-h-screen">
-      <div className="tw-w-4/5 lg:tw-w-1/3 tw-text-center lg:tw-text-left">
-        <Text variant="h4" weight="bold" className="tw-mb-2">
+    <div className="flex flex-col lg:flex-row items-center justify-center h-screen">
+      <div className="w-4/5 lg:w-1/3 text-center lg:text-left">
+        <Text variant="h4" weight="bold" className="mb-2">
           {statusCode === 404
             ? 'You have come too far my friend'
             : 'Something went wrong'}
         </Text>
-        <Text className="tw-mb-8">
+        <Text className="mb-8">
           {statusCode === 404
             ? 'Let me help you in your journey, What do you need?'
             : `Something went wrong on our side, just chill for now!`}
         </Text>
-        <div className="tw-flex tw-flex-col lg:tw-flex-row tw-justify-center lg:tw-justify-start">
+        <div className="flex flex-col lg:flex-row justify-center lg:justify-start">
           {statusCode === 404 ? (
             <>
               <Link href="/blog" variant="custom">
                 <Button
                   variant="primary"
-                  className="tw-mb-4 lg:tw-mb-0 lg:tw-mr-4"
+                  className="mb-4 lg:mb-0 lg:mr-4"
                 >
                   Discover
                 </Button>
@@ -39,17 +39,17 @@ const Error: NextPage<Props> = ({ statusCode }) => {
               </Link>
             </>
           ) : (
-            <ExternalLink
-              href={`mailto:${socialLinks.email}`}
-              variant="custom"
-              title="Send me an Email"
-            >
-              <Button>Contact Me</Button>
-            </ExternalLink>
-          )}
+              <ExternalLink
+                href={`mailto:${socialLinks.email}`}
+                variant="custom"
+                title="Send me an Email"
+              >
+                <Button>Contact Me</Button>
+              </ExternalLink>
+            )}
         </div>
       </div>
-      <div className="tw-hidden lg:tw-block tw-w-1/3">
+      <div className="hidden lg:block w-1/3">
         <img
           src={
             statusCode === 404

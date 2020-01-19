@@ -30,15 +30,15 @@ const MenuLink: React.FC<MenuLink> = ({
       ) : external ? (
         <ExternalLink {...link}>{children}</ExternalLink>
       ) : (
-        <Link
-          {...link}
-          className={cx({
-            'tw-text-blue': active
-          })}
-        >
-          {children}
-        </Link>
-      )}
+            <Link
+              {...link}
+              className={cx({
+                'text-blue': active
+              })}
+            >
+              {children}
+            </Link>
+          )}
     </div>
   )
 }
@@ -74,29 +74,29 @@ const Header: React.FC = (): React.ReactElement => {
   ]
 
   return (
-    <nav className="tw-py-5 tw-bg-white">
-      <div className="tw-hidden lg:tw-flex tw-items-center tw-w-4/5 tw-mx-auto">
-        <div className="tw-flex-grow">
+    <nav className="py-5 bg-white">
+      <div className="hidden lg:flex items-center w-4/5 mx-auto">
+        <div className="flex-grow">
           <Logo size="sm" />
         </div>
 
         {links.map((link, i) => (
-          <MenuLink key={i} className="tw-px-4" {...link} />
+          <MenuLink key={i} className="px-4" {...link} />
         ))}
       </div>
 
-      <div className="lg:tw-hidden">
-        <div className="tw-flex tw-justify-end">
-          <div className="tw-p-4" onClick={(): void => setMenuOpen(!menuOpen)}>
-            <div className={cx({ 'tw-mt-2': menuOpen })}>
+      <div className="lg:hidden">
+        <div className="flex justify-end">
+          <div className="p-4" onClick={(): void => setMenuOpen(!menuOpen)}>
+            <div className={cx({ 'mt-2': menuOpen })}>
               {Array.from(range(1, 3)).map(item => (
                 <div
                   className={cx(
-                    'tw-w-4 tw-h-px tw-my-1 tw-bg-black tw-transition-500',
+                    'w-4 h-px my-1 bg-black transition-500',
                     {
-                      'tw--rotate-45 tw-w-5': menuOpen && item === 1,
-                      'tw-hidden': menuOpen && item === 2,
-                      'tw-rotate-45 tw-w-5 tw--mt-1': menuOpen && item === 3
+                      '-rotate-45 w-5': menuOpen && item === 1,
+                      'hidden': menuOpen && item === 2,
+                      'rotate-45 w-5 -mt-1': menuOpen && item === 3
                     }
                   )}
                   key={item}
@@ -107,13 +107,13 @@ const Header: React.FC = (): React.ReactElement => {
         </div>
 
         {menuOpen && (
-          <div className="tw-flex tw-flex-col tw-text-center tw-border-b tw-pb-6">
-            <div className="tw-inline-block tw-mx-auto">
+          <div className="flex flex-col text-center border-b pb-6">
+            <div className="inline-block mx-auto">
               <Logo />
             </div>
 
             {links.map((link, i) => (
-              <MenuLink key={i} className="tw-py-2" {...link} />
+              <MenuLink key={i} className="py-2" {...link} />
             ))}
           </div>
         )}

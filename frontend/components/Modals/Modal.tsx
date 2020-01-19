@@ -18,21 +18,21 @@ const Modal: React.FC = ({ children }) => {
         <Portal selector="#modal-portal">
           <div
             onClick={handleClose}
-            className="tw-fixed tw-inset-0 tw-w-full tw-h-screen tw-flex tw-items-center tw-justify-center tw-bg-semi-75"
+            className="fixed inset-0 w-full h-screen flex items-center justify-center bg-semi-75"
           >
             <div
               ref={box}
-              className="tw-relative tw-w-full tw-max-w-2xl tw-bg-white tw-shadow-lg tw-rounded tw-p-8"
+              className="relative w-full max-w-2xl bg-white shadow-lg rounded p-8"
             >
               <Button
                 variant="text"
-                className="tw-absolute tw-right-0 tw-top-0 tw-mt-5"
+                className="absolute right-0 top-0 mt-5"
                 onClick={(): void => setOpen(false)}
               >
-                <div className="tw-w-5 tw-h-2px tw--rotate-45 tw-bg-gray-300" />
-                <div className="tw-w-5 tw-h-2px tw-rotate-45 tw-bg-gray-300" />
+                <div className="w-5 h-2px -rotate-45 bg-gray-300" />
+                <div className="w-5 h-2px rotate-45 bg-gray-300" />
               </Button>
-              <div className="tw-flex tw-justify-center tw-my-5">
+              <div className="flex justify-center my-5">
                 {children}
               </div>
             </div>

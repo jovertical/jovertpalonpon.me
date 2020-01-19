@@ -1,5 +1,4 @@
 module.exports = {
-  prefix: 'tw-',
   theme: {
     linearGradients: {
       colors: {
