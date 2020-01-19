@@ -24,7 +24,6 @@ export default class App extends Next {
     return (
       <React.Fragment>
         <style global jsx>
-          {' '}
           {`
             @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap');
 
