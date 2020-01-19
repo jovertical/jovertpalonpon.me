@@ -19,6 +19,6 @@ export default validate(
       text: req.body?.message
     })
 
-    res.send('Sending message...')
+    res.send({ message: 'Sending message...' })
   }
 )
