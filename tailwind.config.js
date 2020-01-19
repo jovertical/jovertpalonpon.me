@@ -27,7 +27,8 @@ module.exports = {
       colors: {
         blue: '#059ae7',
         'blue-lighter': '#63b3ed',
-        'blue-darker': '#2b6cb0'
+        'blue-darker': '#2b6cb0',
+        'semi-75': 'rgba(0, 0, 0, 0.75)'
       },
       inset: {
         '1/2': '50%',
