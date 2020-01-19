@@ -19,6 +19,10 @@ const config = {
 
 module.exports = withCss(withPurgeCss({
   purgeCssEnabled: ({ dev, isServer }) => (!dev && !isServer),
+  purgeCssPaths: [
+    'pages/**/*',
+    'frontend/components/**/*',
+  ],
   purgeCss: {
     whitelist: () => [
       'spinner',
