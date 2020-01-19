@@ -1,5 +1,6 @@
 import React from 'react'
 import LazyLoad from 'react-lazyload'
+import Button from '@frontend/components/Button'
 import Icon from '@frontend/components/Icon'
 import DribbbleIcon from '@frontend/components/Icons/Dribbble'
 import GithubIcon from '@frontend/components/Icons/Github'
@@ -8,14 +9,31 @@ import MessageIcon from '@frontend/components/Icons/Message'
 import TwitterIcon from '@frontend/components/Icons/Twitter'
 import Logo from '@frontend/components/Logo'
 import { ExternalLink } from '@frontend/components/Link'
+import Contact from '@frontend/components/Modals/Contact'
 import Text from '@frontend/components/Text'
 import { social as socialLinks } from '@frontend/constants/links'
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-gradient-t-blue-darker-blue text-white">
+    <footer className="relative mt-32 bg-gradient-t-blue-darker-blue text-white">
+      <div className="absolute w-full flex justify-center">
+        <div className="flex flex-col lg:flex-row items-center justify-between w-full lg:w-3/4 -mt-24 mx-5 lg:mx-0 p-8 lg:p-16 rounded-lg bg-gray-900">
+          <div className="lg:w-2/3">
+            <Text variant="h4" className="mb-2">
+              What about a project?
+            </Text>
+            <Text className="mb-4 lg:mb-0">
+              Have that little idea of yours? I can help you in making that a
+              reality.
+            </Text>
+          </div>
+          <Contact>
+            <Button variant="secondary">Let's do this</Button>
+          </Contact>
+        </div>
+      </div>
       <div className="text-center lg:w-1/2 p-5 lg:p-32 mx-auto">
-        <div className="mb-5 inline-block">
+        <div className="mt-20 lg:mt-10 mb-5 inline-block">
           <LazyLoad>
             <Logo variant="secondary" size="lg" />
           </LazyLoad>

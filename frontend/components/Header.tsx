@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useRouter } from 'next/router'
 import cx from 'classnames'
+import Button from '@frontend/components/Button'
 import Link, {
   ExternalLink,
   Props as LinkProps
@@ -69,7 +70,11 @@ const Header: React.FC = (): React.ReactElement => {
 
     {
       variant: 'custom',
-      children: <Contact />
+      children: (
+        <Contact>
+          <Button>Contact</Button>
+        </Contact>
+      )
     }
   ]
 

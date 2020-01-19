@@ -4,7 +4,11 @@ import Portal from '@frontend/components/Portal'
 import Text from '@frontend/components/Text'
 import { post } from '@frontend/helpers/api'
 
-const Contact: React.FC = () => {
+type Props = {
+  children: any
+}
+
+const Contact: React.FC<Props> = ({ children }) => {
   const [open, setOpen] = useState(false)
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
@@ -33,7 +37,9 @@ const Contact: React.FC = () => {
 
   return (
     <React.Fragment>
-      <Button onClick={(): void => setOpen(true)}>Contact</Button>
+      {React.cloneElement(children, {
+        onClick: (): void => setOpen(true)
+      })}
       {open && (
         <Portal selector="#modal-portal">
           <div className="fixed inset-0 flex flex-col items-center bg-gradient-t-blue-darker-blue">
