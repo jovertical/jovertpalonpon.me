@@ -13,22 +13,22 @@ const Logo: React.FC<Props> = ({
   className,
   ...other
 }) => (
-    <Link href="/">
-      <img
-        alt="Logo"
-        src={variant === 'secondary' ? '/png/logo-white.png' : '/png/logo.png'}
-        className={cx(
-          'cursor-pointer',
-          {
-            'w-16': size === 'sm',
-            'w-20': size === 'md',
-            'w-24': size === 'lg'
-          },
-          className
-        )}
-        {...other}
-      />
-    </Link>
-  )
+  <Link href="/">
+    <img
+      alt="Logo"
+      src={variant === 'secondary' ? '/png/logo-white.png' : '/png/logo.png'}
+      className={cx(
+        'cursor-pointer',
+        {
+          'w-16': size === 'sm',
+          'w-20': size === 'md',
+          'w-24': size === 'lg'
+        },
+        className
+      )}
+      {...other}
+    />
+  </Link>
+)
 
 export default Logo

@@ -29,7 +29,7 @@ const FeaturedProjects = (): React.ReactElement => {
   }, [])
 
   return (
-    <>
+    <React.Fragment>
       <div>
         <Text variant="h5" weight="bold" className="mb-10">
           Featured Projects
@@ -37,58 +37,58 @@ const FeaturedProjects = (): React.ReactElement => {
         {loading ? (
           <Loader />
         ) : (
-            <>
-              {projects.length === 0 ? (
-                <Text>
-                  No Projects Featured.{' '}
-                  <Link href="/projects" className="text-blue">
-                    View All
+          <React.Fragment>
+            {projects.length === 0 ? (
+              <Text>
+                No Projects Featured.{' '}
+                <Link href="/projects" className="text-blue">
+                  View All
                 </Link>
-                </Text>
-              ) : (
-                  <div className="flex flex-wrap -mx-2 mb-10">
-                    {projects.slice(0, limit).map(project => (
+              </Text>
+            ) : (
+              <div className="flex flex-wrap -mx-2 mb-10">
+                {projects.slice(0, limit).map(project => (
+                  <div
+                    key={project.id}
+                    className="project w-full lg:w-1/3 px-2 mb-5"
+                  >
+                    <LazyLoad>
                       <div
-                        key={project.id}
-                        className="project w-full lg:w-1/3 px-2 mb-5"
+                        className="content w-full h-0 pt-16:9 relative bg-cover bg-center rounded-lg hover:bg-gray-800"
+                        style={{
+                          backgroundImage: `url("${project.image?.url ??
+                            '/svg/portfolio_essv.svg'}")`
+                        }}
                       >
-                        <LazyLoad>
-                          <div
-                            className="content w-full h-0 pt-16:9 relative bg-cover bg-center rounded-lg hover:bg-gray-800"
-                            style={{
-                              backgroundImage: `url("${project.image?.url ??
-                                '/svg/portfolio_essv.svg'}")`
-                            }}
+                        <div className="details hidden flex-col justify-center items-center absolute inset-0 w-full h-full p-10">
+                          <p className="text-white mb-5">
+                            {project.description}
+                          </p>
+
+                          <Link
+                            href="/projects/[slug]"
+                            as={`/projects/${project.slug}`}
+                            variant="custom"
                           >
-                            <div className="details hidden flex-col justify-center items-center absolute inset-0 w-full h-full p-10">
-                              <p className="text-white mb-5">
-                                {project.description}
-                              </p>
-
-                              <Link
-                                href="/projects/[slug]"
-                                as={`/projects/${project.slug}`}
-                                variant="custom"
-                              >
-                                <Button variant="secondary">View Project</Button>
-                              </Link>
-                            </div>
-                          </div>
-                        </LazyLoad>
+                            <Button variant="secondary">View Project</Button>
+                          </Link>
+                        </div>
                       </div>
-                    ))}
+                    </LazyLoad>
                   </div>
-                )}
+                ))}
+              </div>
+            )}
 
-              {projects.length > limit && (
-                <div className="w-full">
-                  <Link href="/projects">
-                    <Button>View All</Button>
-                  </Link>
-                </div>
-              )}
-            </>
-          )}
+            {projects.length > limit && (
+              <div className="w-full">
+                <Link href="/projects">
+                  <Button>View All</Button>
+                </Link>
+              </div>
+            )}
+          </React.Fragment>
+        )}
       </div>
 
       <style jsx>{`
@@ -100,7 +100,7 @@ const FeaturedProjects = (): React.ReactElement => {
           display: flex;
         }
       `}</style>
-    </>
+    </React.Fragment>
   )
 }
 

@@ -47,10 +47,7 @@ const Contact: React.FC = () => {
             </Button>
 
             <div className="mt-10">
-              <Text
-                variant="h3"
-                className="text-white text-center mb-5"
-              >
+              <Text variant="h3" className="text-white text-center mb-5">
                 Hello there!
               </Text>
               <Text variant="h6" className="text-white text-center">
@@ -64,47 +61,47 @@ const Contact: React.FC = () => {
                 Thanks for your interest!
               </Text>
             ) : (
-                <form
-                  onSubmit={handleSubmit}
-                  className="w-full lg:w-1/3 px-5 lg:px-0 py-10"
+              <form
+                onSubmit={handleSubmit}
+                className="w-full lg:w-1/3 px-5 lg:px-0 py-10"
+              >
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Your Name"
+                  className="w-full h-12 shadow-none bg-transparent border-b border-gray-400 text-white placeholder-gray-400 mb-5"
+                  required
+                  value={name}
+                  onChange={(e): void => setName(e.target.value)}
+                />
+
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Your Email Address"
+                  className="w-full h-12 shadow-none bg-transparent border-b border-gray-400 text-white placeholder-gray-400 mb-5"
+                  required
+                  value={email}
+                  onChange={(e): void => setEmail(e.target.value)}
+                />
+
+                <textarea
+                  rows={5}
+                  placeholder="Your Message"
+                  className="w-full shadow-none bg-transparent border-b border-gray-400 text-white placeholder-gray-400 mb-10"
+                  required
+                  defaultValue={message}
+                  onChange={(e): void => setMessage(e.target.value)}
+                />
+
+                <button
+                  type="submit"
+                  className="w-full py-3 rounded-full border text-white hover:border-blue hover:bg-white hover:text-blue"
                 >
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="Your Name"
-                    className="w-full h-12 shadow-none bg-transparent border-b border-gray-400 text-white placeholder-gray-400 mb-5"
-                    required
-                    value={name}
-                    onChange={(e): void => setName(e.target.value)}
-                  />
-
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Your Email Address"
-                    className="w-full h-12 shadow-none bg-transparent border-b border-gray-400 text-white placeholder-gray-400 mb-5"
-                    required
-                    value={email}
-                    onChange={(e): void => setEmail(e.target.value)}
-                  />
-
-                  <textarea
-                    rows={5}
-                    placeholder="Your Message"
-                    className="w-full shadow-none bg-transparent border-b border-gray-400 text-white placeholder-gray-400 mb-10"
-                    required
-                    defaultValue={message}
-                    onChange={(e): void => setMessage(e.target.value)}
-                  />
-
-                  <button
-                    type="submit"
-                    className="w-full py-3 rounded-full border text-white hover:border-blue hover:bg-white hover:text-blue"
-                  >
-                    Send
+                  Send
                 </button>
-                </form>
-              )}
+              </form>
+            )}
           </div>
         </Portal>
       )}

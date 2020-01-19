@@ -13,11 +13,14 @@ interface LinkProps extends Props {
   as?: string
 }
 
-// eslint-disable-next-line
 const RawLink: React.FC<Props> = forwardRef(
-  ({ href, variant, className, children, ...other }, ref) => {
+  (
+    { href, variant, className, children, ...other },
+    ref: React.Ref<HTMLAnchorElement>
+  ) => {
     return (
       <a
+        ref={ref}
         title={href}
         href={href}
         className={cx(
@@ -36,6 +39,8 @@ const RawLink: React.FC<Props> = forwardRef(
     )
   }
 )
+
+RawLink.displayName = 'RawLink'
 
 export const ExternalLink: React.FC<Props> = ({ ...other }) => (
   <RawLink target="_blank" rel="noopener noreferrer" {...other} />

@@ -32,9 +32,7 @@ const Modal: React.FC = ({ children }) => {
                 <div className="w-5 h-2px -rotate-45 bg-gray-300" />
                 <div className="w-5 h-2px rotate-45 bg-gray-300" />
               </Button>
-              <div className="flex justify-center my-5">
-                {children}
-              </div>
+              <div className="flex justify-center my-5">{children}</div>
             </div>
           </div>
         </Portal>

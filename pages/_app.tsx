@@ -22,22 +22,25 @@ export default class App extends Next {
     const { Component, pageProps } = this.props
 
     return (
-      <>
-        <style global jsx>{`
-          @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap');
+      <React.Fragment>
+        <style global jsx>
+          {' '}
+          {`
+            @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap');
 
-          html {
-            box-sizing: border-box;
-          }
+            html {
+              box-sizing: border-box;
+            }
 
-          body {
-            font-family: 'Open Sans', sans-serif;
-            background-color: #edf2f7;
-          }
-        `}</style>
+            body {
+              font-family: 'Open Sans', sans-serif;
+              background-color: #edf2f7;
+            }
+          `}
+        </style>
 
         <Component {...pageProps} />
-      </>
+      </React.Fragment>
     )
   }
 }

@@ -30,15 +30,15 @@ const MenuLink: React.FC<MenuLink> = ({
       ) : external ? (
         <ExternalLink {...link}>{children}</ExternalLink>
       ) : (
-            <Link
-              {...link}
-              className={cx({
-                'text-blue': active
-              })}
-            >
-              {children}
-            </Link>
-          )}
+        <Link
+          {...link}
+          className={cx({
+            'text-blue': active
+          })}
+        >
+          {children}
+        </Link>
+      )}
     </div>
   )
 }
@@ -91,14 +91,11 @@ const Header: React.FC = (): React.ReactElement => {
             <div className={cx({ 'mt-2': menuOpen })}>
               {Array.from(range(1, 3)).map(item => (
                 <div
-                  className={cx(
-                    'w-4 h-px my-1 bg-black transition-500',
-                    {
-                      '-rotate-45 w-5': menuOpen && item === 1,
-                      'hidden': menuOpen && item === 2,
-                      'rotate-45 w-5 -mt-1': menuOpen && item === 3
-                    }
-                  )}
+                  className={cx('w-4 h-px my-1 bg-black transition-500', {
+                    '-rotate-45 w-5': menuOpen && item === 1,
+                    hidden: menuOpen && item === 2,
+                    'rotate-45 w-5 -mt-1': menuOpen && item === 3
+                  })}
                   key={item}
                 />
               ))}

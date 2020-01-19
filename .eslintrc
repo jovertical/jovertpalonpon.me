@@ -14,6 +14,7 @@
   ],
   "plugins": ["prettier"],
   "rules": {
+    "@typescript-eslint/no-unused-vars": "off",
     "@typescript-eslint/no-explicit-any": "off",
     "react/prop-types": 0,
     "react/no-children-prop": 0,

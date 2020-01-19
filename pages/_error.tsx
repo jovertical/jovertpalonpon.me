@@ -25,28 +25,25 @@ const Error: NextPage<Props> = ({ statusCode }) => {
         </Text>
         <div className="flex flex-col lg:flex-row justify-center lg:justify-start">
           {statusCode === 404 ? (
-            <>
+            <React.Fragment>
               <Link href="/blog" variant="custom">
-                <Button
-                  variant="primary"
-                  className="mb-4 lg:mb-0 lg:mr-4"
-                >
+                <Button variant="primary" className="mb-4 lg:mb-0 lg:mr-4">
                   Discover
                 </Button>
               </Link>
               <Link variant="custom">
                 <Button variant="secondary">Bring Me Home</Button>
               </Link>
-            </>
+            </React.Fragment>
           ) : (
-              <ExternalLink
-                href={`mailto:${socialLinks.email}`}
-                variant="custom"
-                title="Send me an Email"
-              >
-                <Button>Contact Me</Button>
-              </ExternalLink>
-            )}
+            <ExternalLink
+              href={`mailto:${socialLinks.email}`}
+              variant="custom"
+              title="Send me an Email"
+            >
+              <Button>Contact Me</Button>
+            </ExternalLink>
+          )}
         </div>
       </div>
       <div className="hidden lg:block w-1/3">

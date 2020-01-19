@@ -103,7 +103,7 @@ const Project: NextPage<Props> = ({ project, seo }) => {
         <div className="hidden lg:flex justify-between px-10 py-4 bg-gray-300">
           <span
             className={cx('flex items-center', {
-              'invisible': project?.previousProject === null
+              invisible: project?.previousProject === null
             })}
           >
             <Icon variant="custom" className="mr-2">
@@ -130,7 +130,7 @@ const Project: NextPage<Props> = ({ project, seo }) => {
 
           <span
             className={cx('flex items-center', {
-              'invisible': project?.nextProject === null
+              invisible: project?.nextProject === null
             })}
           >
             <Link

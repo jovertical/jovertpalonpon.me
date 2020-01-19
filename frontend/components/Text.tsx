@@ -58,7 +58,7 @@ const Text: React.FC<Props> = ({
       {
         [`font-${weight}`]: weight !== undefined,
         [`${transform}`]: transform !== undefined,
-        'italic': italic
+        italic: italic
       },
       className
     ),
