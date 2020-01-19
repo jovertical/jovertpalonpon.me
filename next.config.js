@@ -5,7 +5,9 @@ const withPurgeCss = require('next-purgecss')
 const config = {
   env: {
     APP_URL: process.env.APP_URL,
-    DATABASE_URL: process.env.DATABASE_URL
+    DATABASE_URL: process.env.DATABASE_URL,
+    MAIL_USERNAME: process.env.MAIL_USERNAME,
+    MAIL_PASSWORD: process.env.MAIL_PASSWORD,
   },
   webpack(config) {
     config.resolve.alias['@backend'] = path.join(__dirname, 'backend')

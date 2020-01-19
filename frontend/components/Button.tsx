@@ -1,13 +1,7 @@
 import React, { forwardRef } from 'react'
 import cx from 'classnames'
 
-type Variant =
-  | 'primary'
-  | 'secondary'
-  | 'success'
-  | 'warning'
-  | 'danger'
-  | 'text'
+type Variant = 'primary' | 'secondary' | 'text'
 
 type Size = 'sm' | 'md' | 'lg'
 
