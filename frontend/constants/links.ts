@@ -5,7 +5,7 @@ export const social = {
   dribbble: 'https://dribbble.com/jovert018',
   email: 'palonponjovertlota@gmail.com',
   cv:
-    'https://docs.google.com/document/d/1LW5X-x-7tXQbtW6iEoBaMEkosMozzS9om65Rq3e0qq8/edit'
+    'https://docs.google.com/document/d/1bMSxn7Ok0iISX7_TdUYIMLFcRktyoJLmWD-U5GYJzTo/edit'
 }
 
 export default 'https://jovertpalonpon.me'
